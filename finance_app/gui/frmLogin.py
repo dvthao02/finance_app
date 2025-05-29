@@ -23,15 +23,7 @@ class LoginForm(QWidget):
         main_layout.setContentsMargins(30, 30, 30, 30)  # Add margins around the entire form
         self.setLayout(main_layout)
         
-        # Logo
-        logo_label = QLabel()
-        logo_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'assets', 'logo.png')
-        if os.path.exists(logo_path):
-            pixmap = QPixmap(logo_path)
-            logo_label.setPixmap(pixmap.scaled(150, 150, Qt.KeepAspectRatio, Qt.SmoothTransformation))
-        logo_label.setAlignment(Qt.AlignCenter)
-        main_layout.addWidget(logo_label)
-        main_layout.addSpacing(20)  # Add space after logo
+        # Remove logo section
         
         # Login form container
         form_frame = QFrame()
