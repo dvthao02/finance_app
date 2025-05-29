@@ -9,12 +9,15 @@
     "date": "2025-05-01",
     "created_at": "2025-05-01T08:00:00.000000",
     "updated_at": "2025-05-01T08:00:00.000000",
-    "tags": ["lương", "chính thức"],
+    "tags": [
+      "lương",
+      "chính thức"
+    ],
     "location": "Công ty ABC"
   },
   {
     "transaction_id": "txn_002",
-    "user_id": "user_002", 
+    "user_id": "user_002",
     "category_id": "cat_001",
     "amount": 85000,
     "type": "expense",
@@ -22,7 +25,10 @@
     "date": "2025-05-28",
     "created_at": "2025-05-28T07:30:00.000000",
     "updated_at": "2025-05-28T07:30:00.000000",
-    "tags": ["ăn sáng", "phở"],
+    "tags": [
+      "ăn sáng",
+      "phở"
+    ],
     "location": "Quán phở Hà Nội"
   },
   {
@@ -30,12 +36,15 @@
     "user_id": "user_002",
     "category_id": "cat_002",
     "amount": 25000,
-    "type": "expense", 
+    "type": "expense",
     "description": "Grab đi làm",
     "date": "2025-05-28",
     "created_at": "2025-05-28T08:15:00.000000",
     "updated_at": "2025-05-28T08:15:00.000000",
-    "tags": ["grab", "đi làm"],
+    "tags": [
+      "grab",
+      "đi làm"
+    ],
     "location": "Từ nhà đến công ty"
   },
   {
@@ -48,7 +57,10 @@
     "date": "2025-05-27",
     "created_at": "2025-05-27T15:20:00.000000",
     "updated_at": "2025-05-27T15:20:00.000000",
-    "tags": ["thời trang", "áo khoác"],
+    "tags": [
+      "thời trang",
+      "áo khoác"
+    ],
     "location": "TTTM Vincom"
   },
   {
@@ -61,7 +73,10 @@
     "date": "2025-05-25",
     "created_at": "2025-05-25T19:00:00.000000",
     "updated_at": "2025-05-25T19:00:00.000000",
-    "tags": ["hóa đơn", "điện"],
+    "tags": [
+      "hóa đơn",
+      "điện"
+    ],
     "location": "Thanh toán online"
   },
   {
@@ -74,11 +89,14 @@
     "date": "2025-05-24",
     "created_at": "2025-05-24T14:30:00.000000",
     "updated_at": "2025-05-24T14:30:00.000000",
-    "tags": ["freelance", "thiết kế"],
+    "tags": [
+      "freelance",
+      "thiết kế"
+    ],
     "location": "Làm tại nhà"
   },
   {
-    "transaction_id": "txn_007", 
+    "transaction_id": "txn_007",
     "user_id": "user_002",
     "category_id": "cat_003",
     "amount": 200000,
@@ -87,7 +105,11 @@
     "date": "2025-05-26",
     "created_at": "2025-05-26T20:00:00.000000",
     "updated_at": "2025-05-26T20:00:00.000000",
-    "tags": ["giải trí", "phim", "hẹn hò"],
+    "tags": [
+      "giải trí",
+      "phim",
+      "hẹn hò"
+    ],
     "location": "CGV Sư Vạn Hạnh"
   },
   {
@@ -95,12 +117,15 @@
     "user_id": "user_003",
     "category_id": "cat_001",
     "amount": 320000,
-    "type": "expense", 
+    "type": "expense",
     "description": "Ăn tối nhà hàng",
     "date": "2025-05-26",
     "created_at": "2025-05-26T19:30:00.000000",
     "updated_at": "2025-05-26T19:30:00.000000",
-    "tags": ["ăn tối", "nhà hàng"],
+    "tags": [
+      "ăn tối",
+      "nhà hàng"
+    ],
     "location": "Nhà hàng Seoul"
   },
   {
@@ -113,7 +138,10 @@
     "date": "2025-05-23",
     "created_at": "2025-05-23T16:45:00.000000",
     "updated_at": "2025-05-23T16:45:00.000000",
-    "tags": ["y tế", "thuốc"],
+    "tags": [
+      "y tế",
+      "thuốc"
+    ],
     "location": "Nhà thuốc An Khang"
   },
   {
@@ -126,7 +154,10 @@
     "date": "2025-05-20",
     "created_at": "2025-05-20T18:00:00.000000",
     "updated_at": "2025-05-20T18:00:00.000000",
-    "tags": ["sinh nhật", "tiền mừng"],
+    "tags": [
+      "sinh nhật",
+      "tiền mừng"
+    ],
     "location": "Tiệc sinh nhật"
   }
 ]

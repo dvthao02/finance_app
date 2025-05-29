@@ -20,6 +20,15 @@ class BudgetManager:
         self.history = self.load_history()
         self.user_manager = UserManager()
         self.category_manager = CategoryManager()
+        self.current_user_id = None
+
+    def set_current_user(self, user_id):
+        """Thiết lập người dùng hiện tại
+        Args:
+            user_id (str): ID của người dùng
+        """
+        self.current_user_id = user_id
+        self.category_manager.set_current_user(user_id)
 
     def load_budgets(self):
         """Tải danh sách budgets từ file, thêm auto_renew nếu thiếu"""
@@ -41,14 +50,20 @@ class BudgetManager:
         """Lưu lịch sử thay đổi vào file"""
         return save_json(self.history_file, self.history)
     
-    def get_all_budgets(self, user_id, target_user_id=None, active_only=True):
+    def get_all_budgets(self, user_id=None, target_user_id=None, active_only=True):
         """
         Lấy tất cả budgets
         Args:
-            user_id: ID người dùng thực hiện yêu cầu
+            user_id: ID người dùng thực hiện yêu cầu (None để sử dụng current_user_id)
             target_user_id: ID người dùng cần lấy dữ liệu (None để lấy tất cả nếu là admin)
             active_only: True để chỉ lấy budgets đang hoạt động
         """
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None:
+            return []
+            
         if target_user_id and target_user_id != user_id and not self.user_manager.is_admin(user_id):
             raise ValueError("Không có quyền truy cập dữ liệu của người dùng khác")
         
@@ -56,30 +71,39 @@ class BudgetManager:
         
         if target_user_id:
             result = [budget for budget in result if budget['user_id'] == target_user_id]
+        else:
+            result = [budget for budget in result if budget['user_id'] == user_id]
         
         if active_only:
             result = [budget for budget in result if budget.get('is_active', True)]
         
         return result
     
-    def get_budget_by_id(self, user_id, budget_id):
-        """Lấy budget theo ID"""
-        budget = None
+    def get_user_budgets(self, user_id, is_admin=False):
+        """Get all budgets for a user or all if admin"""
+        if is_admin:
+            return self.budgets
+        return [b for b in self.budgets if b['user_id'] == user_id]
+    
+    def get_budget_by_id(self, user_id, budget_id, is_admin=False):
+        """Get a budget by id, check permission"""
         for b in self.budgets:
             if b['budget_id'] == budget_id:
-                budget = b
-                break
-        if not budget:
-            raise ValueError(f"Không tìm thấy budget với ID: {budget_id}")
-        if budget['user_id'] != user_id and not self.user_manager.is_admin(user_id):
-            raise ValueError("Không có quyền truy cập budget này")
-        return budget
+                if is_admin or b['user_id'] == user_id:
+                    return b
+        return None
     
-    def create_budget(self, user_id, category_id, amount, period='monthly', 
+    def create_budget(self, user_id=None, category_id=None, amount=None, period='monthly', 
                      alert_threshold=80, notes='', start_date=None, end_date=None, auto_renew=True):
         """
         Tạo budget mới
         """
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or category_id is None or amount is None:
+            return False, "Thiếu thông tin bắt buộc"
+            
         if not self.user_manager.get_user_by_id(user_id):
             return False, f"Không tìm thấy người dùng với ID: {user_id}"
         
@@ -140,10 +164,16 @@ class BudgetManager:
             return True, new_budget
         return False, "Lỗi khi lưu file"
     
-    def update_budget(self, user_id, budget_id, **kwargs):
+    def update_budget(self, user_id=None, budget_id=None, **kwargs):
         """
         Cập nhật budget
         """
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or budget_id is None:
+            return False, "Thiếu thông tin bắt buộc"
+            
         budget = self.get_budget_by_id(user_id, budget_id)
         if not budget:
             return False, "Không tìm thấy budget"
@@ -191,28 +221,45 @@ class BudgetManager:
             return True, budget
         return False, "Lỗi khi lưu file"
     
-    def update_spent_amount(self, user_id, budget_id, spent_amount):
+    def update_spent_amount(self, user_id=None, budget_id=None, spent_amount=None):
         """Cập nhật số tiền đã chi tiêu"""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or budget_id is None or spent_amount is None:
+            return False, "Thiếu thông tin bắt buộc"
+            
         budget = self.get_budget_by_id(user_id, budget_id)
         
         budget['spent_amount'] = spent_amount
         budget['remaining_amount'] = budget['amount'] - spent_amount
         budget['updated_at'] = get_current_datetime()
         
-        return self.save_budgets()
+        if self.save_budgets():
+            return True, budget
+        return False, "Lỗi khi lưu file"
     
-    def add_transaction_to_budget(self, user_id, budget_id, transaction_amount):
-        """Thêm giao dịch vào budget (tăng spent_amount)"""
+    def add_transaction_to_budget(self, user_id=None, budget_id=None, transaction_amount=None):
+        """Thêm giao dịch vào budget"""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or budget_id is None or transaction_amount is None:
+            return False, "Thiếu thông tin bắt buộc"
+            
         budget = self.get_budget_by_id(user_id, budget_id)
         
-        budget['spent_amount'] += abs(transaction_amount)
-        budget['remaining_amount'] = budget['amount'] - budget['spent_amount']
-        budget['updated_at'] = get_current_datetime()
-        
-        return self.save_budgets()
+        new_spent = budget['spent_amount'] + transaction_amount
+        return self.update_spent_amount(user_id, budget_id, new_spent)
     
-    def delete_budget(self, user_id, budget_id):
+    def delete_budget(self, user_id=None, budget_id=None):
         """Xóa budget (soft delete)"""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or budget_id is None:
+            return False, "Thiếu thông tin bắt buộc"
+            
         budget = self.get_budget_by_id(user_id, budget_id)
         
         budget['is_active'] = False
@@ -222,29 +269,39 @@ class BudgetManager:
             return True, "Đã xóa budget thành công"
         return False, "Lỗi khi lưu file"
     
-    def get_budgets_by_user(self, user_id, active_only=True):
-        """Lấy tất cả budgets của user"""
-        return self.get_all_budgets(user_id, user_id, active_only)
-    
-    def get_budget_alerts(self, user_id, target_user_id=None):
-        """Lấy danh sách budgets cần cảnh báo"""
-        budgets = self.get_all_budgets(user_id, target_user_id, active_only=True)
+    def get_budget_alerts(self, user_id=None, target_user_id=None):
+        """Lấy cảnh báo ngân sách"""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None:
+            return []
+            
+        budgets = self.get_all_budgets(user_id, target_user_id)
         alerts = []
         
         for budget in budgets:
-            spent_percentage = (budget['spent_amount'] / budget['amount']) * 100 if budget['amount'] > 0 else 0
-            if spent_percentage >= budget['alert_threshold']:
-                alerts.append({
-                    'budget': budget,
-                    'spent_percentage': round(spent_percentage, 1),
-                    'over_budget': spent_percentage > 100
-                })
-        
+            if budget['amount'] > 0:
+                spent_percent = (budget['spent_amount'] / budget['amount']) * 100
+                if spent_percent >= budget['alert_threshold']:
+                    alerts.append({
+                        'budget_id': budget['budget_id'],
+                        'category_id': budget['category_id'],
+                        'spent_percent': spent_percent,
+                        'threshold': budget['alert_threshold'],
+                        'amount': budget['amount'],
+                        'spent_amount': budget['spent_amount'],
+                        'remaining_amount': budget['remaining_amount']
+                    })
+                    
         return alerts
     
-    def add_history(self, budget_id, user_id, change_type, old_amount, new_amount, 
-                   old_alert_threshold, new_alert_threshold, reason, changed_by):
-        """Thêm lịch sử thay đổi budget"""
+    def add_history(self, budget_id=None, user_id=None, change_type=None, old_amount=None, new_amount=None, 
+                   old_alert_threshold=None, new_alert_threshold=None, reason=None, changed_by=None):
+        """Thêm lịch sử thay đổi"""
+        if None in [budget_id, user_id, change_type, reason, changed_by]:
+            return False
+            
         history_entry = {
             'history_id': generate_id('hist', self.history),
             'budget_id': budget_id,
@@ -255,94 +312,82 @@ class BudgetManager:
             'old_alert_threshold': old_alert_threshold,
             'new_alert_threshold': new_alert_threshold,
             'reason': reason,
-            'changed_at': get_current_datetime(),
-            'changed_by': changed_by
+            'changed_by': changed_by,
+            'changed_at': get_current_datetime()
         }
         
         self.history.append(history_entry)
+        return True
     
-    def get_budget_history(self, user_id, budget_id):
+    def get_budget_history(self, user_id=None, budget_id=None):
         """Lấy lịch sử thay đổi của một budget"""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or budget_id is None:
+            return []
+            
         budget = self.get_budget_by_id(user_id, budget_id)
-        return [hist for hist in self.history if hist['budget_id'] == budget_id]
+        return [h for h in self.history if h['budget_id'] == budget_id]
     
-    def get_budget_summary(self, user_id):
-        """Tổng hợp thông tin budgets của user"""
-        budgets = self.get_budgets_by_user(user_id)
-        
-        total_budgets = len(budgets)
-        total_amount = sum(budget['amount'] for budget in budgets)
-        total_spent = sum(budget['spent_amount'] for budget in budgets)
-        total_remaining = sum(budget['remaining_amount'] for budget in budgets)
-        
-        alerts = self.get_budget_alerts(user_id)
-        over_budget_count = len([alert for alert in alerts if alert['over_budget']])
-        
+    def get_budget_summary(self, user_id, is_admin=False):
+        """Get budget summary for user or all if admin"""
+        budgets = self.get_user_budgets(user_id, is_admin)
+        active_budgets = [b for b in budgets if b.get('is_active', True)]
+        total_amount = sum(b['amount'] for b in active_budgets)
+        total_spent = sum(b['spent_amount'] for b in active_budgets)
+        over_budget = len([b for b in active_budgets if b['spent_amount'] > b['amount']])
         return {
-            'total_budgets': total_budgets,
+            'total_budgets': len(budgets),
+            'active_budgets': len(active_budgets),
             'total_amount': total_amount,
             'total_spent': total_spent,
-            'total_remaining': total_remaining,
-            'alerts_count': len(alerts),
-            'over_budget_count': over_budget_count,
-            'spent_percentage': round((total_spent / total_amount) * 100, 1) if total_amount > 0 else 0
+            'total_remaining': total_amount - total_spent,
+            'over_budget_count': over_budget,
+            'budgets': active_budgets
         }
     
     def renew_monthly_budgets(self):
-        """Gia hạn ngân sách hàng tháng: reset spent_amount và tạo ngân sách mới cho tháng tiếp theo"""
+        """Gia hạn tự động các budget hàng tháng"""
         today = datetime.now()
-        updated = False
-        new_budgets = []
+        first_day = today.replace(day=1).strftime('%Y-%m-%d')
+        last_day = today.replace(day=calendar.monthrange(today.year, today.month)[1]).strftime('%Y-%m-%d')
         
         for budget in self.budgets:
-            if (budget.get('is_active', True) and budget.get('period') == 'monthly' and 
-                budget.get('auto_renew', True)):
-                end_date = datetime.strptime(budget['end_date'], '%Y-%m-%d')
-                if end_date < today:
-                    budget['is_active'] = False
-                    budget['updated_at'] = get_current_datetime()
-                    updated = True
-                    
-                    next_month = end_date.replace(day=1) + timedelta(days=32)
-                    next_month = next_month.replace(day=1)
-                    last_day = calendar.monthrange(next_month.year, next_month.month)[1]
-                    
-                    new_budget = {
-                        'budget_id': generate_id('budget', self.budgets + new_budgets),
-                        'user_id': budget['user_id'],
-                        'category_id': budget['category_id'],
-                        'amount': budget['amount'],
-                        'period': 'monthly',
-                        'start_date': next_month.strftime('%Y-%m-%d'),
-                        'end_date': f"{next_month.year}-{next_month.month:02d}-{last_day:02d}",
-                        'spent_amount': 0,
-                        'remaining_amount': budget['amount'],
-                        'alert_threshold': budget['alert_threshold'],
-                        'is_active': True,
-                        'created_at': get_current_datetime(),
-                        'updated_at': get_current_datetime(),
-                        'notes': budget['notes'],
-                        'auto_renew': budget['auto_renew']
-                    }
-                    
-                    new_budgets.append(new_budget)
-                    
-                    self.add_history(
-                        budget_id=new_budget['budget_id'],
-                        user_id=budget['user_id'],
-                        change_type='create',
-                        old_amount=None,
-                        new_amount=budget['amount'],
-                        old_alert_threshold=None,
-                        new_alert_threshold=budget['alert_threshold'],
-                        reason='Gia hạn ngân sách hàng tháng',
-                        changed_by=budget['user_id']
-                    )
+            if (budget.get('is_active') and budget.get('auto_renew') and 
+                budget.get('period') == 'monthly' and 
+                budget.get('end_date') < first_day):
+                
+                # Tạo budget mới cho tháng hiện tại
+                self.create_budget(
+                    user_id=budget['user_id'],
+                    category_id=budget['category_id'],
+                    amount=budget['amount'],
+                    period='monthly',
+                    alert_threshold=budget['alert_threshold'],
+                    notes=budget['notes'],
+                    start_date=first_day,
+                    end_date=last_day,
+                    auto_renew=True
+                )
+    
+    def delete_user_budgets(self, user_id):
+        """Delete all budgets for a user
         
-        if new_budgets:
-            self.budgets.extend(new_budgets)
-            updated = True
+        Args:
+            user_id (str): ID of the user whose budgets should be deleted
+        """
+        if not user_id:
+            return
         
-        if updated and self.save_budgets() and self.save_history():
-            return True, f"Đã gia hạn {len(new_budgets)} ngân sách"
-        return False, "Không có ngân sách nào được gia hạn"
+        budgets = self.load_budgets()
+        budgets = [b for b in budgets if b['user_id'] != user_id]
+        self.save_budgets(budgets)
+        
+        # Also delete budget change history
+        history = self.load_budget_history()
+        history = [h for h in history if h['user_id'] != user_id]
+        self.save_budget_history(history)
+        
+        print(f"Đã xóa tất cả ngân sách của người dùng: {user_id}")
+        return True

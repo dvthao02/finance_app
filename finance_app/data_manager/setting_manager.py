@@ -14,7 +14,15 @@ class SettingManager:
         self.file_path = os.path.join(data_dir, file_path)
         self.settings = []
         self.user_manager = UserManager()
+        self.current_user_id = None
         self.load_settings()
+
+    def set_current_user(self, user_id):
+        """Thiết lập người dùng hiện tại
+        Args:
+            user_id (str): ID của người dùng
+        """
+        self.current_user_id = user_id
 
     def load_settings(self):
         """Tải danh sách settings từ file, đảm bảo mỗi user có settings mặc định."""
@@ -50,19 +58,32 @@ class SettingManager:
             'updated_at': get_current_datetime()
         }
 
-    def get_user_settings(self, user_id):
+    def get_user_settings(self, user_id=None):
         """Lấy cài đặt của một người dùng cụ thể."""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None:
+            return self._get_default_settings('default')
+            
         for setting in self.settings:
             if setting['user_id'] == user_id:
                 return setting
+                
         # If settings not found, create and return default
         default_settings = self._get_default_settings(user_id)
         self.settings.append(default_settings)
         self.save_settings()
         return default_settings
 
-    def update_user_settings(self, user_id, new_settings):
+    def update_user_settings(self, user_id=None, new_settings=None):
         """Cập nhật cài đặt cho một người dùng."""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or new_settings is None:
+            return False
+            
         for i, setting in enumerate(self.settings):
             if setting['user_id'] == user_id:
                 # Preserve setting_id and user_id
@@ -74,8 +95,14 @@ class SettingManager:
                 return True
         return False
 
-    def reset_user_settings(self, user_id):
+    def reset_user_settings(self, user_id=None):
         """Reset cài đặt của người dùng về mặc định."""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None:
+            return False
+            
         default_settings = self._get_default_settings(user_id)
         for i, setting in enumerate(self.settings):
             if setting['user_id'] == user_id:
@@ -84,8 +111,11 @@ class SettingManager:
                 return True
         return False
 
-    def get_setting_by_id(self, setting_id):
+    def get_setting_by_id(self, setting_id=None):
         """Lấy cài đặt theo setting_id."""
+        if setting_id is None:
+            return None
+            
         for setting in self.settings:
             if setting['setting_id'] == setting_id:
                 return setting

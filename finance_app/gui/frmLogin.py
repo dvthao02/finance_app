@@ -234,3 +234,4 @@ class LoginForm(QWidget):
             self.username_input.clear()
             self.password_input.clear()
             self.username_input.setFocus()
+

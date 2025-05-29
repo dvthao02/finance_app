@@ -131,7 +131,7 @@
   },
   {
     "notification_id": "notif_009",
-    "user_id": "user123",
+    "user_id": "user_002",
     "type": "budget_alert",
     "title": "Ngân sách sắp hết",
     "message": "Ngân sách cho tháng này đã gần hết. Vui lòng kiểm tra lại.",
@@ -140,7 +140,7 @@
     "created_at": "2025-05-29T09:26:57.919433",
     "read_at": null,
     "data": {
-      "budget_id": "budget456"
+      "budget_id": "budget_001"
     }
   }
 ]

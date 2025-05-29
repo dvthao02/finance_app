@@ -14,12 +14,36 @@ class ReportManager:
         self.budget_manager = BudgetManager()
         self.category_manager = CategoryManager()
         self.user_manager = UserManager()
+        self.current_user_id = None
+        self.reports = []
 
-    def get_financial_summary(self, user_id, start_date=None, end_date=None):
+    def set_current_user(self, user_id):
+        """Thiết lập người dùng hiện tại
+        Args:
+            user_id (str): ID của người dùng
+        """
+        self.current_user_id = user_id
+        self.transaction_manager.set_current_user(user_id)
+        self.budget_manager.set_current_user(user_id)
+        self.category_manager.set_current_user(user_id)
+
+    def get_financial_summary(self, user_id=None, start_date=None, end_date=None):
         """
         Tạo báo cáo tóm tắt tài chính cho một người dùng trong một khoảng thời gian.
         Bao gồm tổng thu nhập, tổng chi tiêu, và số dư.
         """
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None:
+            return {
+                'total_income': 0,
+                'total_expense': 0,
+                'balance': 0,
+                'start_date': start_date,
+                'end_date': end_date
+            }
+            
         transactions = self.transaction_manager.get_transactions_by_date_range(user_id, start_date, end_date)
         
         total_income = sum(txn['amount'] for txn in transactions if txn['type'] == 'income')
@@ -34,11 +58,22 @@ class ReportManager:
             'end_date': end_date
         }
 
-    def get_category_report(self, user_id, report_type='expense', start_date=None, end_date=None):
+    def get_category_report(self, user_id=None, report_type='expense', start_date=None, end_date=None):
         """
         Tạo báo cáo chi tiêu hoặc thu nhập theo danh mục.
         report_type: 'income' hoặc 'expense'.
         """
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None:
+            return {
+                'report_type': report_type,
+                'breakdown': {},
+                'start_date': start_date,
+                'end_date': end_date
+            }
+            
         if report_type not in ['income', 'expense']:
             raise ValueError("report_type phải là 'income' hoặc 'expense'.")
 
@@ -58,11 +93,21 @@ class ReportManager:
             'end_date': end_date
         }
 
-    def get_budget_vs_actual_report(self, user_id, month=None, year=None):
+    def get_budget_vs_actual_report(self, user_id=None, month=None, year=None):
         """
         Tạo báo cáo so sánh ngân sách và chi tiêu thực tế cho một tháng/năm cụ thể.
         Nếu month và year là None, sẽ lấy tháng hiện tại.
         """
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None:
+            return {
+                'month': month or datetime.now().month,
+                'year': year or datetime.now().year,
+                'budget_vs_actual': []
+            }
+            
         if not month:
             month = datetime.now().month
         if not year:
@@ -100,12 +145,22 @@ class ReportManager:
             'budget_vs_actual': report_data
         }
 
-    def get_transaction_trend_report(self, user_id, period='monthly', num_periods=6):
+    def get_transaction_trend_report(self, user_id=None, period='monthly', num_periods=6):
         """
         Tạo báo cáo xu hướng giao dịch (thu nhập/chi tiêu) theo tháng hoặc năm.
         period: 'monthly' hoặc 'yearly'.
         num_periods: Số lượng tháng/năm gần nhất để báo cáo.
         """
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None:
+            return {
+                'period': period,
+                'num_periods': num_periods,
+                'trends': {}
+            }
+            
         today = datetime.now()
         trends = defaultdict(lambda: {'income': 0, 'expense': 0})
 
@@ -144,12 +199,18 @@ class ReportManager:
             'trends': dict(sorted_trends)
         }
 
-    def export_report(self, user_id, report_type, file_format='json', **kwargs):
+    def export_report(self, user_id=None, report_type=None, file_format='json', **kwargs):
         """
         Xuất báo cáo ra file.
         report_type: 'summary', 'category', 'budget_vs_actual', 'trend'.
         file_format: 'json' (có thể mở rộng sang csv, pdf trong tương lai).
         """
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or report_type is None:
+            return False, "Thiếu thông tin bắt buộc"
+            
         report_data = {}
         if report_type == 'summary':
             report_data = self.get_financial_summary(user_id, **kwargs)
@@ -169,3 +230,9 @@ class ReportManager:
             return False, "Lỗi khi lưu báo cáo."
         else:
             return False, "Định dạng file không được hỗ trợ."
+
+    def get_user_reports(self, user_id, is_admin=False):
+        """Get all reports for a user or all if admin"""
+        if is_admin:
+            return self.reports
+        return [r for r in self.reports if r['user_id'] == user_id]

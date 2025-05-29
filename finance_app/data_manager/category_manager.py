@@ -14,6 +14,14 @@ class CategoryManager:
         self.file_path = os.path.join(data_dir, file_path)
         self.categories = self.load_categories()
         self.user_manager = UserManager()
+        self.current_user_id = None
+
+    def set_current_user(self, user_id):
+        """Thiết lập người dùng hiện tại
+        Args:
+            user_id (str): ID của người dùng
+        """
+        self.current_user_id = user_id
 
     def load_categories(self):
         """Tải danh sách categories từ file"""
@@ -23,14 +31,20 @@ class CategoryManager:
         """Lưu danh sách categories vào file"""
         return save_json(self.file_path, self.categories)
 
-    def get_all_categories(self, user_id, category_type=None, active_only=True):
+    def get_all_categories(self, user_id=None, category_type=None, active_only=True):
         """
         Lấy tất cả categories
         Args:
-            user_id: ID người dùng thực hiện yêu cầu
+            user_id: ID người dùng thực hiện yêu cầu (nếu None, sử dụng current_user_id)
             category_type: 'income', 'expense' hoặc None (lấy tất cả)
             active_only: True để chỉ lấy categories đang hoạt động
         """
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None:
+            return []
+            
         result = self.categories.copy()
 
         # Nếu không phải admin, chỉ lấy categories của người dùng hoặc categories chung (user_id=None)
@@ -45,25 +59,61 @@ class CategoryManager:
 
         return result
 
-    def get_category_by_id(self, user_id, category_id):
+    def get_category_by_id(self, user_id, category_id, is_admin=False):
         """Lấy category theo ID"""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or category_id is None:
+            return None
+            
         for category in self.categories:
-            if category['category_id'] == category_id:
-                # Người dùng thường chỉ truy cập được category của họ hoặc category chung
-                if not self.user_manager.is_admin(user_id) and category.get('user_id') not in [user_id, None]:
-                    return None
+            if category.get('category_id') == category_id:
+                if is_admin or category.get('user_id') in [user_id, None]:
+                    return category
+        return None
+
+    def get_category_by_id(self, category_id):
+        """
+        Lấy category theo ID
+        Args:
+            category_id: ID của category cần lấy
+        Returns:
+            dict: Thông tin category hoặc None nếu không tìm thấy
+        """
+        if not category_id:
+            return None
+            
+        for category in self.categories:
+            if category.get('category_id') == category_id:
                 return category
         return None
 
-    def get_categories_by_type(self, user_id, category_type):
+    def get_categories_by_type(self, user_id=None, category_type=None):
         """Lấy categories theo loại (income/expense)"""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or category_type is None:
+            return []
+            
         return [cat for cat in self.get_all_categories(user_id, active_only=True) 
                 if cat.get('type') == category_type]
 
-    def create_category(self, user_id, name, category_type, icon="📝", color="#808080", description=""):
+    def create_category(self, user_id=None, name=None, category_type=None, icon="📝", color="#808080", description=""):
         """
         Tạo category mới
         """
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or name is None or category_type is None:
+            return False, "Thiếu thông tin bắt buộc"
+            
+        # Kiểm tra quyền quản trị: Chỉ admin mới có thể tạo category mới
+        if not self.user_manager.is_admin(user_id):
+            return False, "Chỉ quản trị viên mới có thể tạo danh mục mới"
+            
         # Kiểm tra tên đã tồn tại trong phạm vi người dùng hoặc toàn cục
         existing = self.get_category_by_name(user_id, name)
         if existing:
@@ -82,7 +132,7 @@ class CategoryManager:
             'description': description,
             'is_active': True,
             'created_at': get_current_datetime(),
-            'user_id': user_id if not self.user_manager.is_admin(user_id) else None  # Admin tạo category chung
+            'user_id': None  # Admin tạo category chung
         }
 
         self.categories.append(new_category)
@@ -91,10 +141,16 @@ class CategoryManager:
             return True, new_category
         return False, "Lỗi khi lưu file"
 
-    def update_category(self, user_id, category_id, **kwargs):
+    def update_category(self, user_id=None, category_id=None, **kwargs):
         """
         Cập nhật category
         """
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or category_id is None:
+            return False, "Thiếu thông tin bắt buộc"
+            
         category = self.get_category_by_id(user_id, category_id)
         if not category:
             return False, "Không tìm thấy category hoặc không có quyền"
@@ -123,8 +179,14 @@ class CategoryManager:
             return True, category
         return False, "Lỗi khi lưu file"
 
-    def delete_category(self, user_id, category_id):
+    def delete_category(self, user_id=None, category_id=None):
         """Xóa category (soft delete - set is_active = False)"""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or category_id is None:
+            return False, "Thiếu thông tin bắt buộc"
+            
         category = self.get_category_by_id(user_id, category_id)
         if not category:
             return False, "Không tìm thấy category hoặc không có quyền"
@@ -139,8 +201,14 @@ class CategoryManager:
             return True, "Đã xóa category thành công"
         return False, "Lỗi khi lưu file"
 
-    def restore_category(self, user_id, category_id):
+    def restore_category(self, user_id=None, category_id=None):
         """Khôi phục category đã xóa"""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or category_id is None:
+            return False, "Thiếu thông tin bắt buộc"
+            
         category = self.get_category_by_id(user_id, category_id)
         if not category:
             return False, "Không tìm thấy category hoặc không có quyền"
@@ -155,8 +223,14 @@ class CategoryManager:
             return True, "Đã khôi phục category thành công"
         return False, "Lỗi khi lưu file"
 
-    def get_category_by_name(self, user_id, name):
+    def get_category_by_name(self, user_id=None, name=None):
         """Tìm category theo tên trong phạm vi người dùng hoặc toàn cục"""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or name is None:
+            return None
+            
         name = name.lower()
         for category in self.categories:
             if category['name'].lower() == name:
@@ -165,8 +239,14 @@ class CategoryManager:
                     return category
         return None
 
-    def search_categories(self, user_id, keyword):
+    def search_categories(self, user_id=None, keyword=None):
         """Tìm kiếm categories theo từ khóa"""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or keyword is None:
+            return []
+            
         keyword = keyword.lower()
         result = []
 
@@ -177,8 +257,20 @@ class CategoryManager:
 
         return result
 
-    def get_category_stats(self, user_id):
+    def get_category_stats(self, user_id=None):
         """Thống kê categories"""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None:
+            return {
+                'total': 0,
+                'active': 0,
+                'inactive': 0,
+                'income_categories': 0,
+                'expense_categories': 0
+            }
+            
         categories = self.get_all_categories(user_id)
         total = len(categories)
         active = len([cat for cat in categories if cat.get('is_active', True)])
@@ -193,9 +285,18 @@ class CategoryManager:
             'expense_categories': expense_cats
         }
 
-    def get_category_name(self, category_id):
+    def get_category_name(self, category_id=None):
         """Trả về tên category theo ID (hoặc 'Unknown' nếu không tìm thấy)"""
+        if category_id is None:
+            return "Unknown"
+            
         for category in self.categories:
-            if category['category_id'] == category_id:
-                return category['name']
+            if category.get('category_id') == category_id:
+                return category.get('name', 'Unknown')
         return "Unknown"
+
+    def get_user_categories(self, user_id, is_admin=False):
+        """Get all categories for a user or all if admin"""
+        if is_admin:
+            return self.categories
+        return [c for c in self.categories if c['user_id'] == user_id or c['user_id'] is None]

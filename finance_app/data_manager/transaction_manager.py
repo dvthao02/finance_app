@@ -16,6 +16,18 @@ class TransactionManager:
         self.transaction_file = os.path.join(data_dir, transaction_file)
         self.category_manager = CategoryManager()
         self.user_manager = UserManager()
+        self.current_user_id = None
+        self.transactions = self.load_transactions()
+
+    def set_current_user(self, user_id):
+        """Thiết lập người dùng hiện tại
+        Args:
+            user_id (str): ID của người dùng
+        """
+        self.current_user_id = user_id
+        self.category_manager.set_current_user(user_id)
+        # Reload transactions when user changes
+        self.transactions = self.load_transactions()
 
     def load_transactions(self):
         """Tải danh sách giao dịch từ file"""
@@ -25,36 +37,76 @@ class TransactionManager:
         """Lưu danh sách giao dịch vào file"""
         return save_json(self.transaction_file, transactions)
 
-    def get_all_transactions(self, user_id, target_user_id=None):
-        """Lấy tất cả giao dịch, có thể lọc theo user_id"""
+    def get_all_transactions(self, user_id=None, target_user_id=None, transaction_type=None):
+        """Lấy tất cả giao dịch, có thể lọc theo user_id và loại giao dịch
+        
+        Args:
+            user_id (str): ID của người dùng thực hiện yêu cầu
+            target_user_id (str): ID của người dùng cần lấy giao dịch (dùng cho admin)
+            transaction_type (str): Loại giao dịch ('income' hoặc 'expense')
+        """
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None:
+            return []
+            
         if target_user_id and target_user_id != user_id and not self.user_manager.is_admin(user_id):
             raise ValueError("Không có quyền truy cập dữ liệu của người dùng khác")
         
         transactions = self.load_transactions()
-        if target_user_id:
-            return [txn for txn in transactions if txn['user_id'] == target_user_id]
-        return transactions
+        filtered_transactions = []
+        
+        for txn in transactions:
+            # Filter by user
+            if target_user_id and txn['user_id'] != target_user_id:
+                continue
+            if not target_user_id and txn['user_id'] != user_id:
+                continue
+                
+            # Filter by type if specified
+            if transaction_type and txn.get('type') != transaction_type:
+                continue
+                
+            filtered_transactions.append(txn)
+            
+        return filtered_transactions
 
-    def get_transaction_by_id(self, user_id, transaction_id):
+    def get_transaction_by_id(self, user_id=None, transaction_id=None, is_admin=False):
         """Tìm giao dịch theo ID"""
-        transaction = self.get_transaction_by_id_no_auth(transaction_id)
-        if not transaction:
-            raise ValueError(f"Không tìm thấy giao dịch với ID: {transaction_id}")
-        if transaction['user_id'] != user_id and not self.user_manager.is_admin(user_id):
-            raise ValueError("Không có quyền truy cập giao dịch này")
-        return transaction
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or transaction_id is None:
+            return None
+            
+        transactions = self.get_all_transactions(user_id, user_id)
+        for transaction in transactions:
+            if transaction['transaction_id'] == transaction_id:
+                if is_admin or transaction['user_id'] == user_id:
+                    return transaction
+        return None
 
     def get_transaction_by_id_no_auth(self, transaction_id):
         """Tìm giao dịch theo ID mà không kiểm tra quyền"""
+        if transaction_id is None:
+            return None
+            
         transactions = self.load_transactions()
         for transaction in transactions:
             if transaction['transaction_id'] == transaction_id:
                 return transaction
         return None
 
-    def add_transaction(self, user_id, category_id, amount, transaction_type, description="", 
-                       date=None, tags=None, location=""):
+    def add_transaction(self, user_id=None, category_id=None, amount=None, transaction_type=None, 
+                       description="", date=None, tags=None, location=""):
         """Thêm giao dịch mới"""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or category_id is None or amount is None or transaction_type is None:
+            raise ValueError("Thiếu thông tin bắt buộc")
+            
         # Kiểm tra user_id
         if not self.user_manager.get_user_by_id(user_id):
             raise ValueError(f"Không tìm thấy người dùng với ID: {user_id}")
@@ -106,8 +158,14 @@ class TransactionManager:
         print(f"Đã thêm giao dịch mới: {new_transaction['transaction_id']}")
         return new_transaction['transaction_id']
 
-    def update_transaction(self, user_id, transaction_id, **kwargs):
+    def update_transaction(self, user_id=None, transaction_id=None, **kwargs):
         """Cập nhật giao dịch"""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or transaction_id is None:
+            raise ValueError("Thiếu thông tin bắt buộc")
+            
         transaction = self.get_transaction_by_id(user_id, transaction_id)
         
         transactions = self.load_transactions()
@@ -138,8 +196,14 @@ class TransactionManager:
         
         raise ValueError(f"Không tìm thấy giao dịch với ID: {transaction_id}")
 
-    def delete_transaction(self, user_id, transaction_id):
+    def delete_transaction(self, user_id=None, transaction_id=None):
         """Xóa giao dịch"""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or transaction_id is None:
+            raise ValueError("Thiếu thông tin bắt buộc")
+            
         transaction = self.get_transaction_by_id(user_id, transaction_id)
         
         transactions = self.load_transactions()
@@ -152,8 +216,14 @@ class TransactionManager:
         
         raise ValueError(f"Không tìm thấy giao dịch với ID: {transaction_id}")
 
-    def get_transactions_by_date_range(self, user_id, start_date, end_date):
+    def get_transactions_by_date_range(self, user_id=None, start_date=None, end_date=None):
         """Lấy giao dịch trong khoảng thời gian"""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or start_date is None or end_date is None:
+            return []
+            
         transactions = self.get_all_transactions(user_id, user_id)
         
         if not validate_date_format(start_date) or not validate_date_format(end_date):
@@ -170,8 +240,14 @@ class TransactionManager:
         
         return filtered_transactions
 
-    def get_transactions_by_category(self, user_id, category_id, start_date=None, end_date=None):
+    def get_transactions_by_category(self, user_id=None, category_id=None, start_date=None, end_date=None):
         """Lấy giao dịch theo danh mục"""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or category_id is None:
+            return []
+            
         category = self.category_manager.get_category_by_id(user_id, category_id)
         if not category:
             raise ValueError(f"Không tìm thấy danh mục với ID: {category_id} hoặc không có quyền")
@@ -187,8 +263,14 @@ class TransactionManager:
         
         return filtered
 
-    def search_transactions(self, user_id, keyword, transaction_type=None, category_id=None):
+    def search_transactions(self, user_id=None, keyword=None, transaction_type=None, category_id=None):
         """Tìm kiếm giao dịch theo từ khóa"""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or keyword is None:
+            return []
+            
         transactions = self.get_all_transactions(user_id, user_id)
         keyword = keyword.lower()
         results = []
@@ -200,124 +282,169 @@ class TransactionManager:
                 
                 if transaction_type and txn['type'] != transaction_type:
                     continue
-                
-                if category_id:
-                    category = self.category_manager.get_category_by_id(user_id, category_id)
-                    if not category or txn['category_id'] != category_id:
-                        continue
-                
+                    
+                if category_id and txn['category_id'] != category_id:
+                    continue
+                    
                 results.append(txn)
-        
+                
         return results
 
-    def get_transaction_summary(self, user_id, start_date=None, end_date=None):
-        """Thống kê tổng quan giao dịch"""
-        if start_date and end_date:
-            transactions = self.get_transactions_by_date_range(user_id, start_date, end_date)
-        else:
-            transactions = self.get_all_transactions(user_id, user_id)
-        
-        total_income = sum(txn['amount'] for txn in transactions if txn['type'] == 'income')
-        total_expense = sum(txn['amount'] for txn in transactions if txn['type'] == 'expense')
-        
-        summary = {
-            'total_transactions': len(transactions),
-            'total_income': total_income,
-            'total_expense': total_expense,
-            'net_amount': total_income - total_expense,
-            'income_count': len([txn for txn in transactions if txn['type'] == 'income']),
-            'expense_count': len([txn for txn in transactions if txn['type'] == 'expense'])
-        }
-        
-        return summary
-
-    def get_category_breakdown(self, user_id, transaction_type, start_date=None, end_date=None):
-        """Phân tích theo danh mục"""
-        if start_date and end_date:
-            transactions = self.get_transactions_by_date_range(user_id, start_date, end_date)
-        else:
-            transactions = self.get_all_transactions(user_id, user_id)
-        
-        transactions = [txn for txn in transactions if txn['type'] == transaction_type]
-        
-        category_data = {}
-        for txn in transactions:
-            category_id = txn['category_id']
-            if category_id not in category_data:
-                category = self.category_manager.get_category_by_id(user_id, category_id)
-                category_data[category_id] = {
-                    'category_name': category['name'] if category else 'Unknown',
-                    'total_amount': 0,
-                    'transaction_count': 0,
-                    'transactions': []
-                }
+    def get_transaction_summary(self, user_id=None, start_date=None, end_date=None):
+        """Lấy tổng kết giao dịch"""
+        if user_id is None:
+            user_id = self.current_user_id
             
-            category_data[category_id]['total_amount'] += txn['amount']
-            category_data[category_id]['transaction_count'] += 1
-            category_data[category_id]['transactions'].append(txn)
-        
-        return category_data
-
-    def get_monthly_report(self, user_id, year, month):
-        """Báo cáo tháng"""
-        start_date = datetime(year, month, 1)
-        if month == 12:
-            end_date = datetime(year + 1, 1, 1) - timedelta(days=1)
-        else:
-            end_date = datetime(year, month + 1, 1) - timedelta(days=1)
-        
-        transactions = self.get_transactions_by_date_range(user_id, start_date.strftime('%Y-%m-%d'), end_date.strftime('%Y-%m-%d'))
-        summary = self.get_transaction_summary(user_id, start_date.strftime('%Y-%m-%d'), end_date.strftime('%Y-%m-%d'))
-        
-        income_breakdown = self.get_category_breakdown(user_id, 'income', start_date.strftime('%Y-%m-%d'), end_date.strftime('%Y-%m-%d'))
-        expense_breakdown = self.get_category_breakdown(user_id, 'expense', start_date.strftime('%Y-%m-%d'), end_date.strftime('%Y-%m-%d'))
-        
-        return {
-            'month': month,
-            'year': year,
-            'summary': summary,
-            'income_breakdown': income_breakdown,
-            'expense_breakdown': expense_breakdown,
-            'transactions': transactions
-        }
-
-    def export_transactions(self, user_id, file_path=None, start_date=None, end_date=None):
-        """Xuất giao dịch ra file"""
-        if file_path is None:
-            file_path = f"transactions_{user_id}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
-        
+        if user_id is None:
+            return {
+                'total_income': 0,
+                'total_expense': 0,
+                'net_amount': 0,
+                'transaction_count': 0
+            }
+            
         transactions = self.get_all_transactions(user_id, user_id)
         
         if start_date and end_date:
             transactions = self.get_transactions_by_date_range(user_id, start_date, end_date)
+            
+        total_income = sum(txn['amount'] for txn in transactions if txn['type'] == 'income')
+        total_expense = sum(txn['amount'] for txn in transactions if txn['type'] == 'expense')
         
-        save_json(file_path, transactions)
-        print(f"Đã xuất {len(transactions)} giao dịch ra file: {file_path}")
-        return file_path
-
-    def get_transactions_by_user(self, user_id):
-        """Lấy tất cả giao dịch của một user"""
-        transactions = self.load_transactions() 
-        return [txn for txn in transactions if txn['user_id'] == user_id]
-
-    def get_monthly_summary(self, user_id, year, month):
-        """Tóm tắt giao dịch theo tháng cho báo cáo ngân sách"""
-        start_date = datetime(year, month, 1)
-        if month == 12:
-            end_date = datetime(year + 1, 1, 1) - timedelta(days=1)
-        else:
-            end_date = datetime(year, month + 1, 1) - timedelta(days=1)
-        transactions = self.get_transactions_by_date_range(user_id, start_date.strftime('%Y-%m-%d'), end_date.strftime('%Y-%m-%d'))
-        income_breakdown = {}
-        expense_breakdown = {}
-        for txn in transactions:
-            cat_name = self.category_manager.get_category_name(txn['category_id'])
-            if txn['type'] == 'income':
-                income_breakdown[cat_name] = income_breakdown.get(cat_name, 0) + txn['amount']
-            elif txn['type'] == 'expense':
-                expense_breakdown[cat_name] = expense_breakdown.get(cat_name, 0) + txn['amount']
         return {
-            'income_breakdown': income_breakdown,
-            'expense_breakdown': expense_breakdown,
-            'transactions': transactions
+            'total_income': total_income,
+            'total_expense': total_expense,
+            'net_amount': total_income - total_expense,
+            'transaction_count': len(transactions)
         }
+
+    def get_category_breakdown(self, user_id=None, transaction_type=None, start_date=None, end_date=None):
+        """Lấy phân tích theo danh mục"""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None:
+            return {}
+            
+        transactions = self.get_all_transactions(user_id, user_id)
+        
+        if start_date and end_date:
+            transactions = self.get_transactions_by_date_range(user_id, start_date, end_date)
+            
+        if transaction_type:
+            transactions = [txn for txn in transactions if txn['type'] == transaction_type]
+            
+        breakdown = {}
+        for txn in transactions:
+            category = self.category_manager.get_category_by_id(user_id, txn['category_id'])
+            if category:
+                category_name = category['name']
+                if category_name not in breakdown:
+                    breakdown[category_name] = {
+                        'amount': 0,
+                        'count': 0,
+                        'category_id': category['category_id']
+                    }
+                breakdown[category_name]['amount'] += txn['amount']
+                breakdown[category_name]['count'] += 1
+                
+        return breakdown
+
+    def get_monthly_report(self, user_id=None, year=None, month=None):
+        """Lấy báo cáo tháng"""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or year is None or month is None:
+            return {
+                'income': [],
+                'expense': [],
+                'total_income': 0,
+                'total_expense': 0,
+                'net_amount': 0
+            }
+            
+        start_date = f"{year}-{month:02d}-01"
+        if month == 12:
+            end_date = f"{year + 1}-01-01"
+        else:
+            end_date = f"{year}-{month + 1:02d}-01"
+            
+        transactions = self.get_transactions_by_date_range(user_id, start_date, end_date)
+        
+        income_transactions = [t for t in transactions if t['type'] == 'income']
+        expense_transactions = [t for t in transactions if t['type'] == 'expense']
+        
+        total_income = sum(t['amount'] for t in income_transactions)
+        total_expense = sum(t['amount'] for t in expense_transactions)
+        
+        return {
+            'income': income_transactions,
+            'expense': expense_transactions,
+            'total_income': total_income,
+            'total_expense': total_expense,
+            'net_amount': total_income - total_expense
+        }
+
+    def export_transactions(self, user_id=None, file_path=None, start_date=None, end_date=None):
+        """Xuất giao dịch ra file"""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None:
+            return False
+            
+        transactions = self.get_all_transactions(user_id, user_id)
+        
+        if start_date and end_date:
+            transactions = self.get_transactions_by_date_range(user_id, start_date, end_date)
+            
+        if file_path:
+            # TODO: Implement export to file
+            pass
+            
+        return transactions
+
+    def get_user_transactions(self, user_id, is_admin=False):
+        """Get all transactions for a user or all if admin"""
+        if is_admin:
+            return self.transactions
+        return [t for t in self.transactions if t['user_id'] == user_id]
+
+    def get_monthly_summary(self, user_id=None, year=None, month=None):
+        """Lấy tổng kết tháng"""
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or year is None or month is None:
+            return {
+                'total_income': 0,
+                'total_expense': 0,
+                'net_amount': 0,
+                'category_breakdown': {}
+            }
+            
+        report = self.get_monthly_report(user_id, year, month)
+        category_breakdown = self.get_category_breakdown(user_id)
+        
+        return {
+            'total_income': report['total_income'],
+            'total_expense': report['total_expense'],
+            'net_amount': report['net_amount'],
+            'category_breakdown': category_breakdown
+        }
+
+    def delete_user_transactions(self, user_id):
+        """Delete all transactions for a user
+        
+        Args:
+            user_id (str): ID of the user whose transactions should be deleted
+        """
+        if not user_id:
+            return
+        
+        transactions = self.load_transactions()
+        transactions = [t for t in transactions if t['user_id'] != user_id]
+        self.save_transactions(transactions)
+        print(f"Đã xóa tất cả giao dịch của người dùng: {user_id}")
+        return True

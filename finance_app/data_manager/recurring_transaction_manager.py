@@ -4,7 +4,7 @@ from utils.file_helper import load_json, save_json, generate_id, validate_date_f
 from data_manager.user_manager import UserManager
 from data_manager.category_manager import CategoryManager
 
-class RecurringTransaction:
+class RecurringTransactionManager:
     VALID_FREQUENCIES = ["daily", "weekly", "monthly", "quarterly", "yearly"]
 
     def __init__(self, data_dir=None):
@@ -12,19 +12,43 @@ class RecurringTransaction:
         self.recurring_file = self.data_dir / "recurring_transactions.json"
         self.user_manager = UserManager()
         self.category_manager = CategoryManager()
+        self.current_user_id = None
 
-    def get_all(self, user_id, target_user_id=None, active_only=True):
+    def set_current_user(self, user_id):
+        """Thiết lập người dùng hiện tại
+        Args:
+            user_id (str): ID của người dùng
+        """
+        self.current_user_id = user_id
+        self.category_manager.set_current_user(user_id)
+
+    def get_all(self, user_id=None, target_user_id=None, active_only=True):
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None:
+            return []
+            
         if target_user_id and target_user_id != user_id and not self.user_manager.is_admin(user_id):
             raise ValueError("Không có quyền truy cập dữ liệu của người dùng khác")
         
         data = load_json(self.recurring_file)
         if target_user_id:
             data = [r for r in data if r.get("user_id") == target_user_id]
+        else:
+            data = [r for r in data if r.get("user_id") == user_id]
+            
         if active_only:
             data = [r for r in data if r.get("is_active", True)]
         return data
 
-    def get_by_id(self, user_id, recurring_id):
+    def get_by_id(self, user_id=None, recurring_id=None):
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or recurring_id is None:
+            return None
+            
         data = load_json(self.recurring_file)
         for item in data:
             if item.get("recurring_id") == recurring_id:
@@ -33,8 +57,14 @@ class RecurringTransaction:
                 return item
         return None
 
-    def create(self, user_id, category_id, amount, transaction_type, description,
+    def create(self, user_id=None, category_id=None, amount=None, transaction_type=None, description=None,
                frequency="monthly", start_date=None, end_date=None, tags=None, auto_create=True):
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or category_id is None or amount is None or transaction_type is None or description is None:
+            return None, "Thiếu thông tin bắt buộc"
+            
         # Kiểm tra user_id
         if not self.user_manager.get_user_by_id(user_id):
             return None, f"Không tìm thấy người dùng với ID: {user_id}"
@@ -80,7 +110,13 @@ class RecurringTransaction:
             return new_id, new_item
         return None, "Lỗi khi lưu file"
 
-    def update(self, user_id, recurring_id, **kwargs):
+    def update(self, user_id=None, recurring_id=None, **kwargs):
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or recurring_id is None:
+            return False, "Thiếu thông tin bắt buộc"
+            
         recurring = self.get_by_id(user_id, recurring_id)
         if not recurring:
             return False, "Không tìm thấy giao dịch định kỳ hoặc không có quyền"
@@ -119,7 +155,13 @@ class RecurringTransaction:
                     return save_json(self.recurring_file, data), "Cập nhật thành công"
         return False, "Không tìm thấy giao dịch định kỳ"
 
-    def delete(self, user_id, recurring_id):
+    def delete(self, user_id=None, recurring_id=None):
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or recurring_id is None:
+            return False, "Thiếu thông tin bắt buộc"
+            
         recurring = self.get_by_id(user_id, recurring_id)
         if not recurring:
             return False, "Không tìm thấy giao dịch định kỳ hoặc không có quyền"
@@ -128,13 +170,31 @@ class RecurringTransaction:
         data = [r for r in data if r.get("recurring_id") != recurring_id]
         return save_json(self.recurring_file, data), "Xóa thành công"
 
-    def deactivate(self, user_id, recurring_id):
+    def deactivate(self, user_id=None, recurring_id=None):
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or recurring_id is None:
+            return False, "Thiếu thông tin bắt buộc"
+            
         return self.update(user_id, recurring_id, is_active=False)
 
-    def activate(self, user_id, recurring_id):
+    def activate(self, user_id=None, recurring_id=None):
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None or recurring_id is None:
+            return False, "Thiếu thông tin bắt buộc"
+            
         return self.update(user_id, recurring_id, is_active=True)
 
     def get_due(self, user_id=None):
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None:
+            return []
+            
         today = datetime.datetime.now().isoformat()
         data = self.get_all(user_id, user_id, active_only=True)
         return [
@@ -144,7 +204,13 @@ class RecurringTransaction:
             and r.get("auto_create", True)
         ]
 
-    def get_upcoming(self, user_id, days=7):
+    def get_upcoming(self, user_id=None, days=7):
+        if user_id is None:
+            user_id = self.current_user_id
+            
+        if user_id is None:
+            return []
+            
         today = datetime.datetime.now()
         future = today + datetime.timedelta(days=days)
         data = self.get_all(user_id, user_id, active_only=True)
@@ -194,50 +260,67 @@ class RecurringTransaction:
         
         return count
 
-    def _validate_amount(self, amount, trans_type, freq):
+    def delete_user_recurring_transactions(self, user_id):
+        """Delete all recurring transactions for a user
+        
+        Args:
+            user_id (str): ID of the user whose recurring transactions should be deleted
+        """
+        if not user_id:
+            return
+        
+        data = load_json(self.recurring_file)
+        data = [r for r in data if r.get("user_id") != user_id]
+        save_json(self.recurring_file, data)
+        print(f"Đã xóa tất cả giao dịch định kỳ của người dùng: {user_id}")
+        return True
+
+    def _validate(self, amount, trans_type, freq):
         if not isinstance(amount, (int, float)) or amount <= 0:
-            return False, "Số tiền phải là số dương"
+            return False
         if trans_type not in ["income", "expense"]:
-            return False, "Loại giao dịch không hợp lệ"
+            return False
         if freq not in self.VALID_FREQUENCIES:
-            return False, f"Tần suất phải là: {', '.join(self.VALID_FREQUENCIES)}"
-        return True, ""
+            return False
+        return True
 
     def _next_date(self, date_str, freq="monthly"):
+        if not date_str:
+            return None
+            
         date = self._parse_date(date_str)
-        today_date = datetime.datetime.now()
-        if date > today_date:
-            return date.isoformat()
-        
+        if not date:
+            return None
+            
         if freq == "daily":
-            date += datetime.timedelta(days=1)
+            next_date = date + datetime.timedelta(days=1)
         elif freq == "weekly":
-            date += datetime.timedelta(weeks=1)
+            next_date = date + datetime.timedelta(days=7)
         elif freq == "monthly":
-            date = self._add_months(date, 1)
+            next_date = self._add_months(date, 1)
         elif freq == "quarterly":
-            date = self._add_months(date, 3)
+            next_date = self._add_months(date, 3)
         elif freq == "yearly":
-            date = date.replace(year=date.year + 1)
-        return date.isoformat()
+            next_date = date.replace(year=date.year + 1)
+        else:
+            return None
+            
+        return next_date.isoformat()
 
     def _add_months(self, date, months):
         month = date.month - 1 + months
-        year = date.year + (month // 12)
+        year = date.year + month // 12
         month = month % 12 + 1
         day = min(date.day, self._days_in_month(year, month))
-        return datetime.datetime(year, month, day, date.hour, date.minute, date.second)
+        return date.replace(year=year, month=month, day=day)
 
     def _days_in_month(self, year, month):
         if month == 2:
-            return 29 if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0) else 28
-        return 30 if month in [4, 6, 9, 11] else 31
+            return 29 if year % 4 == 0 and (year % 100 != 0 or year % 400 == 0) else 28
+        return [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1]
 
     def _parse_date(self, s):
         try:
-            return datetime.datetime.fromisoformat(s.replace('Z', '+00:00'))
-        except ValueError:
-            try:
-                return datetime.datetime.strptime(s, "%Y-%m-%d")
-            except ValueError:
-                return datetime.datetime.now()
+            return datetime.datetime.fromisoformat(s)
+        except (ValueError, TypeError):
+            return None
