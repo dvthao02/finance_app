@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: finance_app
+Version: 0.1
+Requires-Python: >=3.8
+Requires-Dist: bcrypt
+Requires-Dist: Pillow
+Dynamic: requires-dist
+Dynamic: requires-python
