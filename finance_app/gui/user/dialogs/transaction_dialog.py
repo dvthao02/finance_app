@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import (QDialog, QFormLayout, QLineEdit, QComboBox,
-                             QDateEdit, QPushButton, QMessageBox)
+                             QDateEdit, QPushButton, QMessageBox, QHBoxLayout)
 from PyQt5.QtCore import QDate
 from finance_app.data_manager.category_manager import CategoryManager
 from finance_app.data_manager.transaction_manager import TransactionManager

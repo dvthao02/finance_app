@@ -3,7 +3,7 @@
 import bcrypt
 import re
 from datetime import datetime
-from utils.file_helper import load_json, save_json, generate_id
+from finance_app.utils.file_helper import load_json, save_json, generate_id
 
 import os
 

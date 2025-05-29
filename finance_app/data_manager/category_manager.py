@@ -1,7 +1,7 @@
 # category_manager.py
 
-from utils.file_helper import load_json, save_json, generate_id, get_current_datetime
-from data_manager.user_manager import UserManager
+from finance_app.utils.file_helper import load_json, save_json, generate_id, get_current_datetime
+from finance_app.data_manager.user_manager import UserManager
 
 class CategoryManager:
     def __init__(self, file_path='categories.json'):
@@ -27,9 +27,11 @@ class CategoryManager:
         """Tải danh sách categories từ file"""
         return load_json(self.file_path)
 
-    def save_categories(self):
+    def save_categories(self, categories=None):
         """Lưu danh sách categories vào file"""
-        return save_json(self.file_path, self.categories)
+        if categories is None:
+            categories = self.categories
+        return save_json(self.file_path, categories)
 
     def get_all_categories(self, user_id=None, category_type=None, active_only=True):
         """
@@ -59,12 +61,12 @@ class CategoryManager:
 
         return result
 
-    def get_category_by_id(self, user_id, category_id, is_admin=False):
+    def get_category_by_id(self, category_id, user_id=None, is_admin=False):
         """Lấy category theo ID"""
         if user_id is None:
             user_id = self.current_user_id
             
-        if user_id is None or category_id is None:
+        if category_id is None:
             return None
             
         for category in self.categories:
@@ -72,8 +74,6 @@ class CategoryManager:
                 if is_admin or category.get('user_id') in [user_id, None]:
                     return category
         return None
-
-    def get_category_by_id(self, category_id):
         """
         Lấy category theo ID
         Args:
@@ -175,12 +175,14 @@ class CategoryManager:
             if field in kwargs:
                 category[field] = kwargs[field]
 
+        category['updated_at'] = get_current_datetime()  # Cập nhật thời gian sửa đổi
+
         if self.save_categories():
             return True, category
         return False, "Lỗi khi lưu file"
 
     def delete_category(self, user_id=None, category_id=None):
-        """Xóa category (soft delete - set is_active = False)"""
+        """Xóa danh mục (soft delete)"""
         if user_id is None:
             user_id = self.current_user_id
             
@@ -189,16 +191,13 @@ class CategoryManager:
             
         category = self.get_category_by_id(user_id, category_id)
         if not category:
-            return False, "Không tìm thấy category hoặc không có quyền"
-
-        # Kiểm tra quyền
-        if not self.user_manager.is_admin(user_id) and category.get('user_id') != user_id:
-            return False, "Không có quyền xóa category này"
-
+            return False, "Không tìm thấy danh mục"
+        
         category['is_active'] = False
-
+        category['updated_at'] = get_current_datetime()
+        
         if self.save_categories():
-            return True, "Đã xóa category thành công"
+            return True, "Đã xóa danh mục thành công"
         return False, "Lỗi khi lưu file"
 
     def restore_category(self, user_id=None, category_id=None):

@@ -2,11 +2,11 @@
 
 from datetime import datetime, timedelta
 from collections import defaultdict
-from utils.file_helper import get_current_datetime, save_json, validate_date_format
-from data_manager.transaction_manager import TransactionManager
-from data_manager.budget_manager import BudgetManager
-from data_manager.category_manager import CategoryManager
-from data_manager.user_manager import UserManager
+from finance_app.utils.file_helper import get_current_datetime, save_json, validate_date_format
+from finance_app.data_manager.transaction_manager import TransactionManager
+from finance_app.data_manager.budget_manager import BudgetManager
+from finance_app.data_manager.category_manager import CategoryManager
+from finance_app.data_manager.user_manager import UserManager
 
 class ReportManager:
     def __init__(self):

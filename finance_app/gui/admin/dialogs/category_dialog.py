@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import (QDialog, QFormLayout, QLineEdit, QComboBox,
-                             QPushButton, QMessageBox, QColorDialog)
+                             QPushButton, QMessageBox, QHBoxLayout, QColorDialog)
 from PyQt5.QtCore import Qt
 from finance_app.data_manager.category_manager import CategoryManager
 

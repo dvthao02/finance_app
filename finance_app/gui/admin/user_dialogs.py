@@ -1,5 +1,5 @@
-from PyQt5.QtWidgets import (QDialog, QFormLayout, QLineEdit, 
-                            QPushButton, QHBoxLayout, QMessageBox, QComboBox, QDateEdit)
+from PyQt5.QtWidgets import (QDialog, QFormLayout, QLineEdit,
+                             QPushButton, QHBoxLayout, QMessageBox, QComboBox, QDateEdit)
 from PyQt5.QtCore import QDate
 
 class UserDialog(QDialog):

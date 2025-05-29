@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import (QDialog, QFormLayout, QLineEdit,
-                            QPushButton, QHBoxLayout, QMessageBox, QComboBox)
+                             QPushButton, QHBoxLayout, QMessageBox, QComboBox)
 
 class CategoryDialog(QDialog):
     def __init__(self, parent=None, category=None):

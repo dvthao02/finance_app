@@ -1,8 +1,8 @@
 from pathlib import Path
 import datetime
-from utils.file_helper import load_json, save_json, generate_id, validate_date_format
-from data_manager.user_manager import UserManager
-from data_manager.category_manager import CategoryManager
+from finance_app.utils.file_helper import load_json, save_json, generate_id, validate_date_format
+from finance_app.data_manager.user_manager import UserManager
+from finance_app.data_manager.category_manager import CategoryManager
 
 class RecurringTransactionManager:
     VALID_FREQUENCIES = ["daily", "weekly", "monthly", "quarterly", "yearly"]
@@ -221,8 +221,8 @@ class RecurringTransactionManager:
         return sorted(upcoming, key=lambda r: r.get("next_date"))
 
     def process_due(self):
-        from .transaction_manager import TransactionManager
-        from .notification_manager import NotificationManager
+        from finance_app.data_manager.transaction_manager import TransactionManager
+        from finance_app.data_manager.notification_manager import NotificationManager
         
         transaction_mgr = TransactionManager()
         notification_mgr = NotificationManager()

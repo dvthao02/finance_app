@@ -1,10 +1,10 @@
-from PyQt5.QtWidgets import (QDialog, QVBoxLayout, QLabel, QLineEdit, 
+from PyQt5.QtWidgets import (QDialog, QVBoxLayout, QLabel, QLineEdit,
                              QPushButton, QMessageBox, QFormLayout)
 
 class ChangePasswordDialog(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.user = parent.user
+        self.user = parent.user  # Access the user attribute from the parent
         self.init_ui()
         
     def init_ui(self):

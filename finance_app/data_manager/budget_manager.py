@@ -1,10 +1,10 @@
 # budget_manager.py
 
-from utils.file_helper import load_json, save_json, generate_id, get_current_datetime, validate_date_format
+from finance_app.utils.file_helper import load_json, save_json, generate_id, get_current_datetime, validate_date_format
 from datetime import datetime, timedelta
 import calendar
-from data_manager.user_manager import UserManager
-from data_manager.category_manager import CategoryManager
+from finance_app.data_manager.user_manager import UserManager
+from finance_app.data_manager.category_manager import CategoryManager
 
 class BudgetManager:
     def __init__(self, budget_file='budgets.json', history_file='budget_change_history.json'):
@@ -42,14 +42,18 @@ class BudgetManager:
         """Tải lịch sử thay đổi budgets từ file"""
         return load_json(self.history_file)
     
-    def save_budgets(self):
+    def save_budgets(self, budgets=None):
         """Lưu danh sách budgets vào file"""
-        return save_json(self.budget_file, self.budgets)
-    
-    def save_history(self):
+        if budgets is None:
+            budgets = self.budgets
+        return save_json(self.budget_file, budgets)
+
+    def save_history(self, history=None):
         """Lưu lịch sử thay đổi vào file"""
-        return save_json(self.history_file, self.history)
-    
+        if history is None:
+            history = self.history
+        return save_json(self.history_file, history)
+
     def get_all_budgets(self, user_id=None, target_user_id=None, active_only=True):
         """
         Lấy tất cả budgets
@@ -261,6 +265,8 @@ class BudgetManager:
             return False, "Thiếu thông tin bắt buộc"
             
         budget = self.get_budget_by_id(user_id, budget_id)
+        if not budget:
+            return False, "Không tìm thấy budget"
         
         budget['is_active'] = False
         budget['updated_at'] = get_current_datetime()
@@ -378,16 +384,12 @@ class BudgetManager:
             user_id (str): ID of the user whose budgets should be deleted
         """
         if not user_id:
-            return
+            return False, "Thiếu thông tin người dùng"
         
-        budgets = self.load_budgets()
-        budgets = [b for b in budgets if b['user_id'] != user_id]
-        self.save_budgets(budgets)
+        self.budgets = [b for b in self.budgets if b['user_id'] != user_id]
+        self.history = [h for h in self.history if h['user_id'] != user_id]
         
-        # Also delete budget change history
-        history = self.load_budget_history()
-        history = [h for h in history if h['user_id'] != user_id]
-        self.save_budget_history(history)
-        
-        print(f"Đã xóa tất cả ngân sách của người dùng: {user_id}")
-        return True
+        if self.save_budgets() and self.save_history():
+            print(f"Đã xóa tất cả ngân sách của người dùng: {user_id}")
+            return True, "Đã xóa tất cả ngân sách thành công"
+        return False, "Lỗi khi lưu file"

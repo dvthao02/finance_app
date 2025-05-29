@@ -20,8 +20,9 @@ from finance_app.data_manager.notification_manager import NotificationManager
 from finance_app.gui.frmBase import FrmBase
 
 class UserDashboard(FrmBase):
-    def __init__(self, parent=None):
+    def __init__(self, user=None, parent=None):
         super().__init__(parent)
+        self.user = user  # Initialize the user attribute
         self.transaction_manager = TransactionManager()
         self.category_manager = CategoryManager()
         self.budget_manager = BudgetManager()
@@ -612,9 +613,11 @@ class UserDashboard(FrmBase):
 
     def show_change_password_dialog(self):
         """Show the change password dialog"""
-        dialog = ChangePasswordDialog(self)
-        if dialog.exec_() == QDialog.Accepted:
-            self.display_message("Đã đổi mật khẩu thành công")
+        try:
+            dialog = ChangePasswordDialog(self)  # Pass self with the user attribute
+            dialog.exec_()
+        except Exception as e:
+            print(f"An error occurred: {e}")
 
     def handle_logout(self):
         """Handle logout button click"""

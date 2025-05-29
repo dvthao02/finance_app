@@ -14,7 +14,7 @@ class FrmBase(QMainWindow):
         super().__init__(parent)
         
         # Set window properties
-        self.setMinimumSize(1024, 768)
+        self.setMinimumSize(350, 768)
         self.setWindowTitle("Ứng dụng Quản lý Tài chính")
         
         # Create and set central widget
@@ -35,6 +35,8 @@ class FrmBase(QMainWindow):
             # Store current user info
             self.current_user = None
             self.current_settings = None
+            
+            self.child_form = None  # Track the currently displayed child form
             
         except Exception as e:
             print(f"Lỗi khởi tạo managers: {str(e)}")
@@ -148,3 +150,34 @@ class FrmBase(QMainWindow):
         except Exception as e:
             print(f"Lỗi khi lấy cài đặt người dùng: {str(e)}")
             return default_value
+
+    def show_child_form(self, child_form):
+        """Display a child form within the base form
+        Args:
+            child_form (QWidget): The child form to display
+        """
+        if self.child_form:
+            self.child_form.close()  # Close the existing child form if any
+
+        self.child_form = child_form
+        self.child_form.setParent(self.central_widget)
+        self.child_form.show()
+        self.resize_child_form()
+
+    def resize_child_form(self):
+        """Resize and center the child form within the base form"""
+        if self.child_form:
+            child_width = self.child_form.width()
+            child_height = self.child_form.height()
+            base_width = self.width()
+            base_height = self.height()
+
+            x = (base_width - child_width) // 2
+            y = (base_height - child_height) // 2
+
+            self.child_form.move(x, y)
+
+    def resizeEvent(self, event):
+        """Handle resizing of the base form"""
+        super().resizeEvent(event)
+        self.resize_child_form()

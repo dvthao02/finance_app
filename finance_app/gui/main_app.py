@@ -16,7 +16,7 @@ class MainApp(QMainWindow):
     def init_ui(self):
         """Initialize the application UI"""
         self.setWindowTitle("Ứng dụng Quản lý Tài chính")
-        self.setMinimumSize(1024, 768)
+        self.setMinimumSize(0, 0)
         
         # Create stacked widget to manage different screens
         self.stacked_widget = QStackedWidget()

@@ -1,9 +1,9 @@
 # transaction_manager.py
 
 from datetime import datetime, timedelta
-from utils.file_helper import load_json, save_json, generate_id, get_current_datetime, validate_date_format
-from data_manager.category_manager import CategoryManager
-from data_manager.user_manager import UserManager
+from finance_app.utils.file_helper import load_json, save_json, generate_id, get_current_datetime, validate_date_format
+from finance_app.data_manager.category_manager import CategoryManager
+from finance_app.data_manager.user_manager import UserManager
 
 class TransactionManager:
     def __init__(self, transaction_file='transactions.json'):
@@ -33,8 +33,10 @@ class TransactionManager:
         """Tải danh sách giao dịch từ file"""
         return load_json(self.transaction_file)
 
-    def save_transactions(self, transactions):
-        """Lưu danh sách giao dịch vào file"""
+    def save_transactions(self, transactions=None):
+        """Lưu danh sách transactions vào file"""
+        if transactions is None:
+            transactions = self.transactions
         return save_json(self.transaction_file, transactions)
 
     def get_all_transactions(self, user_id=None, target_user_id=None, transaction_type=None):
@@ -202,19 +204,18 @@ class TransactionManager:
             user_id = self.current_user_id
             
         if user_id is None or transaction_id is None:
-            raise ValueError("Thiếu thông tin bắt buộc")
+            return False, "Thiếu thông tin bắt buộc"
             
         transaction = self.get_transaction_by_id(user_id, transaction_id)
+        if not transaction:
+            return False, "Không tìm thấy giao dịch"
         
-        transactions = self.load_transactions()
-        for i, txn in enumerate(transactions):
-            if txn['transaction_id'] == transaction_id:
-                del transactions[i]
-                self.save_transactions(transactions)
-                print(f"Đã xóa giao dịch: {transaction_id}")
-                return True
+        transaction['is_active'] = False
+        transaction['updated_at'] = get_current_datetime()
         
-        raise ValueError(f"Không tìm thấy giao dịch với ID: {transaction_id}")
+        if self.save_transactions():
+            return True, "Đã xóa giao dịch thành công"
+        return False, "Lỗi khi lưu file"
 
     def get_transactions_by_date_range(self, user_id=None, start_date=None, end_date=None):
         """Lấy giao dịch trong khoảng thời gian"""

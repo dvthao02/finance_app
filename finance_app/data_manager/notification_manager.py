@@ -1,8 +1,8 @@
 # notification_manager.py
 
-from utils.file_helper import load_json, save_json, generate_id, get_current_datetime
+from finance_app.utils.file_helper import load_json, save_json, generate_id, get_current_datetime
 from datetime import datetime
-from data_manager.user_manager import UserManager
+from finance_app.data_manager.user_manager import UserManager
 
 class NotificationManager:
     def __init__(self, file_path='notifications.json'):

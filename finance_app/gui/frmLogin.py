@@ -15,12 +15,12 @@ class LoginForm(QWidget):
         
     def init_ui(self):
         """Initialize the user interface"""
-        # Set window minimum size
-        self.setMinimumSize(500, 600)
-        
+        # Set window fixed size
+        self.setFixedSize(400, 500)
+
         # Main layout
         main_layout = QVBoxLayout()
-        main_layout.setContentsMargins(30, 30, 30, 30)  # Add margins around the entire form
+        main_layout.setContentsMargins(5, 5, 5, 5)  # Add margins around the entire form
         self.setLayout(main_layout)
         
         # Remove logo section
@@ -220,10 +220,20 @@ class LoginForm(QWidget):
             QMessageBox.critical(self, "Lỗi", result["message"])
             
     def show_register_form(self):
-        from finance_app.gui.register_form import RegisterForm
-        register_form = RegisterForm(self)
-        if register_form.exec_() == RegisterForm.Accepted:
+        from finance_app.gui.frmRegister import RegisterForm
+        frmRegister = RegisterForm(self)
+        if frmRegister.exec_() == RegisterForm.Accepted:
             self.username_input.clear()
             self.password_input.clear()
             self.username_input.setFocus()
+
+    #xử lý key press cho form đăng nhập
+    def keyPressEvent(self, event):
+        if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
+            self.handle_login()
+        elif event.key() == Qt.Key_Escape:
+            self.close()
+        else:
+            super().keyPressEvent(event)
+    
 
