@@ -16,11 +16,17 @@ class BudgetManager:
         os.makedirs(data_dir, exist_ok=True)
         self.budget_file = os.path.join(data_dir, budget_file)
         self.history_file = os.path.join(data_dir, history_file)
-        self.budgets = self.load_budgets()
-        self.history = self.load_history()
+        self.budgets = None # Defer loading
+        self.history = None # Defer loading
         self.user_manager = UserManager()
         self.category_manager = CategoryManager()
         self.current_user_id = None
+
+    def _load_data_if_needed(self):
+        if self.budgets is None:
+            self.budgets = self.load_budgets_internal()
+        if self.history is None:
+            self.history = self.load_history_internal()
 
     def set_current_user(self, user_id):
         """Thiết lập người dùng hiện tại
@@ -30,7 +36,7 @@ class BudgetManager:
         self.current_user_id = user_id
         self.category_manager.set_current_user(user_id)
 
-    def load_budgets(self):
+    def load_budgets_internal(self):
         """Tải danh sách budgets từ file, thêm auto_renew nếu thiếu"""
         budgets = load_json(self.budget_file)
         for budget in budgets:
@@ -38,7 +44,7 @@ class BudgetManager:
                 budget['auto_renew'] = True  # Mặc định gia hạn tự động
         return budgets
     
-    def load_history(self):
+    def load_history_internal(self):
         """Tải lịch sử thay đổi budgets từ file"""
         return load_json(self.history_file)
     
@@ -50,6 +56,7 @@ class BudgetManager:
 
     def save_history(self, history=None):
         """Lưu lịch sử thay đổi vào file"""
+        self._load_data_if_needed() # Ensure history is loaded before saving
         if history is None:
             history = self.history
         return save_json(self.history_file, history)
@@ -68,6 +75,8 @@ class BudgetManager:
         if user_id is None:
             return []
             
+        self._load_data_if_needed() # Load data if not already loaded
+        
         if target_user_id and target_user_id != user_id and not self.user_manager.is_admin(user_id):
             raise ValueError("Không có quyền truy cập dữ liệu của người dùng khác")
         
@@ -83,14 +92,124 @@ class BudgetManager:
         
         return result
     
-    def get_user_budgets(self, user_id, is_admin=False):
-        """Get all budgets for a user or all if admin"""
-        if is_admin:
-            return self.budgets
-        return [b for b in self.budgets if b['user_id'] == user_id]
+    def get_user_budgets(self, user_id, period=None):
+        """Get all budgets for a user with optional period filter
+        
+        Args:
+            user_id (str): User ID to get budgets for
+            period (str, optional): Period filter ('tháng này', 'quý này', 'năm nay')
+            
+        Returns:
+            list: List of budget dictionaries
+        """
+        self._load_data_if_needed() # Load data if not already loaded
+        budgets = [b for b in self.budgets if b['user_id'] == user_id]
+        
+        if not period:
+            return budgets
+            
+        today = datetime.now()
+        start_date = None
+        end_date = None
+        
+        # Convert period to lowercase for comparison
+        period = period.lower()
+        
+        if period == 'tháng này':
+            # Current month
+            start_date = datetime(today.year, today.month, 1)
+            end_date = datetime(today.year, today.month, calendar.monthrange(today.year, today.month)[1])
+        elif period == 'quý này':
+            # Current quarter
+            quarter = (today.month - 1) // 3
+            start_date = datetime(today.year, quarter * 3 + 1, 1)
+            end_month = (quarter + 1) * 3
+            if end_month > 12:
+                end_month = 12
+            end_date = datetime(today.year, end_month, calendar.monthrange(today.year, end_month)[1])
+        elif period == 'năm nay':
+            # Current year
+            start_date = datetime(today.year, 1, 1)
+            end_date = datetime(today.year, 12, 31)
+            
+        if start_date and end_date:
+            filtered_budgets = []
+            for budget in budgets:
+                budget_start = datetime.strptime(budget['start_date'], '%Y-%m-%d')
+                if budget.get('end_date'):
+                    budget_end = datetime.strptime(budget['end_date'], '%Y-%m-%d')
+                else:
+                    budget_end = end_date
+                    
+                # Check if budget period overlaps with filter period
+                if (budget_start <= end_date and budget_end >= start_date):
+                    filtered_budgets.append(budget)
+            return filtered_budgets
+            
+        return budgets
+    
+    def get_user_budgets_by_date_range(self, user_id, start_date_str=None, end_date_str=None):
+        """Get all budgets for a user that overlap with the given date range.
+
+        Args:
+            user_id (str): User ID to get budgets for.
+            start_date_str (str, optional): Start date of the filter range (YYYY-MM-DD).
+            end_date_str (str, optional): End date of the filter range (YYYY-MM-DD).
+            
+        Returns:
+            list: List of budget dictionaries.
+        """
+        self._load_data_if_needed()
+        user_budgets = [b for b in self.budgets if b['user_id'] == user_id and b.get('is_active', True)]
+
+        if not start_date_str or not end_date_str:
+            # If no date range is provided, return all active user budgets
+            # or consider returning budgets for the current month/default period.
+            # For now, returning all active if no specific range.
+            return user_budgets
+
+        try:
+            filter_start_date = datetime.strptime(start_date_str, '%Y-%m-%d')
+            filter_end_date = datetime.strptime(end_date_str, '%Y-%m-%d')
+        except ValueError:
+            # Invalid date format, return empty or all, or raise error
+            # For now, returning all active budgets of the user if date parsing fails.
+            # Consider logging this error.
+            return user_budgets
+
+        filtered_budgets = []
+        for budget in user_budgets:
+            try:
+                budget_start_date = datetime.strptime(budget['start_date'], '%Y-%m-%d')
+                # Budgets might not have an end_date if they are continuous or based on period only
+                # For simplicity, if end_date is missing or empty, we might need a rule.
+                # Assuming if budget has no end_date, it's ongoing.
+                # If budget has an end_date, use it for comparison.
+                budget_end_date_str = budget.get('end_date')
+                if budget_end_date_str:
+                    budget_end_date = datetime.strptime(budget_end_date_str, '%Y-%m-%d')
+                else:
+                    # If a budget has no end_date, how does it interact with a filter_end_date?
+                    # Option 1: Assume it's ongoing indefinitely beyond filter_end_date if budget_start_date <= filter_end_date
+                    # Option 2: If budget is e.g. monthly and filter is for a specific month, it should match.
+                    # The original get_user_budgets had logic for 'monthly', 'quarterly', etc.
+                    # This date range filter is more generic.
+                    # For now, let's assume a budget without an end_date is active until the filter_end_date if it started before/during the filter period.
+                    # This might need more sophisticated handling based on budget.period if available.
+                    budget_end_date = filter_end_date # Effectively, consider it active for the purpose of the filter period if it started.
+
+                # Check for overlap: (StartA <= EndB) and (EndA >= StartB)
+                if budget_start_date <= filter_end_date and budget_end_date >= filter_start_date:
+                    filtered_budgets.append(budget)
+            except ValueError:
+                # Skip budget if its dates are malformed, or log an error
+                continue
+        
+        return filtered_budgets
     
     def get_budget_by_id(self, user_id, budget_id, is_admin=False):
         """Get a budget by id, check permission"""
+        self._load_data_if_needed() # Load data if not already loaded
         for b in self.budgets:
             if b['budget_id'] == budget_id:
                 if is_admin or b['user_id'] == user_id:
@@ -102,6 +221,7 @@ class BudgetManager:
         """
         Tạo budget mới
         """
+        self._load_data_if_needed() # Load data if not already loaded
         if user_id is None:
             user_id = self.current_user_id
             
@@ -172,6 +292,7 @@ class BudgetManager:
         """
         Cập nhật budget
         """
+        self._load_data_if_needed() # Load data if not already loaded
         if user_id is None:
             user_id = self.current_user_id
             
@@ -226,7 +347,8 @@ class BudgetManager:
         return False, "Lỗi khi lưu file"
     
     def update_spent_amount(self, user_id=None, budget_id=None, spent_amount=None):
-        """Cập nhật số tiền đã chi tiêu"""
+        """Cập nhật số tiền đã chi cho budget"""
+        self._load_data_if_needed() # Load data if not already loaded
         if user_id is None:
             user_id = self.current_user_id
             
@@ -244,7 +366,8 @@ class BudgetManager:
         return False, "Lỗi khi lưu file"
     
     def add_transaction_to_budget(self, user_id=None, budget_id=None, transaction_amount=None):
-        """Thêm giao dịch vào budget"""
+        """Thêm giao dịch vào budget và cập nhật spent_amount"""
+        self._load_data_if_needed() # Load data if not already loaded
         if user_id is None:
             user_id = self.current_user_id
             
@@ -257,7 +380,8 @@ class BudgetManager:
         return self.update_spent_amount(user_id, budget_id, new_spent)
     
     def delete_budget(self, user_id=None, budget_id=None):
-        """Xóa budget (soft delete)"""
+        """Xóa budget và lịch sử liên quan"""
+        self._load_data_if_needed() # Load data if not already loaded
         if user_id is None:
             user_id = self.current_user_id
             
@@ -276,7 +400,10 @@ class BudgetManager:
         return False, "Lỗi khi lưu file"
     
     def get_budget_alerts(self, user_id=None, target_user_id=None):
-        """Lấy cảnh báo ngân sách"""
+        """
+        Lấy cảnh báo budget
+        """
+        self._load_data_if_needed() # Load data if not already loaded
         if user_id is None:
             user_id = self.current_user_id
             
@@ -304,7 +431,8 @@ class BudgetManager:
     
     def add_history(self, budget_id=None, user_id=None, change_type=None, old_amount=None, new_amount=None, 
                    old_alert_threshold=None, new_alert_threshold=None, reason=None, changed_by=None):
-        """Thêm lịch sử thay đổi"""
+        """Thêm một bản ghi vào lịch sử thay đổi budgets"""
+        self._load_data_if_needed() # Load data if not already loaded
         if None in [budget_id, user_id, change_type, reason, changed_by]:
             return False
             
@@ -326,7 +454,10 @@ class BudgetManager:
         return True
     
     def get_budget_history(self, user_id=None, budget_id=None):
-        """Lấy lịch sử thay đổi của một budget"""
+        """
+        Lấy lịch sử thay đổi của một budget
+        """
+        self._load_data_if_needed() # Load data if not already loaded
         if user_id is None:
             user_id = self.current_user_id
             
@@ -337,7 +468,13 @@ class BudgetManager:
         return [h for h in self.history if h['budget_id'] == budget_id]
     
     def get_budget_summary(self, user_id, is_admin=False):
-        """Get budget summary for user or all if admin"""
+        """
+        Lấy tóm tắt tình hình budget của người dùng
+        """
+        self._load_data_if_needed() # Load data if not already loaded
+        if not user_id:
+            return {}
+        
         budgets = self.get_user_budgets(user_id, is_admin)
         active_budgets = [b for b in budgets if b.get('is_active', True)]
         total_amount = sum(b['amount'] for b in active_budgets)
@@ -354,7 +491,8 @@ class BudgetManager:
         }
     
     def renew_monthly_budgets(self):
-        """Gia hạn tự động các budget hàng tháng"""
+        """Tự động gia hạn các budgets hàng tháng nếu cần"""
+        self._load_data_if_needed() # Load data if not already loaded
         today = datetime.now()
         first_day = today.replace(day=1).strftime('%Y-%m-%d')
         last_day = today.replace(day=calendar.monthrange(today.year, today.month)[1]).strftime('%Y-%m-%d')
@@ -378,11 +516,8 @@ class BudgetManager:
                 )
     
     def delete_user_budgets(self, user_id):
-        """Delete all budgets for a user
-        
-        Args:
-            user_id (str): ID of the user whose budgets should be deleted
-        """
+        """Xóa tất cả budgets và lịch sử liên quan của một người dùng"""
+        self._load_data_if_needed() # Load data if not already loaded
         if not user_id:
             return False, "Thiếu thông tin người dùng"
         

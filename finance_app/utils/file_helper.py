@@ -2,6 +2,7 @@
 
 import json
 import os
+import re # Import re for regex operations
 from datetime import datetime
 
 def load_json(file_path):
@@ -70,3 +71,37 @@ def validate_datetime_format(datetime_string):
         return True
     except ValueError:
         return False
+
+# --- Start of new validation functions ---
+
+def is_valid_email(email):
+    """Kiểm tra định dạng email cơ bản."""
+    if not email:  # Allow empty email
+        return True
+    # Basic regex for email validation
+    regex = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    return re.match(regex, email) is not None
+
+def is_valid_phone(phone):
+    """Kiểm tra định dạng số điện thoại cơ bản (10-11 chữ số)."""
+    if not phone:  # Allow empty phone
+        return True
+    # This example is for 10-11 digit numbers. Adjust regex for specific Vietnamese formats if needed.
+    regex = r'^\d{10,11}$' 
+    return re.match(regex, phone) is not None
+
+def is_strong_password(password):
+    """Kiểm tra độ mạnh mật khẩu.
+    Yêu cầu: >= 8 ký tự, 1 chữ hoa, 1 chữ thường, 1 số, 1 ký tự đặc biệt.
+    """
+    if not password:
+        return False
+    return (
+        len(password) >= 8 and
+        re.search(r'[a-z]', password) and
+        re.search(r'[A-Z]', password) and
+        re.search(r'\d', password) and
+        re.search(r'[^\w\s]', password) # [^a-zA-Z0-9\s]
+    )
+
+# --- End of new validation functions ---

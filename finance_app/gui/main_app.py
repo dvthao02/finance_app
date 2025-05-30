@@ -2,21 +2,22 @@
 
 from PyQt5.QtWidgets import QMainWindow, QStackedWidget, QMessageBox
 from PyQt5.QtCore import Qt
-from finance_app.gui.frmLogin import LoginForm
-from finance_app.gui.admin.frmAdmin_dashboard import AdminDashboard
-from finance_app.gui.user.frmUser_dashboard import UserDashboard
-from finance_app.gui.frmBase import FrmBase
+from finance_app.gui.auth.login_form import LoginForm
+from finance_app.gui.admin.admin_dashboard import AdminDashboard
+from finance_app.gui.user.user_dashboard import UserDashboard
 from finance_app.data_manager.user_manager import UserManager
 
 class MainApp(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.current_frame = None
+        self.login_frame = None
         self.init_ui()
         
     def init_ui(self):
         """Initialize the application UI"""
         self.setWindowTitle("Ứng dụng Quản lý Tài chính")
-        self.setMinimumSize(0, 0)
+        self.setMinimumSize(800, 600)
         
         # Create stacked widget to manage different screens
         self.stacked_widget = QStackedWidget()
@@ -31,6 +32,8 @@ class MainApp(QMainWindow):
         
         # Add login screen
         self.stacked_widget.addWidget(self.login_screen)
+        self.login_frame = self.login_screen
+        self.current_frame = self.login_frame
         
         # Center window
         self.center_window()
@@ -50,7 +53,11 @@ class MainApp(QMainWindow):
         """
         try:
             user_manager = UserManager()
-            is_admin = user_manager.is_admin(user_id)
+            user_data = user_manager.get_user_by_id(user_id)
+            if not user_data:
+                raise ValueError("User data not found")
+                
+            is_admin = user_data.get('is_admin', False)
             print(f"User {user_id} logged in. Is admin: {is_admin}")
             
             if is_admin:
@@ -60,9 +67,9 @@ class MainApp(QMainWindow):
                     self.stacked_widget.addWidget(self.admin_dashboard)
                 
                 # Set up admin dashboard
-                self.admin_dashboard.set_current_user(user_id)
-                self.admin_dashboard.init_dashboard()
+                self.admin_dashboard.set_current_user(user_data)
                 self.stacked_widget.setCurrentWidget(self.admin_dashboard)
+                self.current_frame = self.admin_dashboard
             else:
                 # Create new user dashboard if doesn't exist
                 if not self.user_dashboard:
@@ -70,9 +77,9 @@ class MainApp(QMainWindow):
                     self.stacked_widget.addWidget(self.user_dashboard)
                 
                 # Set up user dashboard
-                self.user_dashboard.set_current_user(user_id)
-                self.user_dashboard.init_dashboard()
+                self.user_dashboard.set_current_user(user_data)
                 self.stacked_widget.setCurrentWidget(self.user_dashboard)
+                self.current_frame = self.user_dashboard
                 
         except Exception as e:
             print(f"Error during login: {str(e)}")
@@ -80,17 +87,7 @@ class MainApp(QMainWindow):
             self.show_login_frame()
             
     def show_login_frame(self):
-        """Show the login screen"""
-        # Clear login form
-        self.login_screen.username_input.clear()
-        self.login_screen.password_input.clear()
-        self.login_screen.username_input.setFocus()
-        
-        # Switch to login screen
-        self.stacked_widget.setCurrentWidget(self.login_screen)
-        
-        # Clean up dashboard data
-        if self.admin_dashboard:
-            self.admin_dashboard.logout()
-        if self.user_dashboard:
-            self.user_dashboard.logout()
+        """Show the login frame"""
+        if self.current_frame and self.current_frame != self.login_frame:
+            self.stacked_widget.setCurrentWidget(self.login_frame)
+            self.current_frame = self.login_frame

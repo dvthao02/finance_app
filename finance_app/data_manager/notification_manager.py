@@ -13,9 +13,16 @@ class NotificationManager:
         # Create data directory if it doesn't exist
         os.makedirs(data_dir, exist_ok=True)
         self.file_path = os.path.join(data_dir, file_path)
-        self.notifications = self.load_notifications()
-        self.user_manager = UserManager()  # Thêm UserManager
+        self.notifications = None # Defer loading
+        self.user_manager = UserManager() 
         self.current_user_id = None
+
+    def _load_data_if_needed(self):
+        if self.notifications is None:
+            self.notifications = load_json(self.file_path)
+
+    def _save_data(self):
+        return save_json(self.file_path, self.notifications)
 
     def set_current_user(self, user_id):
         """Thiết lập người dùng hiện tại
@@ -24,28 +31,41 @@ class NotificationManager:
         """
         self.current_user_id = user_id
     
-    def load_notifications(self):
-        """Tải danh sách notifications từ file"""
-        return load_json(self.file_path)
-    
-    def save_notifications(self):
-        """Lưu danh sách notifications vào file"""
-        return save_json(self.file_path, self.notifications)
-    
-    def get_user_notifications(self, user_id, is_admin=False):
+    def get_user_notifications(self, user_id, is_admin=False, unread_only=False):
         """Get all notifications for a user or all if admin"""
+        self._load_data_if_needed()
+        
+        # Use self.current_user_id if user_id is not explicitly provided
+        # This part was missing in the original get_user_notifications, 
+        # but present in get_all_notifications. Aligning for consistency.
+        if user_id is None: 
+            user_id = self.current_user_id
+
+        if user_id is None and not is_admin: # if still no user_id and not admin, return empty
+            return []
+
+        data_to_filter = []
         if is_admin:
-            return self.notifications
-        return [n for n in self.notifications if n['user_id'] == user_id]
+            # Admin can see all notifications if no specific user_id is targeted by them
+            # Or, if a user_id is provided, admin sees that user's notifications.
+            if user_id: # If admin is targeting a specific user
+                 data_to_filter = [n for n in self.notifications if n['user_id'] == user_id]
+            else: # Admin sees all if no target_user_id
+                 data_to_filter = self.notifications.copy()
+        else: # Non-admin users only see their own notifications
+            if user_id: # Should always have a user_id for non-admins
+                data_to_filter = [n for n in self.notifications if n['user_id'] == user_id]
+            else: # Should not happen if logic is correct, but as a fallback
+                return []
+        
+        if unread_only:
+            data_to_filter = [n for n in data_to_filter if not n.get('is_read', False)]
+            
+        data_to_filter.sort(key=lambda x: x['created_at'], reverse=True)
+        return data_to_filter
     
     def get_all_notifications(self, user_id=None, target_user_id=None, unread_only=False):
-        """
-        Lấy tất cả notifications
-        Args:
-            user_id: ID người dùng thực hiện yêu cầu (None để sử dụng current_user_id)
-            target_user_id: ID người dùng cần lấy dữ liệu (None để lấy của chính user_id)
-            unread_only: True để chỉ lấy thông báo chưa đọc
-        """
+        self._load_data_if_needed()
         if user_id is None:
             user_id = self.current_user_id
             
@@ -55,12 +75,10 @@ class NotificationManager:
         if target_user_id and target_user_id != user_id and not self.user_manager.is_admin(user_id):
             raise ValueError("Không có quyền truy cập thông báo của người dùng khác")
         
-        result = self.notifications.copy()
-        
-        if target_user_id:
-            result = [notif for notif in result if notif['user_id'] == target_user_id]
-        else:
-            result = [notif for notif in result if notif['user_id'] == user_id]
+        # Determine whose notifications to fetch
+        actual_target_user_id = target_user_id if target_user_id else user_id
+
+        result = [notif for notif in self.notifications if notif['user_id'] == actual_target_user_id]
         
         if unread_only:
             result = [notif for notif in result if not notif.get('is_read', False)]
@@ -72,6 +90,7 @@ class NotificationManager:
     
     def get_notification_by_id(self, user_id=None, notification_id=None):
         """Lấy notification theo ID"""
+        self._load_data_if_needed()
         if user_id is None:
             user_id = self.current_user_id
             
@@ -90,6 +109,7 @@ class NotificationManager:
         """
         Tạo notification mới
         """
+        self._load_data_if_needed()
         if user_id is None:
             user_id = self.current_user_id
             
@@ -125,12 +145,13 @@ class NotificationManager:
         
         self.notifications.append(new_notification)
         
-        if self.save_notifications():
+        if self._save_data():
             return True, new_notification
         return False, "Lỗi khi lưu file"
     
     def mark_as_read(self, user_id=None, notification_id=None):
         """Đánh dấu notification đã đọc"""
+        self._load_data_if_needed()
         if user_id is None:
             user_id = self.current_user_id
             
@@ -144,12 +165,13 @@ class NotificationManager:
         notification['is_read'] = True
         notification['read_at'] = get_current_datetime()
         
-        if self.save_notifications():
+        if self._save_data():
             return True, "Đã đánh dấu thông báo đã đọc"
         return False, "Lỗi khi lưu file"
     
     def mark_as_unread(self, user_id=None, notification_id=None):
         """Đánh dấu notification chưa đọc"""
+        self._load_data_if_needed()
         if user_id is None:
             user_id = self.current_user_id
             
@@ -163,31 +185,44 @@ class NotificationManager:
         notification['is_read'] = False
         notification['read_at'] = None
         
-        if self.save_notifications():
+        if self._save_data():
             return True, "Đã đánh dấu thông báo chưa đọc"
         return False, "Lỗi khi lưu file"
     
     def mark_all_as_read(self, user_id=None, target_user_id=None):
         """Đánh dấu tất cả notifications của user đã đọc"""
+        self._load_data_if_needed()
         if user_id is None:
-            user_id = self.current_user_id
+            user_id = self.current_user_id # User performing the action
             
         if user_id is None:
-            return False, "Thiếu thông tin bắt buộc"
-            
-        notifications = self.get_all_notifications(user_id, target_user_id, unread_only=True)
+            return False, "Thiếu thông tin người dùng thực hiện"
+
+        # Determine whose notifications to mark. If target_user_id is not provided,
+        # it means the current user is marking their own notifications as read.
+        user_to_update_id = target_user_id if target_user_id else user_id
+
+        # Permission check: Only admin can mark others' notifications
+        if user_to_update_id != user_id and not self.user_manager.is_admin(user_id):
+            return False, "Không có quyền đánh dấu thông báo của người dùng khác"
+
         current_time = get_current_datetime()
+        marked_count = 0
+        for notification in self.notifications:
+            if notification['user_id'] == user_to_update_id and not notification.get('is_read', False):
+                notification['is_read'] = True
+                notification['read_at'] = current_time
+                marked_count +=1
         
-        for notification in notifications:
-            notification['is_read'] = True
-            notification['read_at'] = current_time
-        
-        if self.save_notifications():
-            return True, f"Đã đánh dấu {len(notifications)} thông báo đã đọc"
-        return False, "Lỗi khi lưu file"
+        if marked_count > 0:
+            if self._save_data():
+                return True, f"Đã đánh dấu {marked_count} thông báo đã đọc cho người dùng {user_to_update_id}"
+            return False, "Lỗi khi lưu file"
+        return True, f"Không có thông báo chưa đọc nào cho người dùng {user_to_update_id}"
     
     def delete_notification(self, user_id=None, notification_id=None):
         """Xóa notification"""
+        self._load_data_if_needed()
         if user_id is None:
             user_id = self.current_user_id
             
@@ -200,8 +235,9 @@ class NotificationManager:
         
         for i, notif in enumerate(self.notifications):
             if notif['notification_id'] == notification_id:
+                # Permission check already done by get_notification_by_id implicitly
                 del self.notifications[i]
-                if self.save_notifications():
+                if self._save_data():
                     return True, "Đã xóa thông báo"
                 return False, "Lỗi khi lưu file"
             
@@ -213,13 +249,18 @@ class NotificationManager:
         Args:
             user_id (str): ID of the user whose notifications should be deleted
         """
+        self._load_data_if_needed()
         if not user_id:
-            return
+            return False, "User ID is required"
         
-        notifications = self.load_notifications()
-        notifications = [n for n in notifications if n['user_id'] != user_id]
-        self.save_notifications(notifications)
-        print(f"Đã xóa tất cả thông báo của người dùng: {user_id}")
-        return True
+        initial_count = len(self.notifications)
+        self.notifications = [n for n in self.notifications if n['user_id'] != user_id]
+        
+        if len(self.notifications) < initial_count:
+            if self._save_data():
+                return True, f"Successfully deleted {initial_count - len(self.notifications)} notifications for user {user_id}."
+            else:
+                return False, "Error saving data after deleting user notifications."
+        return True, "No notifications found for this user to delete."
 
 # No major bug found, ensure all id keys are correct and consistent.

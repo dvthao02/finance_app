@@ -9,8 +9,17 @@ class RecurringTransactionDialog(QDialog):
         super().__init__(parent)
         self.recurring = recurring
         self.user_id = user_id
+        self.parent_widget = parent
+
         self.category_manager = CategoryManager()
         self.recurring_manager = RecurringTransactionManager()
+
+        if self.user_id:
+            self.category_manager.set_current_user(self.user_id)
+            self.recurring_manager.set_current_user(self.user_id)
+        else:
+            print("Error: RecurringTransactionDialog initialized without user_id.")
+
         self.init_ui()
         
     def init_ui(self):
@@ -109,7 +118,6 @@ class RecurringTransactionDialog(QDialog):
         try:
             transaction_type = 'income' if self.type_combo.currentText() == "Thu nhập" else 'expense'
             categories = self.category_manager.get_all_categories(
-                self.user_id,
                 category_type=transaction_type
             )
             
@@ -123,7 +131,10 @@ class RecurringTransactionDialog(QDialog):
                     self.category_combo.setCurrentIndex(index)
                     
         except Exception as e:
-            print(f"Error loading categories: {str(e)}")
+            if hasattr(self.parent_widget, 'show_error'):
+                 self.parent_widget.show_error("Lỗi tải danh mục", str(e))
+            else:
+                print(f"Error loading categories: {str(e)}")
             
     def on_type_changed(self):
         """Handle transaction type change"""
@@ -183,13 +194,11 @@ class RecurringTransactionDialog(QDialog):
             
             if self.recurring:  # Update existing
                 result = self.recurring_manager.update(
-                    self.user_id,
-                    self.recurring['recurring_id'],
+                    recurring_id=self.recurring['recurring_id'],
                     **recurring_data
                 )
             else:  # Create new
                 result = self.recurring_manager.create(
-                    self.user_id,
                     **recurring_data
                 )
                 

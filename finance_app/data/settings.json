@@ -108,5 +108,15 @@
     "report_frequency": "monthly",
     "created_at": "2025-05-30T02:18:57.778752",
     "updated_at": "2025-05-30T02:18:57.778827"
+  },
+  {
+    "setting_id": "setting_012",
+    "user_id": "user_012",
+    "currency": "VND",
+    "notification_enabled": true,
+    "theme": "light",
+    "report_frequency": "monthly",
+    "created_at": "2025-05-30T23:08:04.359418",
+    "updated_at": "2025-05-30T23:08:04.359426"
   }
 ]

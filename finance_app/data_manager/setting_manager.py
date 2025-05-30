@@ -12,10 +12,14 @@ class SettingManager:
         # Create data directory if it doesn't exist
         os.makedirs(data_dir, exist_ok=True)
         self.file_path = os.path.join(data_dir, file_path)
-        self.settings = []
+        self.settings = None # Defer loading
         self.user_manager = UserManager()
         self.current_user_id = None
-        self.load_settings()
+        # self.load_settings() # Removed eager loading
+
+    def _load_data_if_needed(self):
+        if self.settings is None:
+            self.settings = self.load_settings_internal()
 
     def set_current_user(self, user_id):
         """Thiết lập người dùng hiện tại
@@ -24,25 +28,35 @@ class SettingManager:
         """
         self.current_user_id = user_id
 
-    def load_settings(self):
+    def load_settings_internal(self):
         """Tải danh sách settings từ file, đảm bảo mỗi user có settings mặc định."""
         try:
-            self.settings = load_json(self.file_path)
+            settings_data = load_json(self.file_path)
         except FileNotFoundError:
-            self.settings = []
-            save_json(self.file_path, self.settings)
+            settings_data = []
+            save_json(self.file_path, settings_data) # Save empty list if file not found
             
         # Ensure all active users have a settings entry
         active_users = self.user_manager.get_all_users(active_only=True)
+        # Create a dictionary for faster lookup of existing settings
+        user_settings_map = {s['user_id']: s for s in settings_data}
+        
+        updated = False
         for user in active_users:
             user_id = user['user_id']
-            if not any(s['user_id'] == user_id for s in self.settings):
-                self.settings.append(self._get_default_settings(user_id))
+            if user_id not in user_settings_map:
+                default_setting = self._get_default_settings(user_id)
+                settings_data.append(default_setting)
+                user_settings_map[user_id] = default_setting # Add to map as well
+                updated = True
         
-        save_json(self.file_path, self.settings)
+        if updated:
+            save_json(self.file_path, settings_data)
+        return settings_data
 
     def save_settings(self):
         """Lưu danh sách settings vào file."""
+        self._load_data_if_needed() # Ensure settings are loaded
         return save_json(self.file_path, self.settings)
 
     def _get_default_settings(self, user_id):
@@ -60,24 +74,37 @@ class SettingManager:
 
     def get_user_settings(self, user_id=None):
         """Lấy cài đặt của một người dùng cụ thể."""
+        self._load_data_if_needed() # Load data if not already loaded
         if user_id is None:
             user_id = self.current_user_id
             
         if user_id is None:
-            return self._get_default_settings('default')
+            # For a generic 'default' user or unauthenticated state,
+            # return a default structure without saving it.
+            return {
+                'setting_id': 'default_setting',
+                'user_id': 'default',
+                'currency': 'VND',
+                'notification_enabled': True,
+                'theme': 'light',
+                'report_frequency': 'monthly',
+                'created_at': get_current_datetime(),
+                'updated_at': get_current_datetime()
+            }
             
         for setting in self.settings:
             if setting['user_id'] == user_id:
                 return setting
                 
-        # If settings not found, create and return default
+        # If settings not found for a specific user_id, create, save, and return default
         default_settings = self._get_default_settings(user_id)
         self.settings.append(default_settings)
-        self.save_settings()
+        self.save_settings() # This will call _load_data_if_needed again, but it's fine.
         return default_settings
 
     def update_user_settings(self, user_id=None, new_settings=None):
         """Cập nhật cài đặt cho một người dùng."""
+        self._load_data_if_needed() # Load data if not already loaded
         if user_id is None:
             user_id = self.current_user_id
             
@@ -97,6 +124,7 @@ class SettingManager:
 
     def reset_user_settings(self, user_id=None):
         """Reset cài đặt của người dùng về mặc định."""
+        self._load_data_if_needed() # Load data if not already loaded
         if user_id is None:
             user_id = self.current_user_id
             
@@ -113,6 +141,7 @@ class SettingManager:
 
     def get_setting_by_id(self, setting_id=None):
         """Lấy cài đặt theo setting_id."""
+        self._load_data_if_needed() # Load data if not already loaded
         if setting_id is None:
             return None
             

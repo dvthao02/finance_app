@@ -13,6 +13,11 @@ class RecurringTransactionManager:
         self.user_manager = UserManager()
         self.category_manager = CategoryManager()
         self.current_user_id = None
+        self.recurring_transactions = None # Defer loading
+
+    def _load_data_if_needed(self):
+        if self.recurring_transactions is None:
+            self.recurring_transactions = load_json(self.recurring_file)
 
     def set_current_user(self, user_id):
         """Thiết lập người dùng hiện tại
@@ -22,7 +27,11 @@ class RecurringTransactionManager:
         self.current_user_id = user_id
         self.category_manager.set_current_user(user_id)
 
+    def _save_data(self):
+        return save_json(self.recurring_file, self.recurring_transactions)
+
     def get_all(self, user_id=None, target_user_id=None, active_only=True):
+        self._load_data_if_needed()
         if user_id is None:
             user_id = self.current_user_id
             
@@ -32,25 +41,25 @@ class RecurringTransactionManager:
         if target_user_id and target_user_id != user_id and not self.user_manager.is_admin(user_id):
             raise ValueError("Không có quyền truy cập dữ liệu của người dùng khác")
         
-        data = load_json(self.recurring_file)
+        data_to_filter = self.recurring_transactions
         if target_user_id:
-            data = [r for r in data if r.get("user_id") == target_user_id]
+            data_to_filter = [r for r in data_to_filter if r.get("user_id") == target_user_id]
         else:
-            data = [r for r in data if r.get("user_id") == user_id]
+            data_to_filter = [r for r in data_to_filter if r.get("user_id") == user_id]
             
         if active_only:
-            data = [r for r in data if r.get("is_active", True)]
-        return data
+            data_to_filter = [r for r in data_to_filter if r.get("is_active", True)]
+        return data_to_filter
 
     def get_by_id(self, user_id=None, recurring_id=None):
+        self._load_data_if_needed()
         if user_id is None:
             user_id = self.current_user_id
             
         if user_id is None or recurring_id is None:
             return None
             
-        data = load_json(self.recurring_file)
-        for item in data:
+        for item in self.recurring_transactions:
             if item.get("recurring_id") == recurring_id:
                 if item['user_id'] != user_id and not self.user_manager.is_admin(user_id):
                     raise ValueError("Không có quyền truy cập giao dịch định kỳ này")
@@ -59,6 +68,7 @@ class RecurringTransactionManager:
 
     def create(self, user_id=None, category_id=None, amount=None, transaction_type=None, description=None,
                frequency="monthly", start_date=None, end_date=None, tags=None, auto_create=True):
+        self._load_data_if_needed()
         if user_id is None:
             user_id = self.current_user_id
             
@@ -82,8 +92,7 @@ class RecurringTransactionManager:
         if end_date and not validate_date_format(end_date):
             return None, "Ngày kết thúc không đúng định dạng YYYY-MM-DD"
         
-        data = load_json(self.recurring_file)
-        new_id = generate_id("rec", data)
+        new_id = generate_id("rec", self.recurring_transactions)
         now = datetime.datetime.now().isoformat()
         start_date = start_date or now[:10]
         
@@ -105,12 +114,13 @@ class RecurringTransactionManager:
             "auto_create": auto_create
         }
         
-        data.append(new_item)
-        if save_json(self.recurring_file, data):
+        self.recurring_transactions.append(new_item)
+        if self._save_data():
             return new_id, new_item
         return None, "Lỗi khi lưu file"
 
     def update(self, user_id=None, recurring_id=None, **kwargs):
+        self._load_data_if_needed()
         if user_id is None:
             user_id = self.current_user_id
             
@@ -121,10 +131,14 @@ class RecurringTransactionManager:
         if not recurring:
             return False, "Không tìm thấy giao dịch định kỳ hoặc không có quyền"
         
-        data = load_json(self.recurring_file)
-        for i, r in enumerate(data):
-            if r.get("recurring_id") == recurring_id:
-                changed = False
+        item_updated = False
+        for i, r_txn in enumerate(self.recurring_transactions):
+            if r_txn.get("recurring_id") == recurring_id:
+                # Double check permission here, though get_by_id should have handled it
+                if r_txn['user_id'] != user_id and not self.user_manager.is_admin(user_id):
+                    return False, "Không có quyền cập nhật giao dịch định kỳ này"
+
+                changed_locally = False # Track if changes were made in this iteration
                 for key in [
                     "category_id", "amount", "type", "description",
                     "frequency", "start_date", "end_date", "tags", 
@@ -144,33 +158,47 @@ class RecurringTransactionManager:
                         elif key == 'frequency' and kwargs[key] not in self.VALID_FREQUENCIES:
                             return False, f"Tần suất phải là: {', '.join(self.VALID_FREQUENCIES)}"
                         
-                        r[key] = kwargs[key]
-                        changed = True
+                        r_txn[key] = kwargs[key]
+                        changed_locally = True
                 
-                if changed:
-                    r["updated_at"] = datetime.datetime.now().isoformat()
-                    if "frequency" in kwargs or "start_date" in kwargs:
-                        r["next_date"] = self._next_date(r.get("start_date"), r.get("frequency"))
-                    data[i] = r
-                    return save_json(self.recurring_file, data), "Cập nhật thành công"
-        return False, "Không tìm thấy giao dịch định kỳ"
+                if changed_locally:
+                    r_txn["updated_at"] = datetime.datetime.now().isoformat()
+                    if "frequency" in kwargs or "start_date" in kwargs or "next_date" in kwargs:
+                        # Recalculate next_date if relevant fields change, or if explicitly provided
+                        r_txn["next_date"] = kwargs.get("next_date", self._next_date(r_txn.get("start_date"), r_txn.get("frequency")))
+                    self.recurring_transactions[i] = r_txn
+                    item_updated = True # Mark that an update occurred in the broader list
+                    break # Found and updated the item
+        
+        if item_updated:
+            if self._save_data():
+                return True, "Cập nhật thành công"
+            else:
+                # Potentially rollback or log error more thoroughly if save fails
+                return False, "Lỗi khi lưu file sau khi cập nhật"
+                
+        return False, "Không tìm thấy giao dịch định kỳ hoặc không có thay đổi nào được thực hiện"
 
     def delete(self, user_id=None, recurring_id=None):
+        self._load_data_if_needed()
         if user_id is None:
             user_id = self.current_user_id
             
         if user_id is None or recurring_id is None:
             return False, "Thiếu thông tin bắt buộc"
             
-        recurring = self.get_by_id(user_id, recurring_id)
-        if not recurring:
+        # Verify existence and permission first using get_by_id
+        item_to_delete = self.get_by_id(user_id, recurring_id) 
+        if not item_to_delete:
             return False, "Không tìm thấy giao dịch định kỳ hoặc không có quyền"
         
-        data = load_json(self.recurring_file)
-        data = [r for r in data if r.get("recurring_id") != recurring_id]
-        return save_json(self.recurring_file, data), "Xóa thành công"
+        self.recurring_transactions = [r for r in self.recurring_transactions if r.get("recurring_id") != recurring_id]
+        if self._save_data():
+            return True, "Xóa thành công"
+        return False, "Lỗi khi lưu file sau khi xóa"
 
     def deactivate(self, user_id=None, recurring_id=None):
+        self._load_data_if_needed()
         if user_id is None:
             user_id = self.current_user_id
             
@@ -180,6 +208,7 @@ class RecurringTransactionManager:
         return self.update(user_id, recurring_id, is_active=False)
 
     def activate(self, user_id=None, recurring_id=None):
+        self._load_data_if_needed() # ensure data is loaded before update call
         if user_id is None:
             user_id = self.current_user_id
             
@@ -189,6 +218,7 @@ class RecurringTransactionManager:
         return self.update(user_id, recurring_id, is_active=True)
 
     def get_due(self, user_id=None):
+        self._load_data_if_needed()
         if user_id is None:
             user_id = self.current_user_id
             
@@ -205,6 +235,7 @@ class RecurringTransactionManager:
         ]
 
     def get_upcoming(self, user_id=None, days=7):
+        self._load_data_if_needed()
         if user_id is None:
             user_id = self.current_user_id
             
@@ -221,6 +252,18 @@ class RecurringTransactionManager:
         return sorted(upcoming, key=lambda r: r.get("next_date"))
 
     def process_due(self):
+        # Ensure this method doesn't load data for all users if not intended.
+        # It should operate on a specific user context or be run by an admin for all.
+        # For now, assuming it uses current_user_id if set, or needs explicit user_id if run globally.
+        # The original get_due() call inside here implies it might be for the current_user_id context.
+        # If this is a system-wide process, it needs to iterate through users.
+        
+        # Clarification: get_due() internally uses self.current_user_id.
+        # If process_due is called without a user context, get_due() will return empty.
+        # This method should ideally be called within a user session or pass a user_id.
+        
+        self._load_data_if_needed() # Load data for the current context
+
         from finance_app.data_manager.transaction_manager import TransactionManager
         from finance_app.data_manager.notification_manager import NotificationManager
         
@@ -266,14 +309,15 @@ class RecurringTransactionManager:
         Args:
             user_id (str): ID of the user whose recurring transactions should be deleted
         """
+        self._load_data_if_needed()
         if not user_id:
             return
         
-        data = load_json(self.recurring_file)
-        data = [r for r in data if r.get("user_id") != user_id]
-        save_json(self.recurring_file, data)
-        print(f"Đã xóa tất cả giao dịch định kỳ của người dùng: {user_id}")
-        return True
+        self.recurring_transactions = [r for r in self.recurring_transactions if r.get("user_id") != user_id]
+        if self._save_data():
+            print(f"Đã xóa tất cả giao dịch định kỳ của người dùng: {user_id}")
+            return True
+        return False
 
     def _validate(self, amount, trans_type, freq):
         if not isinstance(amount, (int, float)) or amount <= 0:

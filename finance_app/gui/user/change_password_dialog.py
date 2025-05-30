@@ -1,10 +1,13 @@
 from PyQt5.QtWidgets import (QDialog, QVBoxLayout, QLabel, QLineEdit,
                              QPushButton, QMessageBox, QFormLayout)
+from finance_app.data_manager import UserManager # Import UserManager
 
 class ChangePasswordDialog(QDialog):
-    def __init__(self, parent=None):
+    def __init__(self, user_id, parent=None): # Modified constructor
         super().__init__(parent)
-        self.user = parent.user  # Access the user attribute from the parent
+        self.user_id = user_id # Store user_id
+        self.user_manager = UserManager() # Instantiate UserManager
+        # self.user = parent.user  # This line is problematic and removed
         self.init_ui()
         
     def init_ui(self):
@@ -60,12 +63,16 @@ class ChangePasswordDialog(QDialog):
             return
             
         try:
-            self.parent().parent().user_manager.change_password(
-                self.user['username'],
+            # Use self.user_manager and self.user_id
+            success, message = self.user_manager.change_password(
+                self.user_id,
                 current,
                 new
             )
-            QMessageBox.information(self, "Thành công", "Đã đổi mật khẩu thành công")
-            self.accept()
+            if success:
+                QMessageBox.information(self, "Thành công", "Đã đổi mật khẩu thành công")
+                self.accept()
+            else:
+                QMessageBox.critical(self, "Lỗi", message) # Display message from user_manager
         except Exception as e:
             QMessageBox.critical(self, "Lỗi", str(e))
