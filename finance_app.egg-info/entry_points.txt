@@ -1,2 +1,0 @@
-[console_scripts]
-finance-app = finance_app.main:main
