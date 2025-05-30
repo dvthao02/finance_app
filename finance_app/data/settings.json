@@ -1,0 +1,122 @@
+[
+  {
+    "setting_id": "setting_001",
+    "user_id": "user_001",
+    "currency": "VND",
+    "notification_enabled": true,
+    "theme": "light",
+    "report_frequency": "monthly",
+    "created_at": "2025-05-29T20:36:30.346918",
+    "updated_at": "2025-05-29T20:36:30.346932"
+  },
+  {
+    "setting_id": "setting_002",
+    "user_id": "user_002",
+    "currency": "VND",
+    "notification_enabled": true,
+    "theme": "light",
+    "report_frequency": "monthly",
+    "created_at": "2025-05-29T20:36:30.346948",
+    "updated_at": "2025-05-29T20:36:30.346950"
+  },
+  {
+    "setting_id": "setting_003",
+    "user_id": "user_003",
+    "currency": "VND",
+    "notification_enabled": true,
+    "theme": "light",
+    "report_frequency": "monthly",
+    "created_at": "2025-05-29T20:36:30.346959",
+    "updated_at": "2025-05-29T20:36:30.346961"
+  },
+  {
+    "setting_id": "setting_004",
+    "user_id": "user_004",
+    "currency": "VND",
+    "notification_enabled": true,
+    "theme": "light",
+    "report_frequency": "monthly",
+    "created_at": "2025-05-29T20:36:30.346966",
+    "updated_at": "2025-05-29T20:36:30.346968"
+  },
+  {
+    "setting_id": "setting_005",
+    "user_id": "user_005",
+    "currency": "VND",
+    "notification_enabled": true,
+    "theme": "light",
+    "report_frequency": "monthly",
+    "created_at": "2025-05-29T20:36:30.346973",
+    "updated_at": "2025-05-29T20:36:30.346974"
+  },
+  {
+    "setting_id": "setting_006",
+    "user_id": "user_006",
+    "currency": "VND",
+    "notification_enabled": true,
+    "theme": "light",
+    "report_frequency": "monthly",
+    "created_at": "2025-05-29T20:36:30.346981",
+    "updated_at": "2025-05-29T20:36:30.346982"
+  },
+  {
+    "setting_id": "setting_007",
+    "user_id": "user_007",
+    "currency": "VND",
+    "notification_enabled": true,
+    "theme": "light",
+    "report_frequency": "monthly",
+    "created_at": "2025-05-29T20:52:45.845148",
+    "updated_at": "2025-05-29T20:52:45.845157"
+  },
+  {
+    "setting_id": "setting_008",
+    "user_id": "user_008",
+    "currency": "VND",
+    "notification_enabled": true,
+    "theme": "light",
+    "report_frequency": "monthly",
+    "created_at": "2025-05-29T22:22:17.156936",
+    "updated_at": "2025-05-29T22:22:17.156942"
+  },
+  {
+    "setting_id": "setting_009",
+    "user_id": "user_009",
+    "currency": "VND",
+    "notification_enabled": true,
+    "theme": "light",
+    "report_frequency": "monthly",
+    "created_at": "2025-05-29T23:19:55.621212",
+    "updated_at": "2025-05-29T23:19:55.621218"
+  },
+  {
+    "setting_id": "setting_010",
+    "user_id": "user_010",
+    "currency": "VND",
+    "notification_enabled": true,
+    "theme": "light",
+    "report_frequency": "monthly",
+    "created_at": "2025-05-30T00:33:14.471270",
+    "updated_at": "2025-05-30T00:33:14.471313"
+  },
+  {
+    "setting_id": "setting_011",
+    "user_id": "user_011",
+    "currency": "VND",
+    "notification_enabled": true,
+    "theme": "light",
+    "report_frequency": "monthly",
+    "created_at": "2025-05-30T02:18:57.778752",
+    "updated_at": "2025-05-30T02:18:57.778827"
+  },
+  {
+    "setting_id": "setting_012",
+    "user_id": "user_012",
+    "currency": "VND",
+    "notification_enabled": true,
+    "theme": "light",
+    "report_frequency": "monthly",
+    "created_at": "2025-05-30T23:08:04.359418",
+    "updated_at": "2025-05-30T23:08:04.359426"
+  }
+]
