@@ -304,7 +304,9 @@ class AdminCategoriesPage(BaseWidget):
         
         if reply == QMessageBox.Yes:
             try:
-                self.parent.category_manager.delete_category(category.get('category_id'))
+                current_user_id = self.parent.current_user_id
+                is_admin = self.parent.current_user.get('is_admin', False)
+                self.parent.category_manager.delete_category(category.get('category_id'), current_user_id, is_admin)
                 self.load_categories()
                 QMessageBox.information(
                     self,

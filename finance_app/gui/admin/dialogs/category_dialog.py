@@ -224,9 +224,11 @@ class CategoryDialog(QDialog):
             if self.category_data: # Edit Mode
                 category_id = self.category_data.get('category_id')
                 if not category_id:
-                    # This should not happen if dialog is opened for edit correctly
                     raise ValueError("Category ID is missing for update.")
                 
+                current_user_id = self.parent.parent.current_user_id
+                is_admin = self.parent.parent.current_user.get('is_admin', False)
+
                 update_payload = {
                     'name': name,
                     'type': category_type_value,
@@ -235,10 +237,12 @@ class CategoryDialog(QDialog):
                     'color': color_text,
                     'is_active': is_active_status
                 }
-                updated_cat = category_manager.update_category(category_id, **update_payload)
-                if not updated_cat:
-                    # update_category in CategoryManager should ideally raise an error or return more info
-                    raise Exception("Cập nhật danh mục thất bại.") 
+                updated_cat = category_manager.update_category(category_id, current_user_id, is_admin, **update_payload)
+                if not updated_cat and updated_cat is not None: # Check for None if no actual update happened
+                    # update_category returns None if no change was made, which is not an error.
+                    # It raises an Exception for actual update failures.
+                    # If it returns False or some other non-truthy for failure (not current design), handle here.
+                    pass # No actual update means no error for this path
 
             else: # Add Mode
                 # Assume admin creates "system" categories by default via this dialog

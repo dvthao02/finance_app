@@ -195,4 +195,17 @@ class BaseWidget(QWidget):
         font.setBold(bold)
         label.setFont(font)
         label.setStyleSheet(f"color: {color};")
-        return label 
+        return label
+
+    def get_asset_path(self, asset_name):
+        """
+        Constructs an absolute path to an asset in the 'assets' directory.
+        """
+        # current_dir for base_widget.py: finance_app/gui/base/
+        current_file_dir = os.path.dirname(os.path.abspath(__file__))
+        # package_dir: finance_app/
+        package_dir = os.path.dirname(os.path.dirname(current_file_dir))
+        # project_root_dir: one level above finance_app/
+        project_root_dir = os.path.dirname(package_dir)
+        assets_dir = os.path.join(project_root_dir, "assets")
+        return os.path.join(assets_dir, asset_name) 

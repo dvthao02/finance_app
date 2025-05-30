@@ -6,7 +6,7 @@ from finance_app.data_manager.category_manager import CategoryManager
 from finance_app.data_manager.user_manager import UserManager
 
 class TransactionManager:
-    def __init__(self, transaction_file='transactions.json'):
+    def __init__(self, transaction_file='transactions.json', category_manager=None):
         import os
         # Get the directory where the package is installed
         package_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -14,7 +14,12 @@ class TransactionManager:
         # Create data directory if it doesn't exist
         os.makedirs(data_dir, exist_ok=True)
         self.transaction_file = os.path.join(data_dir, transaction_file)
-        self.category_manager = CategoryManager()
+        
+        if category_manager: # Use provided category_manager if available
+            self.category_manager = category_manager
+        else: # Otherwise, create a new one
+            self.category_manager = CategoryManager()
+            
         self.user_manager = UserManager()
         self.current_user_id = None
         self.transactions = None # Defer loading

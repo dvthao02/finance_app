@@ -267,14 +267,16 @@ class CategoryManager:
             logger.error(f"Failed to save after appending new category: {name}")
             raise Exception("Lưu danh mục mới thất bại.")
 
-    def update_category(self, category_id, **kwargs):
+    def update_category(self, category_id, current_user_id, is_admin, **kwargs):
         """Cập nhật category. Raises ValueError for bad input or not found, Exception for save errors."""
         if not category_id:
             raise ValueError("Category ID is required for update.")
+        if not current_user_id:
+            raise ValueError("Current user ID is required for update.")
             
-        # Reload categories to ensure we are updating the latest version
         self.categories = self.load_categories() 
         category_to_update = None
+        category_index = -1
         for i, cat in enumerate(self.categories):
             if cat.get('category_id') == category_id:
                 category_to_update = cat
@@ -284,46 +286,52 @@ class CategoryManager:
         if not category_to_update:
             raise ValueError(f"Danh mục với ID '{category_id}' không tìm thấy.")
 
-        # Prevent changing type of system categories, or other protected logic if needed
-        # if category_to_update.get('user_id') == "system" and 'type' in kwargs:
-        #     raise ValueError("Không thể thay đổi loại của danh mục hệ thống.")
+        # Ownership/Permission Check
+        owner_id = category_to_update.get('user_id')
+        if owner_id == "system" and not is_admin:
+            raise PermissionError("Bạn không có quyền sửa danh mục hệ thống.")
+        if owner_id != "system" and owner_id != current_user_id and not is_admin:
+            raise PermissionError("Bạn không có quyền sửa danh mục này.")
 
         updated = False
-        # Check for name uniqueness if name is being changed
         if 'name' in kwargs and kwargs['name'] != category_to_update.get('name'):
             new_name = kwargs['name']
             existing_for_name = self.get_category_by_name(new_name)
-            if existing_for_name and existing_for_name.get('category_id') != category_id and \
-               (existing_for_name.get('user_id') == category_to_update.get('user_id') or existing_for_name.get('user_id') == "system"):
+            # Check if new name conflicts with another category owned by the same user or a system category
+            if (existing_for_name and 
+                existing_for_name.get('category_id') != category_id and
+                (existing_for_name.get('user_id') == owner_id or existing_for_name.get('user_id') == "system")):
                 raise ValueError(f"Tên danh mục '{new_name}' đã tồn tại cho người dùng này hoặc là danh mục hệ thống.")
 
         allowed_fields = ['name', 'type', 'icon', 'color', 'description', 'is_active']
         for field in allowed_fields:
             if field in kwargs:
+                # For system categories, non-admins cannot change 'type'
+                if owner_id == "system" and not is_admin and field == 'type' and category_to_update.get(field) != kwargs[field]:
+                    raise PermissionError("Bạn không có quyền thay đổi loại của danh mục hệ thống.")
                 if category_to_update.get(field) != kwargs[field]:
                     category_to_update[field] = kwargs[field]
                     updated = True
 
         if updated:
             category_to_update['updated_at'] = get_current_datetime()
-            self.categories[category_index] = category_to_update # Ensure the list has the updated object
+            self.categories[category_index] = category_to_update
             if self.save_categories():
-                logger.info(f"Updated category: {category_id}")
-                return category_to_update # Return updated category dict
+                logger.info(f"Updated category: {category_id} by user {current_user_id}")
+                return category_to_update
             else:
-                # If save fails, ideally revert changes in self.categories for consistency
-                # This is complex; for now, just raise error.
                 logger.error(f"Failed to save after updating category: {category_id}")
                 raise Exception(f"Lưu cập nhật cho danh mục '{category_id}' thất bại.")
         else:
-            return None # No changes were made, return None to signify this
+            return None
 
-    def delete_category(self, category_id):
+    def delete_category(self, category_id, current_user_id, is_admin):
         """Xóa category. Raises ValueError for bad input or not found/not allowed, Exception for save errors."""
         if not category_id:
             raise ValueError("Category ID is required for deletion.")
+        if not current_user_id:
+            raise ValueError("Current user ID is required for deletion.")
 
-        # Reload categories to ensure we are deleting from the latest data
         self.categories = self.load_categories()
         category_to_delete = None
         category_index = -1
@@ -337,27 +345,20 @@ class CategoryManager:
         if not category_to_delete:
             raise ValueError(f"Danh mục với ID '{category_id}' không tìm thấy.")
         
-        # Don't allow deletion of system categories
-        if category_to_delete.get('user_id') == "system":
-            raise ValueError("Không thể xóa danh mục hệ thống. Bạn có thể đặt nó thành không hoạt động.")
+        # Ownership/Permission Check
+        owner_id = category_to_delete.get('user_id')
+        if owner_id == "system":
+            if not is_admin:
+                raise PermissionError("Bạn không có quyền xóa danh mục hệ thống. Bạn có thể đặt nó thành không hoạt động.")
+            # Admins can proceed to delete system categories if that's intended (current code allows physical delete)
+        elif owner_id != current_user_id and not is_admin: # Not system, not owner, and not admin
+            raise PermissionError("Bạn không có quyền xóa danh mục này.")
             
-        # Instead of physical delete, consider marking as inactive:
-        # category_to_delete['is_active'] = False
-        # category_to_delete['updated_at'] = get_current_datetime()
-        # if self.save_categories():
-        #     logger.info(f"Deactivated category: {category_id}")
-        #     return True
-        # else:
-        #     raise Exception(f"Lưu trạng thái không hoạt động cho danh mục '{category_id}' thất bại.")
-
-        # Physical delete:
         del self.categories[category_index]
         if self.save_categories():
-            logger.info(f"Deleted category: {category_id}")
-            return True # Indicate success
+            logger.info(f"Deleted category: {category_id} by user {current_user_id}")
+            return True
         else:
-            # If save failed, add it back to self.categories for consistency (simplified)
-            # A more robust approach might store the original list before attempting delete.
             self.categories.insert(category_index, category_to_delete)
             logger.error(f"Failed to save after deleting category: {category_id}")
             raise Exception(f"Lưu thay đổi sau khi xóa danh mục '{category_id}' thất bại.")

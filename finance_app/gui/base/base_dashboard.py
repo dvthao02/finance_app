@@ -213,8 +213,17 @@ class BaseDashboard(BaseForm, BaseWidget):
         # Check the selected button and show page
         if page_name in self.nav_buttons:
             self.nav_buttons[page_name].setChecked(True)
-            page_index = list(self.nav_buttons.keys()).index(page_name)
-            self.stack.setCurrentIndex(page_index)
+            # Assuming the order in nav_buttons keys matches stack widget indices
+            try:
+                page_index = list(self.nav_buttons.keys()).index(page_name)
+                self.stack.setCurrentIndex(page_index)
+                current_widget = self.stack.widget(page_index) # Use widget(index) for safety
+                if hasattr(current_widget, 'refresh_data'):
+                    current_widget.refresh_data()
+            except ValueError:
+                print(f"Error: Page '{page_name}' not found in nav_buttons keys for indexing.")
+            except Exception as e:
+                print(f"Error showing page {page_name}: {e}")
             
     def set_current_user(self, user_data):
         """Set the current user and load their data

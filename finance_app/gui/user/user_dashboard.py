@@ -1,9 +1,10 @@
+from PyQt5.QtWidgets import QLabel # Keep if used for placeholder pages
 from finance_app.gui.base.base_dashboard import BaseDashboard
 from finance_app.gui.user.pages.profile_page import UserProfilePage
 from finance_app.gui.user.pages.settings_page import UserSettingsPage
 from finance_app.gui.user.pages.transactions_page import TransactionsPage
 from finance_app.gui.user.pages.budgets_page import BudgetsPage
-from finance_app.gui.user.pages.categories_page import UserCategoriesPage
+from finance_app.gui.user.pages.category_page import UserCategoriesPage
 from finance_app.gui.user.pages.notifications_page import NotificationsPage
 from finance_app.data_manager.user_manager import UserManager
 from finance_app.data_manager.category_manager import CategoryManager
@@ -17,11 +18,38 @@ class UserDashboard(BaseDashboard):
         self.user_manager = UserManager()
         self.category_manager = CategoryManager()
         self.budget_manager = BudgetManager()
-        self.transaction_manager = TransactionManager()
+        self.transaction_manager = TransactionManager(category_manager=self.category_manager)
         self.notification_manager = NotificationManager()
         
         super().__init__(parent)
         
+    def setup_navigation(self):
+        self.nav_tree.setHeaderHidden(True)
+        # Add navigation items
+        # self.nav_tree.addTopLevelItem("Trang chính") # Example if you have a main summary page
+        self.nav_tree.addTopLevelItem("Giao dịch")
+        self.nav_tree.addTopLevelItem("Ngân sách")
+        self.nav_tree.addTopLevelItem("Danh mục")
+        self.nav_tree.addTopLevelItem("Hồ sơ")
+        self.nav_tree.addTopLevelItem("Cài đặt")
+        self.nav_tree.expandAll()
+
+    def init_pages(self):
+        self.pages = {
+            # "Trang chính": QLabel("Welcome to User Dashboard!"), # Example placeholder
+            "Giao dịch": TransactionsPage(self),
+            "Ngân sách": BudgetsPage(self),
+            "Danh mục": UserCategoriesPage(self),
+            "Hồ sơ": UserProfilePage(self),
+            "Cài đặt": UserSettingsPage(self)
+        }
+        # Set initial page to the first item in navigation or a default like "Giao dịch"
+        if self.nav_tree.topLevelItemCount() > 0:
+            initial_page_text = self.nav_tree.topLevelItem(0).text(0)
+            self.navigate(initial_page_text)
+        elif "Giao dịch" in self.pages:
+             self.navigate("Giao dịch")
+
     def get_nav_items(self):
         """Get navigation items for user dashboard"""
         return [
@@ -92,58 +120,36 @@ class UserDashboard(BaseDashboard):
         return "User Dashboard"
         
     def set_current_user(self, user_data):
-        """Set current user and update pages
-        
-        Args:
-            user_data (dict): User data dictionary
-        """
+        """Set current user and update dashboard-specific elements."""
+        # Call super first to set self.current_user, self.current_user_id 
+        # and trigger the base refresh_data mechanism (which refreshes all pages)
         super().set_current_user(user_data)
         
-        if self.current_user_id:
-            # Propagate current_user_id to all managers
+        # UserDashboard specific tasks after user is set:
+        if self.current_user_id: # self.current_user_id is set by super().set_current_user
+            # Propagate current_user_id to managers specific to UserDashboard context if needed
+            # (BaseDashboard might not know about all managers of a subclass)
             self.user_manager.set_current_user(self.current_user_id)
             self.category_manager.set_current_user(self.current_user_id)
             self.budget_manager.set_current_user(self.current_user_id)
             self.transaction_manager.set_current_user(self.current_user_id)
             self.notification_manager.set_current_user(self.current_user_id)
         
-        # Update pages with user data is now handled by refresh_data, called by super().set_current_user()
-        
+        # The page-specific refresh calls that were here are now redundant 
+        # because super().set_current_user() calls self.refresh_data(), 
+        # and UserDashboard.refresh_data() calls super().refresh_data() (BaseDashboard.refresh_data),
+        # which iterates through self.pages and calls .refresh_data() on each page.
+
     def refresh_data(self):
-        """Refresh all dashboard data"""
-        if not self.current_user_id:
-            # TODO: Consider clearing page data or showing placeholder if no user.
-            # For now, just returning prevents errors if current_user is None.
-            # Example: self.profile_page.update_user_info(None) and other pages clear their views.
-            return
-            
-        try:
-            # Refresh profile page first if it relies on user_data directly
-            if self.current_user:
-                self.profile_page.update_user_info(self.current_user)
-            else:
-                # If current_user is None but current_user_id was somehow set,
-                # clear profile page or handle appropriately.
-                # This case should ideally not happen if current_user_id implies current_user is set.
-                self.profile_page.update_user_info(None)
+        """Refreshes data for all relevant pages in the dashboard."""
+        # This method is called by BaseDashboard.set_current_user.
+        # The base implementation (super().refresh_data()) iterates through self.pages 
+        # and calls refresh_data if available on each page.
+        # Add any UserDashboard-specific global refresh logic here if necessary, 
+        # then call super().
+        # Example: self.update_user_specific_summary_widget_if_any()
+        super().refresh_data()
 
-
-            # Refresh all other pages
-            self.transactions_page.refresh_data()
-            self.budgets_page.refresh_data()
-            self.categories_page.refresh_data()
-            self.notifications_page.refresh_data()
-            self.settings_page.refresh_data() # Ensure settings page is consistently refreshed
-            
-            # Update navigation badges
-            self.update_nav_badges()
-            
-        except Exception as e:
-            self.show_error(
-                "Lỗi",
-                f"Không thể tải dữ liệu: {str(e)}"
-            )
-            
     def get_unread_notifications_count(self):
         """Get number of unread notifications
         
@@ -173,7 +179,9 @@ class UserDashboard(BaseDashboard):
             
             if success:
                 # Update notifications page and badge
-                self.notifications_page.refresh_data()
+                # self.notifications_page.refresh_data() # This page is likely in self.pages
+                if "Thông báo" in self.pages and hasattr(self.pages["Thông báo"], 'refresh_data'):
+                    self.pages["Thông báo"].refresh_data()
                 self.update_nav_badges()
                 
         except Exception as e:
@@ -203,7 +211,9 @@ class UserDashboard(BaseDashboard):
             
             if success:
                 # Update notifications page and badge
-                self.notifications_page.refresh_data()
+                # self.notifications_page.refresh_data()
+                if "Thông báo" in self.pages and hasattr(self.pages["Thông báo"], 'refresh_data'):
+                    self.pages["Thông báo"].refresh_data()
                 self.update_nav_badges()
                 
         except Exception as e:

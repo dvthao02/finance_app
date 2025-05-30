@@ -5,10 +5,10 @@
     "type": "budget_alert",
     "title": "Cảnh báo ngân sách",
     "message": "Bạn đã chi tiêu 85% ngân sách giải trí tháng này (850,000/1,000,000 VNĐ)",
-    "is_read": false,
+    "is_read": true,
     "priority": "high",
     "created_at": "2025-05-26T20:30:00.000000",
-    "read_at": null,
+    "read_at": "2025-05-31T05:03:44.669040",
     "data": {
       "budget_id": "budget_003",
       "category_name": "Giải trí",
@@ -85,10 +85,10 @@
     "type": "system",
     "title": "Cập nhật hệ thống",
     "message": "Ứng dụng đã được cập nhật phiên bản mới với tính năng báo cáo chi tiết",
-    "is_read": false,
+    "is_read": true,
     "priority": "low",
     "created_at": "2025-05-20T10:00:00.000000",
-    "read_at": null,
+    "read_at": "2025-05-31T05:03:44.669040",
     "data": {
       "version": "2.1.0",
       "features": [
@@ -119,10 +119,10 @@
     "type": "recurring_reminder",
     "title": "Nhắc nhở thanh toán",
     "message": "Tiền điện tháng 6 sẽ đến hạn vào ngày 25/06/2025",
-    "is_read": false,
+    "is_read": true,
     "priority": "medium",
     "created_at": "2025-05-28T09:00:00.000000",
-    "read_at": null,
+    "read_at": "2025-05-31T05:03:44.669040",
     "data": {
       "recurring_id": "rec_002",
       "due_date": "2025-06-25",
@@ -135,10 +135,10 @@
     "type": "budget_alert",
     "title": "Ngân sách sắp hết",
     "message": "Ngân sách cho tháng này đã gần hết. Vui lòng kiểm tra lại.",
-    "is_read": false,
+    "is_read": true,
     "priority": "high",
     "created_at": "2025-05-29T09:26:57.919433",
-    "read_at": null,
+    "read_at": "2025-05-31T05:03:44.669040",
     "data": {
       "budget_id": "budget_001"
     }
