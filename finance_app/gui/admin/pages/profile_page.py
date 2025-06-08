@@ -1,8 +1,9 @@
 from PyQt5.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QLabel, 
-                             QPushButton, QFrame, QLineEdit, QMessageBox)
+                             QPushButton, QFrame, QLineEdit, QMessageBox, QFileDialog)
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon
 import os
+import shutil
 
 class AdminProfilePage(QWidget):
     def __init__(self, parent=None):
@@ -67,6 +68,8 @@ class AdminProfilePage(QWidget):
                 background-color: #e8f0fe;
             }
         """)
+        # Connect the change_avatar_btn to the change_avatar method
+        change_avatar_btn.clicked.connect(self.change_avatar)
         
         avatar_layout.addWidget(avatar_label)
         avatar_layout.addWidget(change_avatar_btn)
@@ -229,51 +232,75 @@ class AdminProfilePage(QWidget):
         """Save profile changes"""
         if not self.current_user:
             return
-            
         try:
             from finance_app.data_manager.user_manager import UserManager
             user_manager = UserManager()
-            
             # Update user data
             success = user_manager.update_user(
                 user_id=self.current_user['user_id'],
                 full_name=self.name_edit.text(),
                 email=self.email_edit.text()
             )
-            
             if success:
                 QMessageBox.information(
                     self,
                     "Success",
                     "Profile updated successfully"
                 )
+                self.refresh_data()  # Ensure UI reloads data
             else:
                 QMessageBox.warning(
                     self,
                     "Error",
                     "Failed to update profile"
                 )
-                
         except Exception as e:
             QMessageBox.critical(
                 self,
                 "Error",
                 f"Error updating profile: {str(e)}"
             )
-            
+
     def show_change_password_dialog(self):
         """Show change password dialog"""
         if not self.current_user:
             return
-            
         try:
-            from finance_app.gui.user.dialogs.change_password_dialog import ChangePasswordDialog
-            dialog = ChangePasswordDialog(self.current_user['user_id'], self)
+            from finance_app.gui.user.change_password_dialog import ChangePasswordDialog  # Fixed import path
+            # Pass username instead of user_id for compatibility
+            dialog = ChangePasswordDialog(self.current_user['username'], self)
             dialog.exec_()
-            
         except Exception as e:
             QMessageBox.critical(
                 self,
                 "Error",
                 f"Error showing change password dialog: {str(e)}"
-            ) 
+            )
+
+    def change_avatar(self):
+        """Allow admin to change avatar image"""
+        file_path, _ = QFileDialog.getOpenFileName(self, "Chọn ảnh đại diện", "", "Image Files (*.png *.jpg *.jpeg *.bmp)")
+        if file_path:
+            try:
+                # Save avatar path to user data (or copy to assets and update user profile)
+                from finance_app.data_manager.user_manager import UserManager
+                user_manager = UserManager()
+                # Optionally, copy file to assets/avatar_{user_id}.png
+                ext = os.path.splitext(file_path)[1]
+                project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))))
+                avatar_dir = os.path.join(project_root, 'assets')
+                avatar_filename = f"admin_avatar_{self.current_user['user_id']}{ext}"
+                avatar_dest = os.path.join(avatar_dir, avatar_filename)
+                shutil.copyfile(file_path, avatar_dest)
+                # Update user profile with new avatar path
+                success = user_manager.update_user(
+                    user_id=self.current_user['user_id'],
+                    avatar=avatar_filename
+                )
+                if success:
+                    QMessageBox.information(self, "Thành công", "Đã cập nhật ảnh đại diện.")
+                    self.refresh_data()
+                else:
+                    QMessageBox.warning(self, "Lỗi", "Không thể cập nhật ảnh đại diện.")
+            except Exception as e:
+                QMessageBox.critical(self, "Lỗi", f"Lỗi khi cập nhật avatar: {str(e)}")

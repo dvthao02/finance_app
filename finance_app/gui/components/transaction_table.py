@@ -144,10 +144,9 @@ class TransactionTable(QTableWidget):
                 """)
                 delete_btn.clicked.connect(lambda checked, t=transaction: self.handle_delete_click(t))
                 
+                actions_widget = QWidget()
                 actions_layout.addWidget(edit_btn)
                 actions_layout.addWidget(delete_btn)
-                
-                actions_widget = QWidget()
                 actions_widget.setLayout(actions_layout)
                 self.setCellWidget(row, 6, actions_widget)
                 

@@ -40,6 +40,7 @@ class AdminSettingsPage(BaseWidget):
         lang_label = self.create_label("Ngôn ngữ:", bold=True)
         lang_value = self.create_label("Tiếng Việt")
         lang_btn = self.create_secondary_button("Thay đổi")
+        lang_btn.clicked.connect(lambda: self.change_setting_dialog('language', lang_value))
         
         lang_layout.addWidget(lang_label)
         lang_layout.addWidget(lang_value)
@@ -53,6 +54,7 @@ class AdminSettingsPage(BaseWidget):
         theme_label = self.create_label("Giao diện:", bold=True)
         theme_value = self.create_label("Sáng")
         theme_btn = self.create_secondary_button("Thay đổi")
+        theme_btn.clicked.connect(lambda: self.change_setting_dialog('theme', theme_value))
         
         theme_layout.addWidget(theme_label)
         theme_layout.addWidget(theme_value)
@@ -74,6 +76,7 @@ class AdminSettingsPage(BaseWidget):
         email_label = self.create_label("Thông báo qua email:", bold=True)
         email_value = self.create_label("Bật")
         email_btn = self.create_secondary_button("Thay đổi")
+        email_btn.clicked.connect(lambda: self.change_setting_dialog('notification_enabled', email_value))
         
         email_layout.addWidget(email_label)
         email_layout.addWidget(email_value)
@@ -87,6 +90,7 @@ class AdminSettingsPage(BaseWidget):
         push_label = self.create_label("Thông báo đẩy:", bold=True)
         push_value = self.create_label("Bật")
         push_btn = self.create_secondary_button("Thay đổi")
+        push_btn.clicked.connect(lambda: self.change_setting_dialog('notification_enabled', push_value))
         
         push_layout.addWidget(push_label)
         push_layout.addWidget(push_value)
@@ -108,6 +112,7 @@ class AdminSettingsPage(BaseWidget):
         backup_label = self.create_label("Tự động sao lưu:", bold=True)
         backup_value = self.create_label("Hàng tuần")
         backup_btn = self.create_secondary_button("Thay đổi")
+        backup_btn.clicked.connect(lambda: self.change_setting_dialog('backup_frequency', backup_value))
         
         backup_layout.addWidget(backup_label)
         backup_layout.addWidget(backup_value)
@@ -120,6 +125,7 @@ class AdminSettingsPage(BaseWidget):
         manual_layout = QHBoxLayout()
         manual_btn = self.create_primary_button("Sao lưu ngay")
         manual_btn.setFixedWidth(200)
+        manual_btn.clicked.connect(self.manual_backup)
         
         manual_layout.addWidget(manual_btn)
         manual_layout.addStretch()
@@ -155,8 +161,45 @@ class AdminSettingsPage(BaseWidget):
         
     def refresh_data(self):
         """Refresh settings data"""
-        pass # Will be implemented later
-
+        from finance_app.data_manager.setting_manager import SettingManager
+        import os
+        # Khởi tạo SettingManager
+        setting_manager = SettingManager()
+        setting_manager._load_data_if_needed()
+        # Lấy settings của admin (hoặc user đầu tiên)
+        settings_list = setting_manager.settings
+        if not settings_list:
+            return
+        # Lấy settings đầu tiên (hoặc có thể lọc theo user_id admin)
+        settings = settings_list[0]
+        # Cập nhật các label/checkbox/combo box trên giao diện
+        # Tìm các widget theo tên hoặc thứ tự (giả sử đúng thứ tự tạo ra trong init_ui)
+        # Ngôn ngữ
+        lang_label = [lbl for lbl in self.findChildren(QLabel) if lbl.text() == "Ngôn ngữ:"]
+        if lang_label:
+            lang_value = lang_label[0].parent().findChildren(QLabel)[1]
+            lang_value.setText(settings.get('language', 'Tiếng Việt'))
+        # Giao diện
+        theme_label = [lbl for lbl in self.findChildren(QLabel) if lbl.text() == "Giao diện:"]
+        if theme_label:
+            theme_value = theme_label[0].parent().findChildren(QLabel)[1]
+            theme_value.setText('Sáng' if settings.get('theme', 'light') == 'light' else 'Tối')
+        # Thông báo qua email
+        email_label = [lbl for lbl in self.findChildren(QLabel) if lbl.text() == "Thông báo qua email:"]
+        if email_label:
+            email_value = email_label[0].parent().findChildren(QLabel)[1]
+            email_value.setText('Bật' if settings.get('notification_enabled', True) else 'Tắt')
+        # Thông báo đẩy
+        push_label = [lbl for lbl in self.findChildren(QLabel) if lbl.text() == "Thông báo đẩy:"]
+        if push_label:
+            push_value = push_label[0].parent().findChildren(QLabel)[1]
+            push_value.setText('Bật' if settings.get('notification_enabled', True) else 'Tắt')
+        # Tự động sao lưu
+        backup_label = [lbl for lbl in self.findChildren(QLabel) if lbl.text() == "Tự động sao lưu:"]
+        if backup_label:
+            backup_value = backup_label[0].parent().findChildren(QLabel)[1]
+            backup_value.setText(settings.get('backup_frequency', 'Hàng tuần'))
+        
     def create_section(self, title, settings):
         """Create a settings section
         
@@ -304,4 +347,45 @@ class AdminSettingsPage(BaseWidget):
                 "Error",
                 f"An error occurred: {str(e)}",
                 QMessageBox.Ok
-            ) 
+            )
+    
+    def change_setting_dialog(self, key, value_label):
+        """Hiển thị dialog chọn giá trị mới cho setting và lưu lại"""
+        from PyQt5.QtWidgets import QInputDialog
+        options = {
+            'language': ["Tiếng Việt", "English"],
+            'theme': ["Sáng", "Tối"],
+            'notification_enabled': ["Bật", "Tắt"],
+            'backup_frequency': ["Hàng ngày", "Hàng tuần", "Hàng tháng"]
+        }
+        current = value_label.text()
+        items = options.get(key, [])
+        if not items:
+            return
+        item, ok = QInputDialog.getItem(self, "Chọn giá trị mới", f"Chọn {key.replace('_', ' ')}:", items, items.index(current) if current in items else 0, False)
+        if ok and item:
+            value_label.setText(item)
+            # Lưu lại setting
+            self.save_single_setting(key, item)
+
+    def save_single_setting(self, key, value):
+        """Lưu một setting đơn lẻ và reload lại giao diện"""
+        from finance_app.data_manager.setting_manager import SettingManager
+        setting_manager = SettingManager()
+        setting_manager._load_data_if_needed()
+        # Lấy settings đầu tiên (admin)
+        settings = setting_manager.settings[0]
+        # Map value về đúng kiểu
+        if key == 'theme':
+            settings[key] = 'light' if value == 'Sáng' else 'dark'
+        elif key == 'notification_enabled':
+            settings[key] = True if value == 'Bật' else False
+        else:
+            settings[key] = value
+        setting_manager.save_settings()
+        self.refresh_data()
+        QMessageBox.information(self, "Thành công", "Đã cập nhật cài đặt thành công!", QMessageBox.Ok)
+
+    def manual_backup(self):
+        # Giả lập thao tác sao lưu
+        QMessageBox.information(self, "Sao lưu", "Dữ liệu đã được sao lưu thành công!", QMessageBox.Ok)

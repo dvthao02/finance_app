@@ -6,11 +6,8 @@ import traceback
 from PyQt5.QtWidgets import QApplication, QMessageBox
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt
-from finance_app.utils.logging_config import setup_logging
 
-# Set up logging
-logger = setup_logging()
-
+# Define error dialog function first, as it's used in init_app
 def show_error_dialog(error_msg):
     """Show error dialog with detailed message"""
     msg = QMessageBox()
@@ -20,6 +17,7 @@ def show_error_dialog(error_msg):
     msg.setWindowTitle("Error")
     msg.exec_()
 
+# Initialize environment paths first
 def init_app():
     """Initialize application environment"""
     try:
@@ -35,6 +33,15 @@ def init_app():
     except Exception as e:
         show_error_dialog(f"Error initializing application: {str(e)}")
         sys.exit(1)
+
+# Call init_app before importing from the package
+init_app()
+
+# Now we can import from finance_app
+from finance_app.utils.logging_config import setup_logging
+
+# Set up logging
+logger = setup_logging()
 
 def main():
     # Initialize environment

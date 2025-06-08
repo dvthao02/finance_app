@@ -422,22 +422,31 @@ class TransactionManager:
 
     def export_transactions(self, user_id=None, file_path=None, start_date=None, end_date=None):
         """Xuất giao dịch ra file CSV"""
+        import csv
         self._load_data_if_needed() # Load data
         if user_id is None:
             user_id = self.current_user_id
-            
         if user_id is None:
             return False
-            
         transactions = self.get_all_transactions(user_id, user_id)
-        
         if start_date and end_date:
             transactions = self.get_transactions_by_date_range(user_id, start_date, end_date)
-            
         if file_path:
-            # TODO: Implement export to file
-            pass
-            
+            try:
+                with open(file_path, mode='w', encoding='utf-8', newline='') as csvfile:
+                    writer = csv.writer(csvfile)
+                    writer.writerow(["Ngày", "Loại", "Số tiền", "Danh mục", "Ghi chú"])
+                    for txn in transactions:
+                        date_str = txn.get('date', '')
+                        txn_type = 'Thu nhập' if txn.get('type') == 'income' else 'Chi tiêu'
+                        amount = txn.get('amount', 0)
+                        category = txn.get('category_name', '') if txn.get('category_name') else txn.get('category_id', '')
+                        note = txn.get('note', '')
+                        writer.writerow([date_str, txn_type, amount, category, note])
+                return True
+            except Exception as e:
+                print(f"Lỗi khi xuất file CSV: {e}")
+                return False
         return transactions
 
     def get_user_transactions(self, user_id, is_admin=False):

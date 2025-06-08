@@ -43,7 +43,7 @@ class NotificationPanel(QScrollArea):
         
         # Container for notifications
         self.notifications_container = QWidget()
-        self.notifications_layout = QVBoxLayout(self.notifications_container)
+        self.notifications_layout = QVBoxLayout()
         self.notifications_layout.setSpacing(8)
         self.notifications_layout.setAlignment(Qt.AlignTop)
         
@@ -58,6 +58,9 @@ class NotificationPanel(QScrollArea):
         """)
         self.empty_label.setAlignment(Qt.AlignCenter)
         self.notifications_layout.addWidget(self.empty_label)
+        
+        # Set the layout to the container after adding all widgets
+        self.notifications_container.setLayout(self.notifications_layout)
         
         self.main_layout.addWidget(self.notifications_container)
         self.setWidget(self.main_widget)

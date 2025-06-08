@@ -14,7 +14,6 @@ class StatCard(QFrame):
                 border-left: 4px solid {color};
             }}
         """)
-        
         layout = QVBoxLayout()
         layout.setSpacing(10)
         
@@ -22,13 +21,12 @@ class StatCard(QFrame):
         title_label = QLabel(title)
         title_label.setStyleSheet("color: #5f6368; font-size: 14px;")
         
-        # Value
-        value_label = QLabel(str(value))
-        value_label.setFont(QFont("Arial", 24, QFont.Bold))
-        value_label.setStyleSheet(f"color: {color};")
+        self.value_label = QLabel(str(value))
+        self.value_label.setFont(QFont("Arial", 24, QFont.Bold))
+        self.value_label.setStyleSheet(f"color: {color};")
         
         layout.addWidget(title_label)
-        layout.addWidget(value_label)
+        layout.addWidget(self.value_label)
         self.setLayout(layout)
         
 class AdminStatisticsPage(BaseWidget):
@@ -95,18 +93,16 @@ class AdminStatisticsPage(BaseWidget):
             # Get user statistics
             users = self.parent.user_manager.get_all_users()
             active_users = [u for u in users if u.get('is_active', True)]
-            
-            # Update user stats
-            self.total_users_card.findChild(QLabel, "", Qt.FindChildOption.FindChildrenRecursively)[1].setText(str(len(users)))
-            self.active_users_card.findChild(QLabel, "", Qt.FindChildOption.FindChildrenRecursively)[1].setText(str(len(active_users)))
+            self.total_users_card.value_label.setText(str(len(users)))
+            self.active_users_card.value_label.setText(str(len(active_users)))
             
             # Get transaction statistics
             transactions = self.parent.transaction_manager.get_all_transactions()
-            self.total_transactions_card.findChild(QLabel, "", Qt.FindChildOption.FindChildrenRecursively)[1].setText(str(len(transactions)))
+            self.total_transactions_card.value_label.setText(str(len(transactions)))
             
             # Get budget statistics
             budgets = self.parent.budget_manager.get_all_budgets()
-            self.total_budgets_card.findChild(QLabel, "", Qt.FindChildOption.FindChildrenRecursively)[1].setText(str(len(budgets)))
+            self.total_budgets_card.value_label.setText(str(len(budgets)))
             
             # Get category statistics
             categories = self.parent.category_manager.get_all_categories()
@@ -117,7 +113,4 @@ class AdminStatisticsPage(BaseWidget):
             self.notifications_label.setText(f"Tổng số thông báo: {len(notifications)}")
             
         except Exception as e:
-            self.parent.show_error(
-                "Lỗi",
-                f"Không thể tải dữ liệu thống kê: {str(e)}"
-            ) 
+            print(f"Error refreshing statistics: {e}")

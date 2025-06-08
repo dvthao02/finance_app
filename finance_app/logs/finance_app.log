@@ -1,0 +1,1232 @@
+2025-06-08 11:14:25 - finance_app - INFO - Starting Finance App
+2025-06-08 11:14:25 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:38 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:38 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'dvthao' in 4 users
+2025-06-08 11:14:38 - finance_app.data_manager.user_manager - DEBUG - Found user: dvthao
+2025-06-08 11:14:38 - finance_app.data_manager.user_manager - WARNING - Failed login attempt for user: dvthao
+2025-06-08 11:14:44 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:44 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'dvthao' in 4 users
+2025-06-08 11:14:44 - finance_app.data_manager.user_manager - DEBUG - Found user: dvthao
+2025-06-08 11:14:44 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:44 - finance_app.data_manager.user_manager - DEBUG - Saved 4 users to D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:44 - finance_app.data_manager.user_manager - INFO - Successful login for user: dvthao
+2025-06-08 11:14:44 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:44 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:44 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:44 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:14:44 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:44 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:14:44 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:44 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:14:44 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:44 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:14:44 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:14:44 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:44 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:14:44 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:44 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:44 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:46 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:46 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:14:46 - finance_app.data_manager.category_manager - DEBUG - Retrieved 24 categories for user user_003 (including 24 system categories)
+2025-06-08 11:14:46 - finance_app.data_manager.user_manager - DEBUG - UserManager current user set to: user_003
+2025-06-08 11:14:46 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:46 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 11:14:46 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:46 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 11:14:46 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:46 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 11:14:46 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:46 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:46 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:14:46 - finance_app.data_manager.category_manager - DEBUG - Retrieved 24 categories for user user_003 (including 24 system categories)
+2025-06-08 11:14:47 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:48 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:14:48 - finance_app.data_manager.category_manager - DEBUG - Retrieved 24 categories for user user_003 (including 24 system categories)
+2025-06-08 11:14:49 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:49 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:50 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:14:50 - finance_app.data_manager.category_manager - DEBUG - Retrieved 24 categories for user user_003 (including 24 system categories)
+2025-06-08 11:14:54 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:14:57 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:24:30 - finance_app - INFO - Starting Finance App
+2025-06-08 11:24:30 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:24:38 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:24:38 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'test' in 4 users
+2025-06-08 11:24:38 - finance_app.data_manager.user_manager - DEBUG - Found user: test
+2025-06-08 11:24:38 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:24:38 - finance_app.data_manager.user_manager - DEBUG - Saved 4 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:24:38 - finance_app.data_manager.user_manager - INFO - Successful login for user: test
+2025-06-08 11:24:38 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:24:38 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:24:38 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:24:38 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:24:38 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:24:38 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:24:38 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:24:38 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:24:38 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:24:38 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:24:38 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:24:38 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:24:38 - finance_app.data_manager.user_manager - DEBUG - UserManager current user set to: user_002
+2025-06-08 11:24:38 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:24:38 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_002
+2025-06-08 11:24:38 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:24:38 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_002
+2025-06-08 11:24:38 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:24:38 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_002
+2025-06-08 11:26:10 - finance_app - INFO - Starting Finance App
+2025-06-08 11:26:10 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:26:19 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:26:19 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'test' in 4 users
+2025-06-08 11:26:19 - finance_app.data_manager.user_manager - DEBUG - Found user: test
+2025-06-08 11:26:19 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:26:19 - finance_app.data_manager.user_manager - DEBUG - Saved 4 users to D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:26:19 - finance_app.data_manager.user_manager - INFO - Successful login for user: test
+2025-06-08 11:26:19 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:26:19 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:26:19 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:26:19 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:26:19 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:26:19 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:26:19 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:26:19 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:26:19 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:26:19 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:26:19 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:26:19 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:26:20 - finance_app.data_manager.user_manager - DEBUG - UserManager current user set to: user_002
+2025-06-08 11:26:20 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:26:20 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_002
+2025-06-08 11:26:20 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:26:20 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_002
+2025-06-08 11:26:20 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:26:20 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_002
+2025-06-08 11:28:18 - finance_app - INFO - Starting Finance App
+2025-06-08 11:28:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:28:23 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:40:27 - finance_app - INFO - Starting Finance App
+2025-06-08 11:40:27 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:40:37 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:40:37 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'dvthao' in 4 users
+2025-06-08 11:40:37 - finance_app.data_manager.user_manager - DEBUG - Found user: dvthao
+2025-06-08 11:40:37 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:40:37 - finance_app.data_manager.user_manager - DEBUG - Saved 4 users to D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:40:37 - finance_app.data_manager.user_manager - INFO - Successful login for user: dvthao
+2025-06-08 11:40:37 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:40:37 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:40:37 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:40:37 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:40:37 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:40:37 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:40:37 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:40:37 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:40:37 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:40:37 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:40:37 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:40:37 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:40:37 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:40:37 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:40:37 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:40:37 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:40:37 - finance_app.data_manager.category_manager - WARNING - No user ID provided for get_all_categories
+2025-06-08 11:40:37 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:40:37 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:40:37 - finance_app.data_manager.category_manager - DEBUG - Retrieved 24 categories for user user_003 (including 24 system categories)
+2025-06-08 11:40:37 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:40:37 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:40:41 - finance_app.data_manager.user_manager - DEBUG - UserManager current user set to: user_003
+2025-06-08 11:40:41 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:40:41 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 11:40:41 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:40:41 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 11:40:41 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:40:41 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 11:40:41 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:40:41 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:40:41 - finance_app.data_manager.category_manager - DEBUG - Retrieved 24 categories for user user_003 (including 24 system categories)
+2025-06-08 11:40:41 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:40:41 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:40:41 - finance_app.data_manager.category_manager - DEBUG - Retrieved 24 categories for user user_003 (including 24 system categories)
+2025-06-08 11:40:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:41:07 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:41:07 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:41:07 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'TESTT' in 4 users
+2025-06-08 11:41:07 - finance_app.data_manager.user_manager - DEBUG - User 'TESTT' not found
+2025-06-08 11:41:07 - finance_app.data_manager.user_manager - WARNING - Attempt to add user TESTT with weak password.
+2025-06-08 11:41:07 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:41:32 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:41:32 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:41:32 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'testt' in 4 users
+2025-06-08 11:41:32 - finance_app.data_manager.user_manager - DEBUG - User 'testt' not found
+2025-06-08 11:41:33 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:41:33 - finance_app.data_manager.user_manager - INFO - Added new user: testt
+2025-06-08 11:41:33 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:41:46 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:41:46 - finance_app.data_manager.category_manager - DEBUG - Retrieved 24 categories for user user_003 (including 24 system categories)
+2025-06-08 11:41:47 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:41:48 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:41:48 - finance_app.data_manager.category_manager - DEBUG - Retrieved 24 categories for user user_003 (including 24 system categories)
+2025-06-08 11:42:00 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:42:00 - finance_app.data_manager.category_manager - DEBUG - Saved 26 categories to D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:42:00 - finance_app.data_manager.category_manager - INFO - Created new category: a with ID cat_026
+2025-06-08 11:42:00 - finance_app.data_manager.category_manager - DEBUG - Loaded 26 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:42:00 - finance_app.data_manager.category_manager - DEBUG - Retrieved 25 categories for user user_003 (including 25 system categories)
+2025-06-08 11:42:09 - finance_app.data_manager.category_manager - DEBUG - Loaded 26 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:42:09 - finance_app.data_manager.category_manager - DEBUG - Saved 25 categories to D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:42:09 - finance_app.data_manager.category_manager - INFO - Deleted category: cat_026 by user user_003
+2025-06-08 11:42:09 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:42:09 - finance_app.data_manager.category_manager - DEBUG - Retrieved 24 categories for user user_003 (including 24 system categories)
+2025-06-08 11:42:18 - finance_app.data_manager.category_manager - DEBUG - Loaded 25 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:42:18 - finance_app.data_manager.category_manager - DEBUG - Saved 24 categories to D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:42:18 - finance_app.data_manager.category_manager - INFO - Deleted category: cat_017 by user user_003
+2025-06-08 11:42:18 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:42:18 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 11:42:38 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:42:38 - finance_app.data_manager.category_manager - DEBUG - Saved 24 categories to D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:42:38 - finance_app.data_manager.category_manager - INFO - Updated category: cat_024 by user user_003
+2025-06-08 11:42:38 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:42:38 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 11:42:43 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:42:43 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:42:47 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:42:47 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:42:47 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:42:47 - finance_app.data_manager.category_manager - DEBUG - Retrieved 22 categories for user user_003 (including 23 system categories)
+2025-06-08 11:42:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:42:56 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:42:56 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:42:56 - finance_app.data_manager.user_manager - INFO - User user_005 lock status set to True
+2025-06-08 11:42:57 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:43:00 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:43:00 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:43:00 - finance_app.data_manager.category_manager - DEBUG - Retrieved 22 categories for user user_003 (including 23 system categories)
+2025-06-08 11:43:02 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:43:03 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:43:03 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 11:43:09 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:43:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:43:18 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'test' in 5 users
+2025-06-08 11:43:18 - finance_app.data_manager.user_manager - DEBUG - Found user: test
+2025-06-08 11:43:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:43:18 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:43:18 - finance_app.data_manager.user_manager - INFO - Successful login for user: test
+2025-06-08 11:43:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:43:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:43:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:43:18 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:43:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:43:18 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:43:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:43:18 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:43:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:43:18 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:43:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:43:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:43:19 - finance_app.data_manager.user_manager - DEBUG - UserManager current user set to: user_002
+2025-06-08 11:43:19 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:43:19 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_002
+2025-06-08 11:43:19 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:43:19 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_002
+2025-06-08 11:43:19 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:43:19 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_002
+2025-06-08 11:43:24 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:43:24 - finance_app.data_manager.category_manager - DEBUG - Retrieved 24 categories for user user_002 (including 23 system categories)
+2025-06-08 11:43:30 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:43:30 - finance_app.data_manager.category_manager - DEBUG - Saved 23 categories to D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:43:30 - finance_app.data_manager.category_manager - INFO - Deleted category: cat_025 by user user_002
+2025-06-08 11:43:30 - finance_app.data_manager.category_manager - DEBUG - Loaded 23 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:43:30 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_002 (including 23 system categories)
+2025-06-08 11:43:38 - finance_app.data_manager.category_manager - DEBUG - Loaded 23 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:43:38 - finance_app.data_manager.category_manager - DEBUG - Saved 24 categories to D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:43:38 - finance_app.data_manager.category_manager - INFO - Created new category: test with ID cat_025
+2025-06-08 11:43:38 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:43:38 - finance_app.data_manager.category_manager - DEBUG - Retrieved 24 categories for user user_002 (including 23 system categories)
+2025-06-08 11:43:50 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:43:58 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:14 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:14 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'admin' in 5 users
+2025-06-08 11:44:14 - finance_app.data_manager.user_manager - DEBUG - Found user: admin
+2025-06-08 11:44:14 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:14 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:14 - finance_app.data_manager.user_manager - INFO - Successful login for user: admin
+2025-06-08 11:44:14 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:14 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:14 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:14 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:44:14 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:14 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:44:14 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:14 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:44:14 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:14 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:44:14 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:44:14 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:14 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:44:14 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:14 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:14 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:14 - finance_app.data_manager.category_manager - WARNING - No user ID provided for get_all_categories
+2025-06-08 11:44:14 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:14 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:44:14 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 11:44:14 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:14 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:24 - finance_app.data_manager.user_manager - DEBUG - UserManager current user set to: user_001
+2025-06-08 11:44:24 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:24 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_001
+2025-06-08 11:44:24 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:24 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_001
+2025-06-08 11:44:24 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:24 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_001
+2025-06-08 11:44:24 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:24 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:44:24 - finance_app.data_manager.category_manager - DEBUG - Retrieved 22 categories for user user_001 (including 23 system categories)
+2025-06-08 11:44:24 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:24 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:44:24 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 11:44:25 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:26 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:44:26 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 11:44:27 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:28 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:44:28 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 11:44:39 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:47 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:47 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'test' in 5 users
+2025-06-08 11:44:47 - finance_app.data_manager.user_manager - DEBUG - Found user: test
+2025-06-08 11:44:47 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:47 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:47 - finance_app.data_manager.user_manager - INFO - Successful login for user: test
+2025-06-08 11:44:47 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:47 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:47 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:47 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:44:47 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:47 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:44:47 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:47 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:44:47 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:47 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:44:47 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:47 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:47 - finance_app.data_manager.user_manager - DEBUG - UserManager current user set to: user_002
+2025-06-08 11:44:47 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:47 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_002
+2025-06-08 11:44:47 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:47 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_002
+2025-06-08 11:44:47 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:44:47 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_002
+2025-06-08 11:44:49 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:44:49 - finance_app.data_manager.category_manager - DEBUG - Retrieved 24 categories for user user_002 (including 23 system categories)
+2025-06-08 11:45:02 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:45:10 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:45:10 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'dvthao' in 5 users
+2025-06-08 11:45:10 - finance_app.data_manager.user_manager - DEBUG - Found user: dvthao
+2025-06-08 11:45:10 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:45:10 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:45:10 - finance_app.data_manager.user_manager - INFO - Successful login for user: dvthao
+2025-06-08 11:45:10 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:45:10 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:45:10 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:45:10 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:45:10 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:45:10 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:45:10 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:45:10 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:45:10 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:45:10 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:45:10 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:45:10 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:45:10 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:45:10 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:45:10 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:45:10 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:45:10 - finance_app.data_manager.category_manager - WARNING - No user ID provided for get_all_categories
+2025-06-08 11:45:10 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:45:10 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:45:10 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 11:45:10 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:45:10 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:45:11 - finance_app.data_manager.user_manager - DEBUG - UserManager current user set to: user_003
+2025-06-08 11:45:11 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:45:11 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 11:45:11 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:45:11 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 11:45:11 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:45:11 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 11:45:11 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:45:11 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:45:11 - finance_app.data_manager.category_manager - DEBUG - Retrieved 22 categories for user user_003 (including 23 system categories)
+2025-06-08 11:45:11 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:45:11 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:45:11 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 11:45:13 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:45:14 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:45:14 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 11:45:33 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:45:33 - finance_app.data_manager.category_manager - DEBUG - Saved 24 categories to D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:45:33 - finance_app.data_manager.category_manager - INFO - Updated category: cat_024 by user user_003
+2025-06-08 11:45:33 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:45:33 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 11:45:36 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:45:36 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:45:36 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 11:45:40 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from D:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:01 - finance_app - INFO - Starting Finance App
+2025-06-08 11:48:01 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:07 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:07 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'admin' in 5 users
+2025-06-08 11:48:07 - finance_app.data_manager.user_manager - DEBUG - Found user: admin
+2025-06-08 11:48:08 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:08 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:08 - finance_app.data_manager.user_manager - INFO - Successful login for user: admin
+2025-06-08 11:48:08 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:08 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:08 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:08 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:48:08 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:08 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:48:08 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:08 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:48:08 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:08 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:48:08 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:48:08 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:08 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:48:08 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:08 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:08 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:08 - finance_app.data_manager.category_manager - WARNING - No user ID provided for get_all_categories
+2025-06-08 11:48:08 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:08 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:48:08 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 11:48:08 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:08 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:09 - finance_app.data_manager.user_manager - DEBUG - UserManager current user set to: user_001
+2025-06-08 11:48:09 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:09 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_001
+2025-06-08 11:48:09 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:09 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_001
+2025-06-08 11:48:09 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:09 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_001
+2025-06-08 11:48:09 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:09 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:48:09 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 11:48:09 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:09 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:48:09 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 11:48:12 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:31 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:31 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:31 - finance_app.data_manager.user_manager - INFO - Admin reset password for user: user_005
+2025-06-08 11:48:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:42 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:42 - finance_app.data_manager.user_manager - INFO - Updated user: user_005
+2025-06-08 11:48:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:45 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:45 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:48:45 - finance_app.data_manager.user_manager - INFO - User user_005 lock status set to False
+2025-06-08 11:48:46 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:24 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:24 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:24 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'a' in 5 users
+2025-06-08 11:49:24 - finance_app.data_manager.user_manager - DEBUG - User 'a' not found
+2025-06-08 11:49:24 - finance_app.data_manager.user_manager - WARNING - Attempt to add user a with weak password.
+2025-06-08 11:49:26 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:43 - finance_app - INFO - Starting Finance App
+2025-06-08 11:49:43 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:49 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:49 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'admin' in 5 users
+2025-06-08 11:49:49 - finance_app.data_manager.user_manager - DEBUG - Found user: admin
+2025-06-08 11:49:49 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:49 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:49 - finance_app.data_manager.user_manager - INFO - Successful login for user: admin
+2025-06-08 11:49:49 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:49 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:49 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:49 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:49:49 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:49 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:49:49 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:49 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:49:49 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:49 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:49:49 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:49:49 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:49 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:49:49 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:49 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:49 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:49 - finance_app.data_manager.category_manager - WARNING - No user ID provided for get_all_categories
+2025-06-08 11:49:49 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:49 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:49:49 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 11:49:49 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:49 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:52 - finance_app.data_manager.user_manager - DEBUG - UserManager current user set to: user_001
+2025-06-08 11:49:52 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:52 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_001
+2025-06-08 11:49:52 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:52 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_001
+2025-06-08 11:49:52 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:52 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_001
+2025-06-08 11:49:52 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:52 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:49:52 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 11:49:52 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:52 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:49:52 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 11:49:54 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:49:54 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:49:54 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 11:49:55 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:50:01 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:50:01 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:50:01 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'a' in 5 users
+2025-06-08 11:50:01 - finance_app.data_manager.user_manager - DEBUG - User 'a' not found
+2025-06-08 11:50:01 - finance_app.data_manager.user_manager - WARNING - Attempt to add user a with weak password.
+2025-06-08 11:50:02 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:51:28 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:51:28 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:51:28 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:51:28 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:51:37 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:51:37 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:51:41 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:51:41 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:51:41 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:51:41 - finance_app.data_manager.user_manager - INFO - Updated user: user_001
+2025-06-08 11:51:43 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:51:43 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:51:43 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 11:51:44 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:51:53 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:51:53 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:51:53 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'a' in 5 users
+2025-06-08 11:51:53 - finance_app.data_manager.user_manager - DEBUG - User 'a' not found
+2025-06-08 11:51:53 - finance_app.data_manager.user_manager - WARNING - Attempt to add user a with weak password.
+2025-06-08 11:51:54 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:51:55 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:04 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:04 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'admin' in 5 users
+2025-06-08 11:52:04 - finance_app.data_manager.user_manager - DEBUG - Found user: admin
+2025-06-08 11:52:04 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:04 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:04 - finance_app.data_manager.user_manager - INFO - Successful login for user: admin
+2025-06-08 11:52:04 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:04 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:04 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:04 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:52:04 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:04 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:52:04 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:04 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:52:04 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:04 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:52:04 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:52:04 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:04 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:52:04 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:04 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:04 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:04 - finance_app.data_manager.category_manager - WARNING - No user ID provided for get_all_categories
+2025-06-08 11:52:04 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:04 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:52:04 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 11:52:04 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:04 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:06 - finance_app.data_manager.user_manager - DEBUG - UserManager current user set to: user_001
+2025-06-08 11:52:06 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:06 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_001
+2025-06-08 11:52:06 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:06 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_001
+2025-06-08 11:52:06 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:06 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_001
+2025-06-08 11:52:06 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:06 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:52:06 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 11:52:06 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:06 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:52:06 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 11:52:07 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:12 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:12 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:12 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'a' in 5 users
+2025-06-08 11:52:12 - finance_app.data_manager.user_manager - DEBUG - User 'a' not found
+2025-06-08 11:52:12 - finance_app.data_manager.user_manager - WARNING - Attempt to add user a with weak password.
+2025-06-08 11:52:13 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:15 - finance_app - INFO - Starting Finance App
+2025-06-08 11:52:15 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:18 - finance_app - INFO - Starting Finance App
+2025-06-08 11:52:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:24 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:25 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'admin' in 5 users
+2025-06-08 11:52:25 - finance_app.data_manager.user_manager - DEBUG - Found user: admin
+2025-06-08 11:52:25 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:25 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:25 - finance_app.data_manager.user_manager - INFO - Successful login for user: admin
+2025-06-08 11:52:25 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:25 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:25 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:25 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:52:25 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:25 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:52:25 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:25 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:52:25 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:25 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:52:25 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:52:25 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:25 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:52:25 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:25 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:25 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:25 - finance_app.data_manager.category_manager - WARNING - No user ID provided for get_all_categories
+2025-06-08 11:52:25 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:25 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:52:25 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 11:52:25 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:25 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:26 - finance_app.data_manager.user_manager - DEBUG - UserManager current user set to: user_001
+2025-06-08 11:52:26 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:26 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_001
+2025-06-08 11:52:26 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:26 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_001
+2025-06-08 11:52:26 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:26 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_001
+2025-06-08 11:52:26 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:26 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:52:26 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 11:52:26 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:26 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:52:26 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 11:52:27 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:33 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:33 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:33 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'a' in 5 users
+2025-06-08 11:52:33 - finance_app.data_manager.user_manager - DEBUG - User 'a' not found
+2025-06-08 11:52:33 - finance_app.data_manager.user_manager - WARNING - Attempt to add user a with weak password.
+2025-06-08 11:52:41 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:41 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:41 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'a' in 5 users
+2025-06-08 11:52:41 - finance_app.data_manager.user_manager - DEBUG - User 'a' not found
+2025-06-08 11:52:41 - finance_app.data_manager.user_manager - DEBUG - Saved 6 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:41 - finance_app.data_manager.user_manager - INFO - Added new user: a
+2025-06-08 11:52:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 6 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:47 - finance_app.data_manager.user_manager - DEBUG - Loaded 6 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:47 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:47 - finance_app.data_manager.user_manager - INFO - Deleted user: user_005
+2025-06-08 11:52:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:51 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:51 - finance_app.data_manager.user_manager - DEBUG - Saved 4 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:51 - finance_app.data_manager.user_manager - INFO - Deleted user: user_004
+2025-06-08 11:52:53 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:58 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:52:58 - finance_app.data_manager.user_manager - WARNING - Validation error updating user user_006: Định dạng email không hợp lệ.
+2025-06-08 11:53:06 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:53:06 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:53:06 - finance_app.data_manager.user_manager - DEBUG - Saved 4 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:53:06 - finance_app.data_manager.user_manager - INFO - Updated user: user_006
+2025-06-08 11:53:06 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:56:55 - finance_app - INFO - Starting Finance App
+2025-06-08 11:56:55 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:01 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:01 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'admin' in 4 users
+2025-06-08 11:57:01 - finance_app.data_manager.user_manager - DEBUG - Found user: admin
+2025-06-08 11:57:01 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:01 - finance_app.data_manager.user_manager - DEBUG - Saved 4 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:01 - finance_app.data_manager.user_manager - INFO - Successful login for user: admin
+2025-06-08 11:57:01 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:01 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:01 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:01 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:57:01 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:01 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:57:01 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:01 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:57:01 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:01 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:57:01 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:57:01 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:01 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:57:01 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:01 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:01 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:01 - finance_app.data_manager.category_manager - WARNING - No user ID provided for get_all_categories
+2025-06-08 11:57:01 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:01 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:57:01 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 11:57:01 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:01 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:03 - finance_app.data_manager.user_manager - DEBUG - UserManager current user set to: user_001
+2025-06-08 11:57:03 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:03 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_001
+2025-06-08 11:57:03 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:03 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_001
+2025-06-08 11:57:03 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:03 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_001
+2025-06-08 11:57:03 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:03 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:57:03 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 11:57:03 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:03 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:57:03 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 11:57:04 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:05 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 11:57:05 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 11:57:06 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:06 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 11:57:29 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:00:54 - finance_app - INFO - Starting Finance App
+2025-06-08 12:00:54 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'dvthao' in 4 users
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - DEBUG - Found user: dvthao
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - DEBUG - Saved 4 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - INFO - Successful login for user: dvthao
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:00 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:00 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:00 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:00 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:01:00 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:00 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:00 - finance_app.data_manager.category_manager - WARNING - No user ID provided for get_all_categories
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:00 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:01:00 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - DEBUG - UserManager current user set to: user_003
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:00 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:00 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:00 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:00 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:01:00 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:01:00 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:00 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:01:00 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:01:06 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:30 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:30 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:30 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'DVTHAO' in 4 users
+2025-06-08 12:01:30 - finance_app.data_manager.user_manager - DEBUG - Found user: dvthao
+2025-06-08 12:01:30 - finance_app.data_manager.user_manager - WARNING - Attempt to add existing username: DVTHAO
+2025-06-08 12:01:38 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:38 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:38 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'test2' in 4 users
+2025-06-08 12:01:38 - finance_app.data_manager.user_manager - DEBUG - User 'test2' not found
+2025-06-08 12:01:38 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:38 - finance_app.data_manager.user_manager - INFO - Added new user: test2
+2025-06-08 12:01:40 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:56 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:56 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:56 - finance_app.data_manager.user_manager - INFO - Updated user: user_007
+2025-06-08 12:01:56 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:01:59 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:01:59 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:02:01 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:02:01 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:02:01 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:02:02 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:02:11 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:02:23 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:02:38 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:11 - finance_app - INFO - Starting Finance App
+2025-06-08 12:05:11 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:17 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:17 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'dvthao' in 5 users
+2025-06-08 12:05:17 - finance_app.data_manager.user_manager - DEBUG - Found user: dvthao
+2025-06-08 12:05:17 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:17 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:17 - finance_app.data_manager.user_manager - INFO - Successful login for user: dvthao
+2025-06-08 12:05:17 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:17 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:17 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:17 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:05:17 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:17 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:05:17 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:17 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:05:17 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:17 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:05:17 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:05:17 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:17 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:05:17 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:17 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:18 - finance_app.data_manager.category_manager - WARNING - No user ID provided for get_all_categories
+2025-06-08 12:05:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:18 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:05:18 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:05:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:18 - finance_app.data_manager.user_manager - DEBUG - UserManager current user set to: user_003
+2025-06-08 12:05:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:18 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:05:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:18 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:05:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:18 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:05:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:18 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:05:18 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:05:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:18 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:05:18 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:05:21 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:47 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:47 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:05:54 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:14 - finance_app - INFO - Starting Finance App
+2025-06-08 12:06:14 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:21 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:21 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'dvthao' in 5 users
+2025-06-08 12:06:21 - finance_app.data_manager.user_manager - DEBUG - Found user: dvthao
+2025-06-08 12:06:21 - finance_app.data_manager.user_manager - WARNING - Failed login attempt for user: dvthao
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'dvthao' in 5 users
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - DEBUG - Found user: dvthao
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - INFO - Successful login for user: dvthao
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:31 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:31 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:31 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:31 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:06:31 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:31 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:31 - finance_app.data_manager.category_manager - WARNING - No user ID provided for get_all_categories
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:31 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:06:31 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - DEBUG - UserManager current user set to: user_003
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:31 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:31 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:31 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:31 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:06:31 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:06:31 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:31 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:06:31 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:06:34 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:49 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:06:50 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:15:07 - finance_app - INFO - Starting Finance App
+2025-06-08 12:15:07 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:15:17 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:15:17 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'dvthao' in 5 users
+2025-06-08 12:15:17 - finance_app.data_manager.user_manager - DEBUG - Found user: dvthao
+2025-06-08 12:15:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:15:18 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:15:18 - finance_app.data_manager.user_manager - INFO - Successful login for user: dvthao
+2025-06-08 12:15:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:15:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:15:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:15:18 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:15:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:15:18 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:15:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:15:18 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:15:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:15:18 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:15:18 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:15:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:15:18 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:15:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:15:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:15:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:15:18 - finance_app.data_manager.category_manager - WARNING - No user ID provided for get_all_categories
+2025-06-08 12:15:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:15:18 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:15:18 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:15:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:15:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:15:18 - finance_app.data_manager.user_manager - DEBUG - UserManager current user set to: user_003
+2025-06-08 12:15:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:15:18 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:15:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:15:18 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:15:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:15:18 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:15:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:15:18 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:15:18 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:15:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:15:18 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:15:18 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:15:25 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:17:38 - finance_app - INFO - Starting Finance App
+2025-06-08 12:17:38 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'dvthao' in 5 users
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - DEBUG - Found user: dvthao
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - INFO - Successful login for user: dvthao
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:17:48 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:17:48 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:17:48 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:17:48 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:17:48 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:17:48 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:17:48 - finance_app.data_manager.category_manager - WARNING - No user ID provided for get_all_categories
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:17:48 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:17:48 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - DEBUG - UserManager current user set to: user_003
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:17:48 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:17:48 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:17:48 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:17:48 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:17:48 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:17:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:17:48 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:17:48 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:17:51 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:21:31 - finance_app - INFO - Starting Finance App
+2025-06-08 12:21:31 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:21:43 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:21:43 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'admin' in 5 users
+2025-06-08 12:21:43 - finance_app.data_manager.user_manager - DEBUG - Found user: admin
+2025-06-08 12:21:43 - finance_app.data_manager.user_manager - WARNING - Failed login attempt for user: admin
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'admin' in 5 users
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - DEBUG - Found user: admin
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - INFO - Successful login for user: admin
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:21:50 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:21:50 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:21:50 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:21:50 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:21:50 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:21:50 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:21:50 - finance_app.data_manager.category_manager - WARNING - No user ID provided for get_all_categories
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:21:50 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:21:50 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - DEBUG - UserManager current user set to: user_001
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:21:50 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_001
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:21:50 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_001
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:21:50 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_001
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:21:50 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:21:50 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 12:21:50 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:21:50 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:21:50 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_001 (including 23 system categories)
+2025-06-08 12:21:53 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:23:31 - finance_app - INFO - Starting Finance App
+2025-06-08 12:23:31 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:23:41 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:23:41 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'dvthao' in 5 users
+2025-06-08 12:23:41 - finance_app.data_manager.user_manager - DEBUG - Found user: dvthao
+2025-06-08 12:23:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:23:42 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:23:42 - finance_app.data_manager.user_manager - INFO - Successful login for user: dvthao
+2025-06-08 12:23:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:23:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:23:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:23:42 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:23:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:23:42 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:23:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:23:42 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:23:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:23:42 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:23:42 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:23:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:23:42 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:23:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:23:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:23:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:23:42 - finance_app.data_manager.category_manager - WARNING - No user ID provided for get_all_categories
+2025-06-08 12:23:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:23:42 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:23:42 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:23:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:23:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:23:42 - finance_app.data_manager.user_manager - DEBUG - UserManager current user set to: user_003
+2025-06-08 12:23:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:23:42 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:23:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:23:42 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:23:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:23:42 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:23:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:23:42 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:23:42 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:23:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:23:42 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:23:42 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:23:45 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:04 - finance_app - INFO - Starting Finance App
+2025-06-08 12:29:04 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'dvthao' in 5 users
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - DEBUG - Found user: dvthao
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - INFO - Successful login for user: dvthao
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:13 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:13 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:13 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:13 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:29:13 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:13 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:13 - finance_app.data_manager.category_manager - WARNING - No user ID provided for get_all_categories
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:13 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:29:13 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - DEBUG - UserManager current user set to: user_003
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:13 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:13 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:13 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:13 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:29:13 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:29:13 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:13 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:29:13 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:29:15 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:50 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:50 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:50 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:29:50 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:29:54 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:54 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:29:54 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:29:54 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:29:55 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:30:03 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:30:03 - finance_app.data_manager.user_manager - DEBUG - Saved 4 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:30:03 - finance_app.data_manager.user_manager - INFO - Deleted user: user_007
+2025-06-08 12:30:04 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:30:13 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:30:13 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:30:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:30:24 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:30:24 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'test' in 4 users
+2025-06-08 12:30:24 - finance_app.data_manager.user_manager - DEBUG - Found user: test
+2025-06-08 12:30:24 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:30:24 - finance_app.data_manager.user_manager - DEBUG - Saved 4 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:30:24 - finance_app.data_manager.user_manager - INFO - Successful login for user: test
+2025-06-08 12:30:24 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:30:24 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:30:24 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:30:24 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:30:24 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:30:24 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:30:24 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:30:24 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:30:24 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:30:24 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:30:24 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:30:24 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:30:25 - finance_app.data_manager.user_manager - DEBUG - UserManager current user set to: user_002
+2025-06-08 12:30:25 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:30:25 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_002
+2025-06-08 12:30:25 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:30:25 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_002
+2025-06-08 12:30:25 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:30:25 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_002
+2025-06-08 12:30:29 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:30:29 - finance_app.data_manager.category_manager - DEBUG - Retrieved 24 categories for user user_002 (including 23 system categories)
+2025-06-08 12:37:04 - finance_app - INFO - Starting Finance App
+2025-06-08 12:37:04 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:15 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:15 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'dvthao' in 4 users
+2025-06-08 12:37:15 - finance_app.data_manager.user_manager - DEBUG - Found user: dvthao
+2025-06-08 12:37:15 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:15 - finance_app.data_manager.user_manager - DEBUG - Saved 4 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:15 - finance_app.data_manager.user_manager - INFO - Successful login for user: dvthao
+2025-06-08 12:37:15 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:15 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:15 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:15 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:37:15 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:15 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:37:15 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:15 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:37:15 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:15 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:37:15 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:37:15 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:15 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:37:15 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:15 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:16 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:16 - finance_app.data_manager.category_manager - WARNING - No user ID provided for get_all_categories
+2025-06-08 12:37:16 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:16 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:37:16 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:37:16 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:16 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:16 - finance_app.data_manager.user_manager - DEBUG - UserManager current user set to: user_003
+2025-06-08 12:37:16 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:16 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:37:16 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:16 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:37:16 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:16 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:37:16 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:16 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:37:16 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:37:16 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:16 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:37:16 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:37:18 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:24 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:24 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:24 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:37:24 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:37:25 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:26 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:26 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:37:26 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:37:32 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:45 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:45 - finance_app.data_manager.user_manager - DEBUG - Loaded 4 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:45 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'TTT' in 4 users
+2025-06-08 12:37:45 - finance_app.data_manager.user_manager - DEBUG - User 'TTT' not found
+2025-06-08 12:37:45 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:45 - finance_app.data_manager.user_manager - INFO - Added new user: TTT
+2025-06-08 12:37:46 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:48 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:37:48 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:37:49 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:50 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:37:50 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:37:50 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:37:51 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:38:00 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:38:00 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:38:00 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:39:36 - finance_app - INFO - Starting Finance App
+2025-06-08 12:39:36 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:39:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:39:42 - finance_app.data_manager.user_manager - DEBUG - Searching for user 'dvthao' in 5 users
+2025-06-08 12:39:42 - finance_app.data_manager.user_manager - DEBUG - Found user: dvthao
+2025-06-08 12:39:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:39:42 - finance_app.data_manager.user_manager - DEBUG - Saved 5 users to d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:39:42 - finance_app.data_manager.user_manager - INFO - Successful login for user: dvthao
+2025-06-08 12:39:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:39:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:39:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:39:42 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:39:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:39:42 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:39:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:39:42 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:39:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:39:42 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:39:42 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:39:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:39:42 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:39:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:39:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:39:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:39:42 - finance_app.data_manager.category_manager - WARNING - No user ID provided for get_all_categories
+2025-06-08 12:39:42 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:39:42 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:39:42 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:39:43 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:39:43 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:39:43 - finance_app.data_manager.user_manager - DEBUG - UserManager current user set to: user_003
+2025-06-08 12:39:43 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:39:43 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:39:43 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:39:43 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:39:43 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:39:43 - finance_app.data_manager.category_manager - DEBUG - Set current user to: user_003
+2025-06-08 12:39:43 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:39:43 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:39:43 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:39:43 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:39:43 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:39:43 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:39:45 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json
+2025-06-08 12:39:45 - finance_app.data_manager.category_manager - DEBUG - Loaded 24 categories from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\categories.json
+2025-06-08 12:39:45 - finance_app.data_manager.category_manager - DEBUG - Retrieved 23 categories for user user_003 (including 23 system categories)
+2025-06-08 12:39:48 - finance_app.data_manager.user_manager - DEBUG - Loaded 5 users from d:\Workspace\UngDungQuanLyTaiChinh_DA_Python\finance_app\finance_app\data\users.json

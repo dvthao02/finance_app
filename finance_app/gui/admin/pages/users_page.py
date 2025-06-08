@@ -8,6 +8,7 @@ from finance_app.gui.admin.user_dialogs import UserDialog, ResetPasswordDialog
 from finance_app.gui.admin.dialogs.user_details_dialog import UserDetailsDialog
 import os
 from finance_app.gui.base.base_widget import BaseWidget
+import functools
 
 class AdminUsersPage(BaseWidget):
     def __init__(self, parent=None):
@@ -65,7 +66,7 @@ class AdminUsersPage(BaseWidget):
         locked_users_card, self.locked_users_label = self.create_stat_card_with_label_ref(
             "Locked Users",
             "0",
-            "locked_users_icon.png",
+            "locked_users.png",
             "#ea4335"
         )
         stats_layout.addWidget(locked_users_card)
@@ -193,43 +194,27 @@ class AdminUsersPage(BaseWidget):
     def load_users(self):
         """Load users into the table"""
         try:
-            # Fetch all users, including inactive/locked ones for admin view
             users = self.parent.user_manager.get_all_users(active_only=False)
-            # Nếu cần lọc theo user_id, có thể truyền user_id=self.parent.current_user_id
-            
-            # Update statistics
             total_users = len(users)
             active_users = len([u for u in users if u.get('is_active', True)])
             locked_users = total_users - active_users
-            
-            # Update stat cards
             if self.total_users_label:
                 self.total_users_label.setText(str(total_users))
             if self.active_users_label:
                 self.active_users_label.setText(str(active_users))
             if self.locked_users_label:
                 self.locked_users_label.setText(str(locked_users))
-            
-            # Clear table
             self.users_table.setRowCount(0)
-            
-            # Add users to table
             for user in users:
                 row = self.users_table.rowCount()
                 self.users_table.insertRow(row)
-                
-                # Column indices shift due to ID removal
                 self.users_table.setItem(row, 0, QTableWidgetItem(user.get('username', '')))
                 self.users_table.setItem(row, 1, QTableWidgetItem(user.get('full_name', '')))
                 self.users_table.setItem(row, 2, QTableWidgetItem(user.get('email', '')))
-                
-                # Role
                 role = "Admin" if user.get('is_admin') else "User"
                 role_item = QTableWidgetItem(role)
                 role_item.setTextAlignment(Qt.AlignCenter)
                 self.users_table.setItem(row, 3, role_item)
-                
-                # Status
                 status = "Hoạt động" if user.get('is_active', True) else "Đã khóa"
                 status_item = QTableWidgetItem(status)
                 status_item.setTextAlignment(Qt.AlignCenter)
@@ -238,8 +223,6 @@ class AdminUsersPage(BaseWidget):
                 else:
                     status_item.setForeground(Qt.red)
                 self.users_table.setItem(row, 4, status_item)
-                
-                # Actions button
                 actions_btn = QPushButton("...")
                 actions_btn.setStyleSheet("""
                     QPushButton {
@@ -253,41 +236,24 @@ class AdminUsersPage(BaseWidget):
                         border-radius: 4px;
                     }
                 """)
-                
-                # Create actions menu
                 menu = QMenu()
-                
-                # View details action
                 view_action = menu.addAction("Xem chi tiết")
-                view_action.triggered.connect(lambda checked, u=user: self.view_user_details(u))
-                
-                # Edit action
+                view_action.triggered.connect(functools.partial(self.view_user_details, user))
                 edit_action = menu.addAction("Chỉnh sửa")
-                edit_action.triggered.connect(lambda checked, u=user: self.edit_user(u))
-                
-                # Reset password action
+                edit_action.triggered.connect(functools.partial(self.edit_user, user))
                 reset_action = menu.addAction("Đặt lại mật khẩu")
-                reset_action.triggered.connect(lambda checked, u=user: self.reset_password(u))
-                
-                # Lock/Unlock action
+                reset_action.triggered.connect(functools.partial(self.reset_password, user))
                 if user.get('is_active', True):
                     lock_action = menu.addAction("Khóa")
-                    lock_action.triggered.connect(lambda checked, u=user: self.toggle_lock(u, True))
+                    lock_action.triggered.connect(functools.partial(self.toggle_lock, user, True))
                 else:
                     unlock_action = menu.addAction("Mở khóa")
-                    unlock_action.triggered.connect(lambda checked, u=user: self.toggle_lock(u, False))
-                
-                # Delete action
+                    unlock_action.triggered.connect(functools.partial(self.toggle_lock, user, False))
                 menu.addSeparator()
                 delete_action = menu.addAction("Xóa")
-                delete_action.triggered.connect(lambda checked, u=user: self.delete_user(u))
-                
-                # Set menu for button
+                delete_action.triggered.connect(functools.partial(self.delete_user, user))
                 actions_btn.setMenu(menu)
-                
-                # Add button to table
                 self.users_table.setCellWidget(row, 5, actions_btn)
-                
         except Exception as e:
             QMessageBox.critical(
                 self,
@@ -300,7 +266,13 @@ class AdminUsersPage(BaseWidget):
         """Show dialog to add new user"""
         dialog = UserDialog(self)
         if dialog.exec_() == QDialog.Accepted:
+            # Show success notification
+            self.show_info("Thành công", "Đã thêm người dùng mới thành công.")
             self.load_users()
+        else:
+            # If dialog has error message, show it (UserDialog should set self.error_message if failed)
+            if hasattr(dialog, 'error_message') and dialog.error_message:
+                self.show_error("Lỗi", dialog.error_message)
     
     def edit_user(self, user_data):
         """Show dialog to edit user
@@ -477,4 +449,4 @@ class AdminUsersPage(BaseWidget):
     def show_question(self, title, message):
         if self.parent and hasattr(self.parent, 'show_question'):
             return self.parent.show_question(title, message)
-        return QMessageBox.question(self, title, message, QMessageBox.Yes | QMessageBox.No, QMessageBox.No) 
+        return QMessageBox.question(self, title, message, QMessageBox.Yes | QMessageBox.No, QMessageBox.No)

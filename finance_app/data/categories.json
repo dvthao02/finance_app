@@ -179,18 +179,6 @@
     "user_id": "system"
   },
   {
-    "category_id": "cat_017",
-    "name": "Thu nhập phụ",
-    "type": "income",
-    "icon": "💵",
-    "color": "#34a853",
-    "description": "Danh mục income mặc định",
-    "is_active": true,
-    "created_at": "2025-05-30T23:11:08.027584",
-    "updated_at": "2025-05-30T23:11:08.027595",
-    "user_id": "system"
-  },
-  {
     "category_id": "cat_018",
     "name": "Ăn uống",
     "type": "expense",
@@ -271,19 +259,19 @@
     "description": "Danh mục expense mặc định",
     "is_active": true,
     "created_at": "2025-05-30T23:11:08.073601",
-    "updated_at": "2025-05-30T23:11:08.073614",
+    "updated_at": "2025-06-08T11:45:33.773732",
     "user_id": "system"
   },
   {
     "category_id": "cat_025",
-    "name": "Bảo Hiểm",
-    "type": "expense",
-    "icon": "a",
+    "name": "test",
+    "type": "income",
+    "icon": "",
     "color": "",
-    "description": "Mua bảo hiểm",
-    "is_active": false,
-    "created_at": "2025-05-31T05:43:41.119955",
-    "updated_at": "2025-05-31T05:43:41.119975",
+    "description": "",
+    "is_active": true,
+    "created_at": "2025-06-08T11:43:38.155508",
+    "updated_at": "2025-06-08T11:43:38.155513",
     "user_id": "user_002"
   }
 ]

@@ -6,6 +6,7 @@ from PyQt5.QtGui import QIcon
 from finance_app.gui.admin.dialogs.category_dialog import CategoryDialog
 import os
 from finance_app.gui.base.base_widget import BaseWidget
+import functools
 
 class AdminCategoriesPage(BaseWidget):
     def __init__(self, parent=None):
@@ -337,15 +338,12 @@ class AdminCategoriesPage(BaseWidget):
                 border-radius: 4px;
             }
         """)
-        
         menu = QMenu()
         edit_action = menu.addAction("Chỉnh sửa")
-        edit_action.triggered.connect(lambda checked, c=category_data: self.edit_category(c))
-        
+        edit_action.triggered.connect(functools.partial(self.edit_category, category_data))
         menu.addSeparator()
         delete_action = menu.addAction("Xóa")
-        delete_action.triggered.connect(lambda checked, c=category_data: self.delete_category(c))
-        
+        delete_action.triggered.connect(functools.partial(self.delete_category, category_data))
         actions_btn.setMenu(menu)
         self.categories_table.setCellWidget(row_num, 6, actions_btn) # Column 6 for actions
 
@@ -354,4 +352,4 @@ class AdminCategoriesPage(BaseWidget):
         if not self.parent or not self.parent.category_manager:
             print("AdminCategoriesPage: Cannot refresh data, parent or category_manager not available.")
             return
-        self.load_categories() 
+        self.load_categories()

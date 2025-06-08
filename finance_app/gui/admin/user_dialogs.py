@@ -93,7 +93,7 @@ class UserDialog(QDialog):
             if not username:
                 QMessageBox.warning(self, "Cảnh báo", "Vui lòng nhập tên đăng nhập")
                 return
-                
+
             user_data = {
                 'full_name': self.fullname_input.text().strip(),
                 'email': self.email_input.text().strip(),
@@ -102,25 +102,21 @@ class UserDialog(QDialog):
                 'address': self.address_input.text().strip(),
                 'is_admin': self.role_combo.currentText() == "Quản trị viên"
             }
-            
+
             if not user_data['full_name']:
                 QMessageBox.warning(self, "Cảnh báo", "Vui lòng nhập họ và tên")
                 return
-                
+
             if self.user:  # Update existing user
-                # Prepare data for update_user, which expects user_id
                 update_payload = {
                     'full_name': user_data['full_name'],
                     'email': user_data['email'],
                     'phone': user_data['phone'],
                     'date_of_birth': user_data['date_of_birth'],
                     'address': user_data['address']
-                    # is_admin is typically not updated this way, UserManager.update_user doesn't handle it.
-                    # If admin status change is needed, it might require a separate, more explicit function.
                 }
                 success = self.user_manager.update_user(self.user['user_id'], **update_payload)
                 if not success:
-                    # self.user_manager.update_user logs errors, but we can show a generic one here
                     QMessageBox.critical(self, "Lỗi", "Không thể cập nhật thông tin người dùng.")
                     return
             else:  # Add new user
@@ -128,9 +124,9 @@ class UserDialog(QDialog):
                 if not password:
                     QMessageBox.warning(self, "Cảnh báo", "Vui lòng nhập mật khẩu")
                     return
-                
+
                 # Pass all relevant fields to add_user, including is_admin
-                created_user = self.user_manager.add_user(
+                result = self.user_manager.add_user(
                     username=username,
                     password=password,
                     full_name=user_data['full_name'],
@@ -140,16 +136,15 @@ class UserDialog(QDialog):
                     address=user_data['address'],
                     is_admin=user_data['is_admin']
                 )
-                if not created_user:
-                    # add_user raises exceptions on failure, which are caught below.
-                    # If it returned None on failure (which it doesn't seem to do now),
-                    # this would be the place to handle it.
-                    pass # Error handled by the exception block
-                
+                if isinstance(result, dict) and result.get('status') == 'error':
+                    QMessageBox.critical(self, "Lỗi", result.get('message', 'Không thể thêm người dùng.'))
+                    self.error_message = result.get('message', 'Không thể thêm người dùng.')
+                    return
+                self.error_message = None
             self.accept()
-            
         except Exception as e:
             QMessageBox.critical(self, "Lỗi", str(e))
+            self.error_message = str(e)
             
             
 class ResetPasswordDialog(QDialog):
