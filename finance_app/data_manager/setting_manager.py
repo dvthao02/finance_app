@@ -99,25 +99,30 @@ class SettingManager:
         # If settings not found for a specific user_id, create, save, and return default
         default_settings = self._get_default_settings(user_id)
         self.settings.append(default_settings)
-        self.save_settings() # This will call _load_data_if_needed again, but it's fine.
+        self.save_settings() # Save if new default is added
         return default_settings
 
-    def update_user_settings(self, user_id=None, new_settings=None):
-        """Cập nhật cài đặt cho một người dùng."""
+    def get_setting(self, key, user_id=None, default=None):
+        """Lấy một giá trị cài đặt cụ thể cho người dùng."""
+        user_settings = self.get_user_settings(user_id) # This already handles loading and defaults
+        if user_settings:
+            return user_settings.get(key, default)
+        return default # Should not happen if get_user_settings works correctly
+
+    def update_user_setting(self, key, value, user_id=None):
+        """Cập nhật một giá trị cài đặt cho người dùng."""
         self._load_data_if_needed() # Load data if not already loaded
         if user_id is None:
             user_id = self.current_user_id
             
-        if user_id is None or new_settings is None:
+        if user_id is None:
             return False
             
         for i, setting in enumerate(self.settings):
             if setting['user_id'] == user_id:
-                # Preserve setting_id and user_id
-                new_settings['setting_id'] = setting['setting_id']
-                new_settings['user_id'] = user_id
-                new_settings['updated_at'] = get_current_datetime()
-                self.settings[i] = new_settings
+                setting[key] = value
+                setting['updated_at'] = get_current_datetime()
+                self.settings[i] = setting
                 self.save_settings()
                 return True
         return False

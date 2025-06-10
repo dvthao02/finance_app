@@ -3,12 +3,14 @@ from finance_app.gui.auth.login_form import LoginForm
 from finance_app.gui.admin.admin_dashboard import AdminDashboard
 from finance_app.gui.user.user_dashboard import UserDashboard
 from finance_app.data_manager.user_manager import UserManager
+from finance_app.data_manager.setting_manager import SettingManager # Import SettingManager
 
 class MainApp(QMainWindow):
     def __init__(self):
         super().__init__()
         self.admin_dashboard = None
         self.user_dashboard = None
+        self.setting_manager = SettingManager() # Create an instance of SettingManager
         self.init_ui()
 
     def init_ui(self):
@@ -54,14 +56,16 @@ class MainApp(QMainWindow):
 
         is_admin = user_data.get('is_admin', False)
 
+        # Pass the setting_manager to the dashboards
         if is_admin:
             if not self.admin_dashboard:
-                self.admin_dashboard = AdminDashboard(self)
+                self.admin_dashboard = AdminDashboard(parent=self, setting_manager=self.setting_manager)
             self.setCentralWidget(self.admin_dashboard)
             self.admin_dashboard.set_current_user(user_data)
         else:
             if not self.user_dashboard:
-                self.user_dashboard = UserDashboard(self)
+                # Pass setting_manager to UserDashboard
+                self.user_dashboard = UserDashboard(parent=self, setting_manager=self.setting_manager) 
             self.setCentralWidget(self.user_dashboard)
             self.user_dashboard.set_current_user(user_data)
 
@@ -100,4 +104,4 @@ class MainApp(QMainWindow):
         """Initiates the process of logging out and showing the login screen again."""
         self.restart_app_for_login()
 
-            
+

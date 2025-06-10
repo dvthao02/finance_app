@@ -11,13 +11,14 @@ from finance_app.data_manager.transaction_manager import TransactionManager
 from finance_app.data_manager.notification_manager import NotificationManager
 
 class AdminDashboard(BaseDashboard):
-    def __init__(self, parent=None):
+    def __init__(self, parent=None, setting_manager=None): # Add setting_manager parameter
         # Initialize managers
         self.user_manager = UserManager()
         self.category_manager = CategoryManager()
         self.budget_manager = BudgetManager()
         self.transaction_manager = TransactionManager()
         self.notification_manager = NotificationManager()
+        self.setting_manager = setting_manager # Store the passed setting_manager
         
         super().__init__(parent)
         
@@ -118,4 +119,4 @@ class AdminDashboard(BaseDashboard):
             self.show_error(
                 "Lỗi",
                 f"Không thể tải dữ liệu: {str(e)}"
-            ) 
+            )

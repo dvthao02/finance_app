@@ -5,10 +5,11 @@ from finance_app.gui.base.base_widget import BaseWidget
 from datetime import datetime
 
 class TransactionDialog(QDialog, BaseWidget):
-    def __init__(self, parent=None, transaction_data=None):
+    def __init__(self, parent=None, transaction_data=None, user_id=None): # Add user_id here
         super().__init__(parent)
         self.parent = parent
         self.transaction_data = transaction_data
+        self.user_id = user_id # Store user_id
         self.init_ui()
         
     def init_ui(self):

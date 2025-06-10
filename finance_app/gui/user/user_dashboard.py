@@ -13,13 +13,14 @@ from finance_app.data_manager.transaction_manager import TransactionManager
 from finance_app.data_manager.notification_manager import NotificationManager
 
 class UserDashboard(BaseDashboard):
-    def __init__(self, parent=None):
+    def __init__(self, parent=None, setting_manager=None): # Add setting_manager parameter
         # Initialize managers
         self.user_manager = UserManager()
         self.category_manager = CategoryManager()
         self.budget_manager = BudgetManager()
         self.transaction_manager = TransactionManager(category_manager=self.category_manager)
         self.notification_manager = NotificationManager()
+        self.setting_manager = setting_manager # Store the passed setting_manager
         
         super().__init__(parent)
         
@@ -37,11 +38,11 @@ class UserDashboard(BaseDashboard):
     def init_pages(self):
         self.pages = {
             # "Trang chính": QLabel("Welcome to User Dashboard!"), # Example placeholder
-            "Giao dịch": TransactionsPage(self),
-            "Ngân sách": BudgetsPage(self),
-            "Danh mục": UserCategoriesPage(self),
-            "Hồ sơ": UserProfilePage(self),
-            "Cài đặt": UserSettingsPage(self)
+            "Giao dịch": TransactionsPage(self), # Parent is UserDashboard
+            "Ngân sách": BudgetsPage(self),       # Parent is UserDashboard
+            "Danh mục": UserCategoriesPage(self), # Parent is UserDashboard
+            "Hồ sơ": UserProfilePage(self),       # Parent is UserDashboard
+            "Cài đặt": UserSettingsPage(self)    # Parent is UserDashboard, it will get setting_manager via self.parent.setting_manager
         }
         # Set initial page to the first item in navigation or a default like "Giao dịch"
         if self.nav_tree.topLevelItemCount() > 0:
@@ -220,4 +221,4 @@ class UserDashboard(BaseDashboard):
             self.show_error(
                 "Lỗi",
                 f"Không thể tạo thông báo: {str(e)}"
-            ) 
+            )
